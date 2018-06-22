@@ -2,5 +2,6 @@ atom/*
 !atom/config.cson
 !atom/init.coffee
 !atom/keymap.cson
+!atom/packages.list
 !atom/snippets.cson
 !atom/styles.less
