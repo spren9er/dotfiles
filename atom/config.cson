@@ -1,5 +1,6 @@
 "*":
   Hydrogen:
+    outputAreaDefault: true
     outputAreaFontSize: 11
     statusBarDisable: true
   "atom-alignment": {}
