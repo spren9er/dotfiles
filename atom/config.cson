@@ -1,0 +1,103 @@
+"*":
+  Hydrogen:
+    outputAreaFontSize: 11
+    statusBarDisable: true
+  "atom-alignment": {}
+  "atom-package-deps":
+    ignored: []
+  autosave:
+    enabled: true
+  core:
+    excludeVcsIgnoredPaths: true
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "vendor"
+    ]
+    packagesWithKeymapsDisabled: [
+      "devdocs"
+    ]
+    projectHome: "/Users/spren9er/Development"
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "solarized-light-syntax"
+    ]
+    titleBar: "custom-inset"
+  editor:
+    fontFamily: "Inconsolata"
+    invisibles: {}
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "exception-reporting":
+    userId: "e15f02c2-795d-94b8-5873-9c543c6defd8"
+  "file-icons":
+    coloured: false
+  "find-and-replace":
+    focusEditorAfterSearch: true
+    scrollToResultOnLiveSearch: true
+  "fuzzy-finder":
+    preserveLastSearch: true
+    searchAllPanes: true
+  "gfm-pdf":
+    type: "PDF+HTML"
+  "git-blame":
+    dateFormatString: "DD.MM.YYYY"
+    showOnlyLastNames: true
+  "linter-rubocop":
+    command: "/Users/spren9er/.rvm/gems/ruby-2.5.1/bin/rubocop"
+  "linter-ui-default":
+    decorateOnTreeView: "None"
+    panelHeight: 69
+  "markdown-preview":
+    useGitHubStyle: true
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        black: "#1f4a56"
+        blue: "#2f89ce"
+        cyan: "#339f96"
+        green: "#859926"
+        magenta: "#d13f84"
+        red: "#d11f25"
+        white: "#eee8d7"
+        yellow: "#b38a2a"
+      zBright:
+        brightBlack: "#022b34"
+        brightBlue: "#839496"
+        brightCyan: "#93a1a1"
+        brightGreen: "#586e75"
+        brightMagenta: "#6c71c0"
+        brightRed: "#c9512e"
+        brightWhite: "#fdf6e5"
+        brightYellow: "#657b81"
+    core:
+      autoRunCommand: "guard"
+    iconColors:
+      blue: "#61afef"
+      cyan: "#56b6c2"
+      green: "#98c379"
+      magenta: "#c678dd"
+      orange: "#d19965"
+      pink: "#c578dd"
+      purple: "#d682f0"
+      red: "#df6b75"
+      yellow: "#e2c08d"
+    style:
+      animationSpeed: 3
+      fontFamily: "Menlo"
+      fontSize: "11"
+      theme: "solarized-dark"
+    toggles:
+      autoClose: true
+      runInsertedText: false
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
