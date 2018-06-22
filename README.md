@@ -14,3 +14,10 @@ Installing all packages from list can be done by
 ```bash
 apm install --packages-file ~/.dotfiles/atom/packages.list
 ```
+
+## Symlinking
+
+```bash
+ln -s ~/.dotfiles/atom ~/.atom
+ln -s ~/.dotfiles/hyper/hyper.js ~/.hyper.js
+```
