@@ -1,5 +1,6 @@
 Hydrogen
 atom-alignment
+atom-language-r
 busy-signal
 devdocs
 file-icons
@@ -7,7 +8,6 @@ gfm-pdf
 git-blame
 git-time-machine
 intentions
-language-r
 linter
 linter-rubocop
 linter-ui-default
