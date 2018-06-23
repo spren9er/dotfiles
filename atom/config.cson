@@ -55,7 +55,6 @@
     command: "/Users/spren9er/.rvm/gems/ruby-2.5.1/bin/rubocop"
   "linter-ui-default":
     decorateOnTreeView: "None"
-    panelHeight: 69
   "markdown-preview":
     useGitHubStyle: true
   "platformio-ide-terminal":

@@ -128,7 +128,7 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     hypercwd: {
-      initialWorkingDirectory: '/Users/spren9er/Development'
+      initialWorkingDirectory: '~/Development'
     },
 
     hyperTabs: {
