@@ -24,7 +24,7 @@ module.exports = {
     letterSpacing: 1,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: 'rgba(181,137,39,0.4)',
 
     // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
@@ -43,7 +43,7 @@ module.exports = {
     backgroundColor: '#000',
 
     // terminal selection color
-    selectionColor: 'rgba(248,28,229,0.3)',
+    selectionColor: 'rgba(181,137,39,0.4)',
 
     // border color (window, tabs)
     borderColor: '#333',
