@@ -47,6 +47,7 @@
     preserveLastSearch: true
     searchAllPanes: true
   "gfm-pdf":
+    styleFontSize: "14px"
     type: "PDF+HTML"
   "git-blame":
     dateFormatString: "DD.MM.YYYY"
