@@ -8,6 +8,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey \^U backward-kill-line
 
 # misc
+export LANG=en_US.UTF-8
 export EDITOR="atom --wait"
 
 # development
