@@ -8,16 +8,12 @@ source $ZSH/oh-my-zsh.sh
 bindkey \^U backward-kill-line
 
 # misc
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 export EDITOR="atom --wait"
 
-# development
+# development folder
 c() { cd ~/Development/$1; }
 _c() { _files -W ~/Development -/; }
 compdef _c c
-
-# git
-alias gpl='ggpull'
-alias gph='ggpush'
-alias gc='git commit -m'
-compdef _git gc=git-commit
