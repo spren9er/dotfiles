@@ -7,6 +7,6 @@
 [commit]
 	template = ~/.gitmessage
 [pull]
-  rebase = true
+	rebase = true
 [github]
 	user = spren9er
