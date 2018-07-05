@@ -1,0 +1,12 @@
+[core]
+	editor = atom --wait
+	excludesfile = ~/.gitignore_global
+[user]
+	name = Torsten Sprenger
+	email = mail@spren9er.de
+[commit]
+	template = ~/.gitmessage
+[pull]
+  rebase = true
+[github]
+	user = spren9er
