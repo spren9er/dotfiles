@@ -23,4 +23,5 @@ ln -s ~/.dotfiles/git/.gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/git/.gitmessage ~/.gitmessage
 ln -s ~/.dotfiles/atom ~/.atom
 ln -s ~/.dotfiles/hyper/hyper.js ~/.hyper.js
+ln -s ~/.dotfiles/r/.Rprofile ~/.Rprofile
 ```

@@ -1,7 +1,7 @@
 "*":
   Hydrogen:
     outputAreaDefault: true
-    outputAreaFontSize: 11
+    outputAreaFontSize: 12
     statusBarDisable: true
   "atom-alignment": {}
   "atom-package-deps":
