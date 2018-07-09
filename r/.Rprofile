@@ -6,4 +6,5 @@ options(graphics.record = TRUE)
 .First <- function(){
   suppressMessages(library(stats))
   suppressMessages(library(tidyverse))
+  suppressMessages(library(extrafont))
 }
