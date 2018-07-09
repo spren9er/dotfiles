@@ -24,3 +24,6 @@
   'Pipe Operator':
     'prefix': '>'
     'body': '%>%\n'
+  'Assign Operator':
+    'prefix': '<'
+    'body': '<- '
