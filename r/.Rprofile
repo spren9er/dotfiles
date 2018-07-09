@@ -4,5 +4,6 @@ options(digits = 4)
 options(graphics.record = TRUE)
 
 .First <- function(){
+  suppressMessages(library(stats))
   suppressMessages(library(tidyverse))
 }
