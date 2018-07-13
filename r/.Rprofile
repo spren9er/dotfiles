@@ -19,15 +19,31 @@ options(lubridate.week.start = 1)
 theme_set(
   theme_gray() +
   theme(
-    text = element_text(size = 12, family = 'Inconsolata'),
+    text = element_text(size = 9, family = 'Inconsolata'),
     plot.title = element_text(hjust = 0.5, face = 'bold')
   )
 )
+
+# redefine ggplot function
 ggplot <- function(...) ggplot2::ggplot(...) + scale_color_solarized()
 
 # redefine plot_ly function
 plot_ly <- function(...) {
-  p <- plotly::plot_ly(...)
+  font <- list(
+    family = 'Inconsolata',
+    size = 10,
+    color = '#333333'
+  )
+
+  p <- plotly::plot_ly(...) %>%
+         plotly::layout(
+           font = font, hovermode = FALSE,
+           autosize = TRUE, width = 480,
+           xaxis = list(fixedrange = TRUE),
+           yaxis = list(fixedrange = TRUE)
+         ) %>%
+         plotly::config(displayModeBar = FALSE)
+
   tryCatch({
     json <- plotly:::to_JSON(plotly_build(p)$x)
     mimebundle <- list('application/vnd.plotly.v1+json'=json)
