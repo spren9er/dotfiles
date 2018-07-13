@@ -1,23 +1,43 @@
+# load libraries
+suppressMessages(library(stats))
+suppressMessages(library(tidyverse))
+suppressMessages(library(lubridate))
+
+suppressMessages(library(extrafont))
+suppressMessages(library(ggthemes))
+
+suppressMessages(library(plotly))
+
+# set options
 options(tab.width = 2)
 options(width = 80)
-options(digits = 4)
+options(digits = 8)
 options(graphics.record = TRUE)
+options(lubridate.week.start = 1)
 
-.First <- function(){
-  suppressMessages(library(stats))
-  suppressMessages(library(tidyverse))
-  suppressMessages(library(lubridate))
-
-  suppressMessages(library(extrafont))
-  suppressMessages(library(ggthemes))
-
-  theme_set(
-    theme_gray() +
-    theme(
-      text = element_text(size = 12, family = 'Inconsolata'),
-      plot.title = element_text(hjust = 0.5, face = 'bold')
-    )
+# set styles
+theme_set(
+  theme_gray() +
+  theme(
+    text = element_text(size = 12, family = 'Inconsolata'),
+    plot.title = element_text(hjust = 0.5, face = 'bold')
   )
+)
+ggplot <- function(...) ggplot2::ggplot(...) + scale_color_solarized()
 
-  ggplot <- function(...) ggplot2::ggplot(...) + scale_colour_solarized()
+# redefine plot_ly function
+plot_ly <- function(...) {
+  p <- plotly::plot_ly(...)
+  tryCatch({
+    json <- plotly:::to_JSON(plotly_build(p)$x)
+    mimebundle <- list('application/vnd.plotly.v1+json'=json)
+    return(IRdisplay::publish_mimebundle(mimebundle))
+  },
+    warning = function(c) {
+      msg <- conditionMessage(c)
+      if (grep("IRdisplay.*", msg)) return(p)
+      print(msg)
+    },
+    error = function(c) return(p)
+  )
 }
