@@ -1,3 +1,7 @@
+# system settings
+invisible(Sys.setlocale('LC_CTYPE', 'de_DE.UTF-8'))
+setwd('~/Development/r')
+
 # load libraries
 suppressMessages(library(stats))
 suppressMessages(library(tidyverse))
@@ -9,7 +13,6 @@ suppressMessages(library(ggthemes))
 suppressMessages(library(plotly))
 
 # set options
-Sys.setlocale('LC_CTYPE', 'de_DE.UTF-8')
 options(tab.width = 2)
 options(width = 80)
 options(digits = 8)
