@@ -1,14 +1,15 @@
 # system settings
 invisible(Sys.setlocale('LC_CTYPE', 'de_DE.UTF-8'))
-setwd('~/Development/r')
 
 # load libraries
 suppressMessages(library(stats))
 suppressMessages(library(tidyverse))
 suppressMessages(library(lubridate))
 
+suppressMessages(library(rmarkdown))
 suppressMessages(library(extrafont))
 suppressMessages(library(ggthemes))
+suppressMessages(library(epuRate))
 
 suppressMessages(library(plotly))
 
