@@ -82,7 +82,7 @@ spren9er_theme <- function() {
 
   # set title and axis labels, and format these and tick marks
   theme(plot.title = element_text(
-    color = color.title, size = 13, vjust = 1.25, hjust = .5, face = 'bold')
+    color = color.title, size = 12, vjust = 1.25, hjust = .5, face = 'bold')
   ) +
   theme(axis.text.x = element_text(size = 7, color = color.axis.text)) +
   theme(axis.text.y = element_text(size = 7, color = color.axis.text)) +
