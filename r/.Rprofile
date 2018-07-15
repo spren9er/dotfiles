@@ -1,6 +1,3 @@
-# system settings
-invisible(Sys.setlocale('LC_CTYPE', 'de_DE.UTF-8'))
-
 # load libraries
 suppressMessages(library(stats))
 suppressMessages(library(tidyverse))
@@ -8,8 +5,6 @@ suppressMessages(library(lubridate))
 
 suppressMessages(library(rmarkdown))
 suppressMessages(library(extrafont))
-suppressMessages(library(ggthemes))
-suppressMessages(library(epuRate))
 
 suppressMessages(library(plotly))
 
@@ -30,7 +25,9 @@ theme_set(
 )
 
 # redefine ggplot function
-ggplot <- function(...) ggplot2::ggplot(...) + scale_color_solarized()
+ggplot <- function(...) {
+  ggplot2::ggplot(...) + scale_colour_brewer(palette = 'Set1')
+}
 
 # redefine plot_ly function
 plot_ly <- function(...) {

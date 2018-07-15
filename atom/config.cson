@@ -2,6 +2,7 @@
   Hydrogen:
     outputAreaDefault: true
     outputAreaFontSize: 12
+    startDir: "dirOfFile"
     statusBarDisable: true
   "atom-alignment": {}
   "atom-package-deps":
