@@ -40,7 +40,7 @@ invisible(dev.off())
 spren9er_theme <- function() {
   # generate colors
   pal <- brewer.pal(9, 'Greys')
-  color.background <- pal[2]
+  color.background <- pal[1]
   color.grid.major <- pal[3]
   color.axis.text  <- pal[6]
   color.axis.title <- pal[7]
@@ -51,7 +51,7 @@ spren9er_theme <- function() {
 
   # set font styles
   theme(text = element_text(color = 1)) +
-  # theme(text = element_text(family = 'Inconsolata')) +
+  theme(text = element_text(family = 'Source\ Sans\ Pro')) +
 
   # set the entire chart region to a light gray color
   theme(
@@ -77,7 +77,7 @@ spren9er_theme <- function() {
   # format legend
   theme(legend.background = element_rect(fill = color.background)) +
   theme(legend.text = element_text(size = 7, color = color.axis.text)) +
-  theme(legend.title = element_text(color = color.axis.title, face = 'bold')) +
+  theme(legend.title = element_text(color = color.axis.title)) +
   theme(legend.key = element_rect(fill = color.background)) +
 
   # set title and axis labels, and format these and tick marks
@@ -88,13 +88,13 @@ spren9er_theme <- function() {
   theme(axis.text.y = element_text(size = 7, color = color.axis.text)) +
   theme(axis.title.x =
     element_text(
-      color = color.axis.title, vjust = 0, face = 'bold',
+      color = color.axis.title, vjust = 0,
       margin = margin(t = 8, r = 0, b = 0, l = 0)
     )
   ) +
   theme(axis.title.y =
     element_text(
-      color = color.axis.title, vjust = 1.25, face = 'bold',
+      color = color.axis.title, vjust = 1.25,
       margin = margin(t = 0, r = 8, b = 0, l = 0)
     )
   ) +
