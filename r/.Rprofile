@@ -1,6 +1,3 @@
-# system settings
-invisible(Sys.setlocale('LC_ALL', 'de_DE.UTF-8'))
-
 # load libraries
 suppressMessages(library(stats))
 suppressMessages(library(tidyverse))

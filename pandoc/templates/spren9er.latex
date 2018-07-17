@@ -3,7 +3,7 @@
 \PassOptionsToPackage{svgnames*,table}{xcolor}
 
 \documentclass[
-  $if(fontsize)$$fontsize$,$endif$ $if(lang)$$babel-lang$,$endif$ $if(papersize)$$papersize$paper,$else$a4paper,$endif$ $if(beamer)$ignorenonframetext, $if(handout)$handout,$endif$ $if(aspectratio)$aspectratio=$aspectratio$, $endif$ $endif$ $for(classoption)$$classoption$$sep$,$endfor$, tablecaptionabove
+  $if(fontsize)$$fontsize$,$else$10pt,$endif$ $if(lang)$$babel-lang$,$endif$ $if(papersize)$$papersize$paper,$else$a4paper,$endif$ $if(beamer)$ignorenonframetext, $if(handout)$handout,$endif$ $if(aspectratio)$aspectratio=$aspectratio$, $endif$ $endif$ $for(classoption)$$classoption$$sep$,$endfor$, tablecaptionabove
 ]{scrartcl}
 
 $if(beamer)$
@@ -46,19 +46,25 @@ $endif$
   $else$
     \usepackage{unicode-math}
   $endif$
+
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+
   $for(fontfamilies)$
     \newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
   $endfor$
+
   $if(mainfont)$
     \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
   $endif$
+
   $if(sansfont)$
     \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
   $endif$
+
   $if(monofont)$
     \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
   $endif$
+
   $if(mathfont)$
     $if(mathspec)$
       \ifxetex
@@ -96,18 +102,23 @@ $if(beamer)$
   $if(theme)$
     \usetheme[$for(themeoptions)$$themeoptions$$sep$,$endfor$]{$theme$}
   $endif$
+
   $if(colortheme)$
     \usecolortheme{$colortheme$}
   $endif$
+
   $if(fonttheme)$
     \usefonttheme{$fonttheme$}
   $endif$
+
   $if(mainfont)$
     \usefonttheme{serif} % use mainfont rather than sansfont for slide text
   $endif$
+
   $if(innertheme)$
     \useinnertheme{$innertheme$}
   $endif$
+
   $if(outertheme)$
     \useoutertheme{$outertheme$}
   $endif$
@@ -142,7 +153,7 @@ $if(colorlinks)$
   \definecolor{default-urlcolor}{HTML}{4077C0}
 $endif$
 
-\usepackage{hyperref}
+\usepackage[bookmarks=true]{hyperref}
 \hypersetup{
   $if(title-meta)$
     pdftitle={$title-meta$},
@@ -169,24 +180,31 @@ $endif$
   $endif$
   breaklinks=true
 }
+
 \urlstyle{same}  % don't use monospace font for urls
+
 $if(verbatim-in-note)$
   \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
+
 $if(geometry)$
   \usepackage[margin=2.5cm,includehead=true,includefoot=true,centering,$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $else$
   \usepackage[margin=2.5cm,includehead=true,includefoot=true,centering]{geometry}
 $endif$
+
 $if(beamer)$
   \newif\ifbibliography
 $endif$
+
 $if(lhs)$
   \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
 $endif$
+
 $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
+
 $if(tables)$
   \usepackage{longtable,booktabs}
   $if(beamer)$
@@ -200,6 +218,7 @@ $if(tables)$
     \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
   $endif$
 $endif$
+
 $if(graphics)$
   \usepackage{graphicx,grffile}
   \makeatletter
@@ -211,6 +230,7 @@ $if(graphics)$
   % using explicit options in \includegraphics[width, height, ...]{}
   \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
+
 $if(beamer)$
   % Prevent slide breaks in the middle of a paragraph:
   \widowpenalties 1 10000
@@ -248,23 +268,28 @@ $if(beamer)$
     }
   $endif$
 $endif$
+
 $if(links-as-notes)$
   % Make links footnotes instead of hotlinks:
   \DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
 $endif$
+
 $if(strikeout)$
   \usepackage[normalem]{ulem}
   % avoid problems with \sout in headers with hyperref:
   \pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 $endif$
+
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
 \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 $if(numbersections)$
   \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
 $else$
   \setcounter{secnumdepth}{0}
 $endif$
+
 $if(beamer)$
 $else$
   $if(subparagraph)$
@@ -284,6 +309,7 @@ $else$
     \fi
   $endif$
 $endif$
+
 $if(pagestyle)$
   \pagestyle{$pagestyle$}
 $endif$
@@ -295,18 +321,19 @@ $endif$
 $for(header-includes)$
   $header-includes$
 $endfor$
+
 $if(lang)$
   \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
-  $if(babel-newcommands)$
-    $babel-newcommands$
-  $endif$
-\else
-  $if(mainfont)$
-  $else$
-    % See issue https://github.com/reutenauer/polyglossia/issues/127
-    \renewcommand*\familydefault{\sfdefault}
-  $endif$
+    \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
+    $if(babel-newcommands)$
+      $babel-newcommands$
+    $endif$
+  \else
+    $if(mainfont)$
+    $else$
+      % See issue https://github.com/reutenauer/polyglossia/issues/127
+      \renewcommand*\familydefault{\sfdefault}
+    $endif$
     % load polyglossia as late as possible as it *could* call bidi if RTL lang (e.g. Hebrew or Arabic)
     \usepackage{polyglossia}
     \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
@@ -315,6 +342,7 @@ $if(lang)$
     $endfor$
   \fi
 $endif$
+
 $if(dir)$
   \ifxetex
     % load bidi as late as possible as it modifies e.g. graphicx
@@ -334,10 +362,12 @@ $if(dir)$
     \newenvironment{LTR}{\beginL}{\endL}
   \fi
 $endif$
+
 $if(natbib)$
   \usepackage[$natbiboptions$]{natbib}
   \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
 $endif$
+
 $if(biblatex)$
   \usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
   $for(bibliography)$
@@ -370,7 +400,7 @@ $if(beamer)$
     \titlegraphic{\includegraphics{$titlegraphic$}}
   $endif$
   $if(logo)$
-  \logo{\includegraphics{$logo$}}
+    \logo{\includegraphics{$logo$}}
   $endif$
 $endif$
 
@@ -434,8 +464,8 @@ $endif$
 
 $if(mainfont)$
 $else$
-\usepackage[default]{sourcesanspro}
-\usepackage{inconsolata}
+  \usepackage[default]{sourcesanspro}
+  \usepackage{inconsolata}
 $endif$
 
 \definecolor{heading-color}{RGB}{40,40,40}
@@ -478,43 +508,43 @@ $endif$
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+
 \begin{document}
-
   $if(titlepage)$
-  \begin{titlepage}
-    \newgeometry{left=6cm}
-    $if(titlepage-color)$
-      \definecolor{titlepage-color}{HTML}{$titlepage-color$}
-      \newpagecolor{titlepage-color}\afterpage{\restorepagecolor}
-    $endif$
-    \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
-    \begin{flushleft}
-      \noindent
-      \\[-1em]
-      \color[HTML]{$if(titlepage-text-color)$$titlepage-text-color$$else$333333$endif$}
-      \makebox[0pt][l]{\colorRule[$if(titlepage-rule-color)$$titlepage-rule-color$$else$333333$endif$]{1.3\textwidth}{$if(titlepage-rule-height)$$titlepage-rule-height$$else$4$endif$pt}}
-      \par
-      \noindent
-
-      { \setstretch{1.4}
-      \vfill
-      \noindent {\huge \textbf{\textsf{$title$}}}
-
-      $if(subtitle)$
-        \vskip 1em
-        {\Large \textsf{$subtitle$}}
+    \begin{titlepage}
+      \newgeometry{left=6cm}
+      $if(titlepage-color)$
+        \definecolor{titlepage-color}{HTML}{$titlepage-color$}
+        \newpagecolor{titlepage-color}\afterpage{\restorepagecolor}
       $endif$
+      \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
+      \begin{flushleft}
+        \noindent
+        \\[-1em]
+        \color[HTML]{$if(titlepage-text-color)$$titlepage-text-color$$else$333333$endif$}
+        \makebox[0pt][l]{\colorRule[$if(titlepage-rule-color)$$titlepage-rule-color$$else$333333$endif$]{1.3\textwidth}{$if(titlepage-rule-height)$$titlepage-rule-height$$else$4$endif$pt}}
+        \par
+        \noindent
 
-      \vskip 2em
-      \noindent
-      {\normalsize \textit{$for(author)$$author$$sep$, $endfor$ \hspace{0.2em} • \hspace{0.2em} $for(mail_address)$$mail_address$$sep$, $endfor$}
-      \vfill
-      }
+        { \setstretch{1.4}
+        \vfill
+        \noindent {\huge \textbf{\textsf{$title$}}}
 
-      \textsf{$date$}}
-    \end{flushleft}
-  \end{titlepage}
-  \restoregeometry
+        $if(subtitle)$
+          \vskip 1em
+          {\Large \textsf{$subtitle$}}
+        $endif$
+
+        \vskip 2em
+        \noindent
+        {\normalsize \textit{$for(author)$$author$$sep$, $endfor$ \hspace{0.2em} • \hspace{0.2em} $for(mail_address)$$mail_address$$sep$, $endfor$}
+        \vfill
+        }
+
+        \textsf{$date$}}
+      \end{flushleft}
+    \end{titlepage}
+    \restoregeometry
   $endif$
 
   $if(title)$
@@ -599,5 +629,4 @@ $endif$
   $for(include-after)$
     $include-after$
   $endfor$
-  
 \end{document}
