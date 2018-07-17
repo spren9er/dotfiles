@@ -40,11 +40,13 @@ invisible(dev.off())
 spren9er_theme <- function() {
   # generate colors
   pal <- brewer.pal(9, 'Greys')
+  color.title      <- 1
   color.background <- pal[1]
   color.grid.major <- pal[3]
   color.axis.text  <- pal[6]
   color.axis.title <- pal[7]
-  color.title      <- 1
+  strip.background <- '#f0f0f0'
+  strip.color      <- pal[9]
 
   # use base theme
   theme_bw(base_size = 9) +
@@ -70,9 +72,9 @@ spren9er_theme <- function() {
   theme(axis.ticks = element_blank()) +
 
   # format strip
-  theme(strip.background = element_blank()) +
-  theme(strip.text.x = element_text(color = color.axis.title, face = 'bold')) +
-  theme(strip.text.y = element_text(color = color.axis.title, face = 'bold')) +
+  theme(strip.background = element_rect(fill = strip.background, color = NA)) +
+  theme(strip.text.x = element_text(color = color.title, face = 'bold')) +
+  theme(strip.text.y = element_text(color = color.title, face = 'bold')) +
 
   # format legend
   theme(legend.background = element_rect(fill = color.background)) +
