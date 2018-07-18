@@ -1,5 +1,8 @@
 # load libraries
 suppressMessages(library(stats))
+suppressMessages(library(utils))
+suppressMessages(library(grDevices))
+
 suppressMessages(library(tidyverse))
 suppressMessages(library(lubridate))
 
@@ -8,7 +11,6 @@ suppressMessages(library(scales))
 suppressMessages(library(grid))
 suppressMessages(library(RColorBrewer))
 suppressMessages(library(plotly))
-suppressMessages(library(grDevices))
 
 # set options
 options(tab.width = 2)
@@ -17,31 +19,35 @@ options(digits = 8)
 options(graphics.record = TRUE)
 options(lubridate.week.start = 1)
 
-# define palette
+# set device
+invisible(pdf(NULL))
+
+# define and set palette
 spren9er_palette <- function() {
-  black   <- '#073642'
+  black   <- '#555555'
   red     <- '#dc322f'
   green   <- '#859900'
   blue    <- '#268bd2'
   cyan    <- '#2aa198'
-  magenta <- '#d33682'
+  orange <-  '#cb4b16'
   yellow  <- '#b58900'
   gray    <- '#586e75'
 
-  c(black, red, green, blue, cyan, magenta, yellow, gray)
+  c(black, red, green, blue, cyan, orange, yellow, gray)
 }
+invisible(palette(spren9er_palette()))
 
-# define theme
+# define and set theme
 spren9er_theme <- function() {
   # generate colors
   pal <- brewer.pal(9, 'Greys')
-  color.title      <- 1
+  color.title      <- '#555555'
   color.background <- pal[1]
   color.grid.major <- pal[3]
   color.axis.text  <- pal[6]
   color.axis.title <- pal[7]
   strip.background <- '#f0f0f0'
-  strip.color      <- pal[9]
+  strip.color      <- '#555555'
 
   # use base theme
   theme_bw(base_size = 9) +
@@ -68,8 +74,8 @@ spren9er_theme <- function() {
 
   # format strip
   theme(strip.background = element_rect(fill = strip.background, color = NA)) +
-  theme(strip.text.x = element_text(color = color.title, face = 'bold')) +
-  theme(strip.text.y = element_text(color = color.title, face = 'bold')) +
+  theme(strip.text.x = element_text(color = color.title)) +
+  theme(strip.text.y = element_text(color = color.title)) +
 
   # format legend
   theme(legend.background = element_rect(fill = color.background)) +
@@ -99,12 +105,20 @@ spren9er_theme <- function() {
   # plot margins
   theme(plot.margin = unit(c(.35, .2, .3, .35), 'cm'))
 }
-
-# set theme and palette
-invisible(cairo_pdf())
-invisible(palette(spren9er_palette()))
 invisible(theme_set(spren9er_theme()))
-invisible(dev.off())
+
+# set default plot color
+update_geom_default_color <- function(color) {
+  geom_names <- apropos("^Geom", ignore.case = FALSE)
+  geoms <- mget(geom_names, env = asNamespace("ggplot2"))
+  colors <- map(map(geoms, 'default_aes'), 'colour')
+  colors <- colors[sapply(colors, function(x) is.character(x))]
+  colors <- colors[sapply(colors, function(x) x == 'black')]
+  geom_prefixes <- gsub('Geom', '', names(colors))
+  geom_prefixes <- sub("^(.[a-z])", "\\L\\1", geom_prefixes, perl = TRUE)
+  map(geom_prefixes, update_geom_defaults, list(colour = color))
+}
+invisible(update_geom_default_color(1))
 
 # redefine ggplot function
 ggplot <- function(...) {
@@ -141,3 +155,6 @@ plot_ly <- function(...) {
     error = function(c) return(p)
   )
 }
+
+# set device off
+invisible(dev.off())
