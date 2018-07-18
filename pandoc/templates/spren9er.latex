@@ -499,12 +499,12 @@ $endif$
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
-\lhead{$title$}
+\lhead{\footnotesize $title$}
 \chead{}
-\rhead{$date$}
-\lfoot{$for(author)$$author$$sep$, $endfor$}
+\rhead{\footnotesize $date$}
+\lfoot{\vspace{-0.35em}\footnotesize $for(author)$$author$$sep$, $endfor$}
 \cfoot{}
-\rfoot{\thepage}
+\rfoot{\vspace{-0.35em}\footnotesize\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
