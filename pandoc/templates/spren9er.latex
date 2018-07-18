@@ -3,7 +3,7 @@
 \PassOptionsToPackage{svgnames*,table}{xcolor}
 
 \documentclass[
-  $if(fontsize)$$fontsize$,$else$10pt,$endif$ $if(lang)$$babel-lang$,$endif$ $if(papersize)$$papersize$paper,$else$a4paper,$endif$ $if(beamer)$ignorenonframetext, $if(handout)$handout,$endif$ $if(aspectratio)$aspectratio=$aspectratio$, $endif$ $endif$ $for(classoption)$$classoption$$sep$,$endfor$, tablecaptionabove
+  $if(fontsize)$$fontsize$,$else$10.5pt,$endif$ $if(lang)$$babel-lang$,$endif$ $if(papersize)$$papersize$paper,$else$a4paper,$endif$ $if(beamer)$ignorenonframetext, $if(handout)$handout,$endif$ $if(aspectratio)$aspectratio=$aspectratio$, $endif$ $endif$ $for(classoption)$$classoption$$sep$,$endfor$, tablecaptionabove
 ]{scrartcl}
 
 $if(beamer)$

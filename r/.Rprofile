@@ -17,7 +17,7 @@ options(digits = 8)
 options(graphics.record = TRUE)
 options(lubridate.week.start = 1)
 
-# set styles
+# define palette
 spren9er_palette <- function() {
   black   <- '#073642'
   red     <- '#dc322f'
@@ -30,10 +30,8 @@ spren9er_palette <- function() {
 
   c(black, red, green, blue, cyan, magenta, yellow, gray)
 }
-invisible(pdf(NULL))
-invisible(palette(spren9er_palette()))
-invisible(dev.off())
 
+# define theme
 spren9er_theme <- function() {
   # generate colors
   pal <- brewer.pal(9, 'Greys')
@@ -101,7 +99,12 @@ spren9er_theme <- function() {
   # plot margins
   theme(plot.margin = unit(c(.35, .2, .3, .35), 'cm'))
 }
-theme_set(spren9er_theme())
+
+# set theme and palette
+invisible(cairo_pdf())
+invisible(palette(spren9er_palette()))
+invisible(theme_set(spren9er_theme()))
+invisible(dev.off())
 
 # redefine ggplot function
 ggplot <- function(...) {
@@ -111,7 +114,7 @@ ggplot <- function(...) {
 # redefine plot_ly function
 plot_ly <- function(...) {
   font <- list(
-    family = 'Inconsolata',
+    family = 'Source\ Sans\ Pro',
     size = 10,
     color = '#333333'
   )
