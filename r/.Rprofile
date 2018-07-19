@@ -107,18 +107,20 @@ spren9er_theme <- function() {
 }
 invisible(theme_set(spren9er_theme()))
 
-# set default plot color
-update_geom_default_color <- function(color) {
+# set default plot colors
+geom_colors <- function() {
   geom_names <- apropos("^Geom", ignore.case = FALSE)
   geoms <- mget(geom_names, env = asNamespace("ggplot2"))
-  colors <- map(map(geoms, 'default_aes'), 'colour')
-  colors <- colors[sapply(colors, function(x) is.character(x))]
-  colors <- colors[sapply(colors, function(x) x == 'black')]
-  geom_prefixes <- gsub('Geom', '', names(colors))
-  geom_prefixes <- sub("^(.[a-z])", "\\L\\1", geom_prefixes, perl = TRUE)
-  map(geom_prefixes, update_geom_defaults, list(colour = color))
+  map(map(geoms, 'default_aes'), 'colour')
 }
-invisible(update_geom_default_color(1))
+
+replace_geom_colors <- function(old_color, new_color) {
+  colors <- keep(keep(geom_colors(), is.character), ~ . == old_color)
+  names(colors)
+  geoms <- gsub('^Geom(.*)', '\\1', names(colors))
+  map(geoms, update_geom_defaults, list(colour = new_color))
+}
+invisible(replace_geom_colors('black', 1))
 
 # redefine ggplot function
 ggplot <- function(...) {
