@@ -20,7 +20,7 @@ options(graphics.record = TRUE)
 options(lubridate.week.start = 1)
 
 # set device
-invisible(pdf(NULL))
+invisible(cairo_pdf())
 
 # define and set palette
 spren9er_palette <- function() {
@@ -115,8 +115,7 @@ geom_colors <- function() {
 }
 
 replace_geom_colors <- function(old_color, new_color) {
-  colors <- keep(keep(geom_colors(), is.character), ~ . == old_color)
-  names(colors)
+  colors <- keep(compact(geom_colors()), ~ . == old_color)
   geoms <- gsub('^Geom(.*)', '\\1', names(colors))
   map(geoms, update_geom_defaults, list(colour = new_color))
 }
