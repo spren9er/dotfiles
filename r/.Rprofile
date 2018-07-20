@@ -35,19 +35,18 @@ spren9er_palette <- function() {
 
   c(black, red, green, blue, cyan, orange, yellow, gray)
 }
+
 invisible(palette(spren9er_palette()))
 
 # define and set theme
 spren9er_theme <- function() {
-  # generate colors
-  pal <- brewer.pal(9, 'Greys')
-  color.title      <- '#555555'
-  color.background <- pal[1]
-  color.grid.major <- pal[3]
-  color.axis.text  <- pal[6]
-  color.axis.title <- pal[7]
+  color.title      <- '#333333'
+  color.background <- '#ffffff'
+  color.grid.major <- '#dedede'
+  color.axis.text  <- '#777777'
+  color.axis.title <- '#333333'
   strip.background <- '#f0f0f0'
-  strip.color      <- '#555555'
+  strip.color      <- '#333333'
 
   # use base theme
   theme_bw(base_size = 9) +
@@ -105,21 +104,27 @@ spren9er_theme <- function() {
   # plot margins
   theme(plot.margin = unit(c(.35, .2, .3, .35), 'cm'))
 }
+
 invisible(theme_set(spren9er_theme()))
 
 # set default plot colors
-geom_colors <- function() {
-  geom_names <- apropos("^Geom", ignore.case = FALSE)
-  geoms <- mget(geom_names, env = asNamespace("ggplot2"))
-  map(map(geoms, 'default_aes'), 'colour')
+geom_aes_defaults <- function() {
+  geom_names <- apropos('^Geom', ignore.case = FALSE)
+  geoms <- mget(geom_names, env = asNamespace('ggplot2'))
+  map(geoms, ~ .$default_aes)
 }
 
-replace_geom_colors <- function(old_color, new_color) {
-  colors <- keep(compact(geom_colors()), ~ . == old_color)
-  geoms <- gsub('^Geom(.*)', '\\1', names(colors))
-  map(geoms, update_geom_defaults, list(colour = new_color))
+replace_geom_aes_defaults <- function(name, old_aes, new_aes) {
+  matching_geoms <-
+    map(geom_aes_defaults(), name) %>%
+      compact() %>%
+      keep(~ . == old_aes)
+  geoms <- gsub('^Geom(.*)', '\\1', names(matching_geoms))
+  walk(geoms, update_geom_defaults, setNames(list(new_aes), name))
 }
-invisible(replace_geom_colors('black', 1))
+
+replace_geom_aes_defaults('colour', 'black', 1)
+replace_geom_aes_defaults('fill', 'grey35', 1)
 
 # redefine ggplot function
 ggplot <- function(...) {
