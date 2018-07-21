@@ -9,7 +9,6 @@ suppressMessages(library(lubridate))
 suppressMessages(library(extrafont))
 suppressMessages(library(scales))
 suppressMessages(library(grid))
-suppressMessages(library(RColorBrewer))
 suppressMessages(library(plotly))
 
 # set options
