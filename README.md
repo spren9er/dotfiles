@@ -25,5 +25,4 @@ ln -s ~/.dotfiles/atom ~/.atom
 ln -s ~/.dotfiles/hyper/hyper.js ~/.hyper.js
 ln -s ~/.dotfiles/r/.Rprofile ~/.Rprofile
 ln -s ~/.dotfiles/guard/.guard.rb ~/.guard.rb
-ln -s ~/.dotfiles/pandoc ~/.pandoc
 ```
