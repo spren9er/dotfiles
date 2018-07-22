@@ -1,5 +1,6 @@
 "*":
   Hydrogen:
+    gateways: "[{\"name\": \"R 3.5.1\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\" }}]"
     outputAreaDefault: true
     outputAreaFontSize: 12
     startDir: "dirOfFile"
