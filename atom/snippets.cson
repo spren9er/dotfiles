@@ -23,7 +23,11 @@
 '.source.r':
   'Pipe Operator':
     'prefix': '>'
-    'body': '%>%\n'
-  'Assign Operator':
+    'body': '%>%'
+  'Left Assign Operator':
     'prefix': '<'
     'body': '<- '
+'.source.gfm':
+  'Insert Input Code Chunk':
+    'prefix': 'rc'
+    'body': '```{r}\n$1\n```'

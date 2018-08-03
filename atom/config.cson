@@ -33,7 +33,7 @@
     ]
     titleBar: "custom-inset"
   editor:
-    fontFamily: "Inconsolata"
+    fontFamily: "Liga Inconsolata"
     invisibles: {}
     showIndentGuide: true
     softWrap: true
