@@ -33,7 +33,8 @@
     ]
     titleBar: "custom-inset"
   editor:
-    fontFamily: "Liga Inconsolata"
+    fontFamily: "Fira Code"
+    fontSize: 12
     invisibles: {}
     showIndentGuide: true
     softWrap: true
