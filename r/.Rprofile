@@ -28,7 +28,7 @@ spren9er_palette <- function() {
   green   <- '#859900'
   blue    <- '#268bd2'
   cyan    <- '#2aa198'
-  orange <-  '#cb4b16'
+  orange  <- '#cb4b16'
   yellow  <- '#b58900'
   gray    <- '#586e75'
 
