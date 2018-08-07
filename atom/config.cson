@@ -34,7 +34,7 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "Fira Code"
-    fontSize: 12
+    fontSize: 13
     invisibles: {}
     showIndentGuide: true
     softWrap: true
