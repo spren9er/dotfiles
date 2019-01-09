@@ -1,7 +1,7 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="blinks"
-plugins=(git bundler ruby rvm rails docker docker-machine docker-compose)
+plugins=(git bundler ruby rails docker docker-machine docker-compose)
 source $ZSH/oh-my-zsh.sh
 
 # key bindings
