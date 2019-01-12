@@ -32,7 +32,7 @@ spren9er_palette <- function() {
   yellow  <- '#b58900'
   gray    <- '#586e75'
 
-  c(black, red, green, blue, cyan, orange, yellow, gray)
+  rep(c(black, red, green, blue, cyan, orange, yellow, gray), times = 2)
 }
 
 invisible(palette(spren9er_palette()))

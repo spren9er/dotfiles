@@ -4,8 +4,6 @@
 [user]
 	name = Torsten Sprenger
 	email = mail@spren9er.de
-[commit]
-	template = ~/.gitmessage
 [pull]
 	rebase = true
 [github]

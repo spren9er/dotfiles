@@ -1,6 +1,6 @@
 "*":
   Hydrogen:
-    gateways: "[{\"name\": \"R 3.5.1\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\" }}]"
+    gateways: "[{ \"name\": \"R 3.5.1 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\", \"token\": 1 } }, { \"name\": \"Python 3.6 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8887\", \"token\": 1 } }]"
     outputAreaDefault: true
     outputAreaFontSize: 12
     startDir: "dirOfFile"
@@ -56,10 +56,9 @@
     dateFormatString: "DD.MM.YYYY"
     showOnlyLastNames: true
   "linter-rubocop":
-    command: "/Users/spren9er/.rvm/gems/ruby-2.5.1/bin/rubocop"
+    command: "/Users/spren9er/.rbenv/shims/rubocop"
   "linter-ui-default":
     decorateOnTreeView: "None"
-    panelHeight: 69
   "markdown-preview":
     useGitHubStyle: true
   "platformio-ide-terminal":
