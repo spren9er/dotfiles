@@ -9,7 +9,6 @@ suppressMessages(library(lubridate))
 suppressMessages(library(extrafont))
 suppressMessages(library(scales))
 suppressMessages(library(grid))
-suppressMessages(library(plotly))
 
 # set options
 options(tab.width = 2)
@@ -128,37 +127,6 @@ replace_geom_aes_defaults('fill', 'grey35', 1)
 # redefine ggplot function
 ggplot <- function(...) {
   ggplot2::ggplot(...) + scale_color_manual(values = spren9er_palette())
-}
-
-# redefine plot_ly function
-plot_ly <- function(...) {
-  font <- list(
-    family = 'Source\ Sans\ Pro',
-    size = 10,
-    color = '#333333'
-  )
-
-  p <- plotly::plot_ly(...) %>%
-         plotly::layout(
-           font = font, hovermode = FALSE,
-           autosize = TRUE, width = 480,
-           xaxis = list(fixedrange = TRUE),
-           yaxis = list(fixedrange = TRUE)
-         ) %>%
-         plotly::config(displayModeBar = FALSE)
-
-  tryCatch({
-    json <- plotly:::to_JSON(plotly_build(p)$x)
-    mimebundle <- list('application/vnd.plotly.v1+json'=json)
-    return(IRdisplay::publish_mimebundle(mimebundle))
-  },
-    warning = function(c) {
-      msg <- conditionMessage(c)
-      if (grep("IRdisplay.*", msg)) return(p)
-      print(msg)
-    },
-    error = function(c) return(p)
-  )
 }
 
 # set device off
