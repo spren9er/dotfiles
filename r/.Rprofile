@@ -37,73 +37,94 @@ spren9er_palette <- function() {
 invisible(palette(spren9er_palette()))
 
 # define and set theme
-spren9er_theme <- function() {
-  color.title      <- '#333333'
-  color.background <- '#ffffff'
-  color.grid.major <- '#dedede'
-  color.axis.text  <- '#777777'
-  color.axis.title <- '#333333'
+theme_spren9er <- function(base_size = 9, scale = 1) {
+  title.color      <- '#333333'
+  background.color <- '#ffffff'
+  grid.major.color <- '#dedede'
+  axis.text.color  <- '#777777'
+  axis.title.color <- '#333333'
   strip.background <- '#f0f0f0'
   strip.color      <- '#333333'
 
   # use base theme
-  theme_bw(base_size = 9) +
+  theme_bw(base_size = base_size * scale) +
 
   # set font styles
   theme(text = element_text(color = 1)) +
   theme(text = element_text(family = 'Source\ Sans\ Pro')) +
+  theme(title = element_text(face = 'bold')) +
 
-  # set the entire chart region to a light gray color
+  # format plot
   theme(
-    panel.background =
-      element_rect(fill = color.background, color = color.background)
+    plot.title =
+      element_text(
+        color = title.color, size = scale * (base_size + 3),
+        vjust = 1.25, hjust = .5, face = 'bold'
+      )
+  ) +
+  theme(
+    plot.subtitle = element_text(hjust = 0.5)
   ) +
   theme(
     plot.background =
-      element_rect(fill = color.background, color = color.background)
+      element_rect(fill = background.color, color = background.color)
   ) +
-  theme(panel.border = element_rect(color = color.background)) +
+
+  # format panel
+  theme(
+    panel.background =
+      element_rect(fill = background.color, color = background.color, size = 0)
+  ) +
+  theme(panel.border = element_rect(color = background.color)) +
 
   # format grid
-  theme(panel.grid.major = element_line(color = color.grid.major, size = .25)) +
+  theme(
+    panel.grid.major =
+      element_line(color = grid.major.color, size = .25 * scale)
+    ) +
   theme(panel.grid.minor = element_blank()) +
   theme(axis.ticks = element_blank()) +
 
   # format strip
   theme(strip.background = element_rect(fill = strip.background, color = NA)) +
-  theme(strip.text.x = element_text(color = color.title)) +
-  theme(strip.text.y = element_text(color = color.title)) +
+  theme(strip.text.x = element_text(color = title.color)) +
+  theme(strip.text.y = element_text(color = title.color)) +
 
   # format legend
-  theme(legend.background = element_rect(fill = color.background)) +
-  theme(legend.text = element_text(size = 7, color = color.axis.text)) +
-  theme(legend.title = element_text(color = color.axis.title)) +
-  theme(legend.key = element_rect(fill = color.background)) +
+  theme(legend.background = element_rect(fill = background.color)) +
+  theme(
+    legend.text =
+      element_text(size = scale * (base_size - 2), color = axis.text.color)
+  ) +
+  theme(legend.title = element_text(color = axis.title.color)) +
+  theme(legend.key = element_rect(fill = background.color)) +
 
-  # set title and axis labels, and format these and tick marks
-  theme(plot.title = element_text(
-    color = color.title, size = 12, vjust = 1.25, hjust = .5, face = 'bold')
+  # format axes labels and tick marks
+  theme(
+    axis.text.x =
+      element_text(size = scale * (base_size - 2), color = axis.text.color)
   ) +
-  theme(axis.text.x = element_text(size = 7, color = color.axis.text)) +
-  theme(axis.text.y = element_text(size = 7, color = color.axis.text)) +
-  theme(axis.title.x =
-    element_text(
-      color = color.axis.title, vjust = 0,
-      margin = margin(t = 8, r = 0, b = 0, l = 0)
-    )
+  theme(
+    axis.text.y =
+      element_text(size = scale * (base_size - 2), color = axis.text.color)
   ) +
-  theme(axis.title.y =
-    element_text(
-      color = color.axis.title, vjust = 1.25,
-      margin = margin(t = 0, r = 8, b = 0, l = 0)
-    )
+  theme(
+    axis.title.x =
+      element_text(
+        color = axis.title.color, vjust = 0,
+        margin = margin(t = 8 * scale, r = 0, b = 0, l = 0)
+      )
   ) +
-
-  # plot margins
-  theme(plot.margin = unit(c(.35, .2, .3, .35), 'cm'))
+  theme(
+    axis.title.y =
+      element_text(
+        color = axis.title.color, vjust = 1.25,
+        margin = margin(t = 0, r = 8 * scale, b = 0, l = 0)
+      )
+  )
 }
 
-invisible(theme_set(spren9er_theme()))
+invisible(theme_set(theme_spren9er()))
 
 # set default plot colors
 geom_aes_defaults <- function() {
