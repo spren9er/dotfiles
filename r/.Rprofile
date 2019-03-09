@@ -137,7 +137,7 @@ replace_geom_aes_defaults <- function(name, old_aes, new_aes) {
   matching_geoms <-
     map(geom_aes_defaults(), name) %>%
       compact() %>%
-      keep(~ . == old_aes)
+      keep(~ !is.na(.) & . == old_aes)
   geoms <- gsub('^Geom(.*)', '\\1', names(matching_geoms))
   walk(geoms, update_geom_defaults, setNames(list(new_aes), name))
 }
