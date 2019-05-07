@@ -22,12 +22,12 @@ invisible(cairo_pdf())
 
 # define and set palette
 spren9er_palette <- function() {
-  black   <- '#555555'
-  red     <- '#dc322f'
-  green   <- '#859900'
-  blue    <- '#268bd2'
-  cyan    <- '#2aa198'
-  orange  <- '#cb4b16'
+  black   <- '#24292e' # '#555555'
+  red     <- '#c54950' # '#dc322f'
+  green   <- '#2a9e46' # '#859900'
+  blue    <- '#3766aa' # '#268bd2'
+  cyan    <- '#6b42b8' # '#2aa198'
+  orange  <- '#f46d25' # '#cb4b16'
   yellow  <- '#b58900'
   gray    <- '#586e75'
 

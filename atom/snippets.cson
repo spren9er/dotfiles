@@ -27,6 +27,9 @@
   'Left Assign Operator':
     'prefix': '<'
     'body': '<- '
+  'Insert Cell':
+    'prefix': '#'
+    'body': '# %%'
 '.source.gfm':
   'Insert Input Code Chunk':
     'prefix': 'rc'

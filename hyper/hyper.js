@@ -110,7 +110,8 @@ module.exports = {
     env: {},
 
     // set to `false` for no bell
-    bell: 'SOUND',
+    // bell: 'SOUND',
+    bell: false,
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: true,
@@ -128,7 +129,7 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     hypercwd: {
-      initialWorkingDirectory: '~/Development'
+      initialWorkingDirectory: '~'
     },
 
     hyperTabs: {
@@ -148,11 +149,11 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hyper-font-smoothing',
-    'hyper-search',
     'hyper-solarized-dark',
     'hyper-statusline',
     'hyper-tabs-enhanced',
-    'hypercwd'
+    'hypercwd',
+    'hyper-search'
   ],
 
   // in development, you can create a directory under

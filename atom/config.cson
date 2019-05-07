@@ -28,8 +28,8 @@
     projectHome: "/Users/spren9er/Development"
     telemetryConsent: "limited"
     themes: [
-      "one-dark-ui"
-      "base16-tomorrow-light-theme"
+      "one-light-ui"
+      "one-light-syntax"
     ]
     titleBar: "custom-inset"
   editor:
