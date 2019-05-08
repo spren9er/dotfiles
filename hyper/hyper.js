@@ -133,7 +133,7 @@ module.exports = {
     },
 
     hyperTabs: {
-      trafficButtons: false,
+      trafficButtons: true,
       border: false,
       tabIconsColored: false,
       closeAlign: 'right',

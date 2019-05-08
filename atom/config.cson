@@ -4,7 +4,6 @@
     outputAreaDefault: true
     outputAreaFontSize: 12
     startDir: "dirOfFile"
-    statusBarDisable: true
   "atom-alignment": {}
   "atom-package-deps":
     ignored: []
@@ -59,6 +58,7 @@
     command: "/Users/spren9er/.rbenv/shims/rubocop"
   "linter-ui-default":
     decorateOnTreeView: "None"
+    panelHeight: 1103
   "markdown-preview":
     useGitHubStyle: true
   "platformio-ide-terminal":
@@ -105,3 +105,6 @@
     hideIgnoredNames: true
   welcome:
     showOnStartup: false
+".breakpoints.hydrogen":
+  editor:
+    autoIndentOnPaste: false
