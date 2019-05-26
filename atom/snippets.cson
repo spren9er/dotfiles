@@ -29,7 +29,10 @@
     'body': '<- '
   'Insert Cell':
     'prefix': '#'
-    'body': '# %%'
+    'body': '# %%\n'
+  'Insert Markdown':
+    'prefix': 'md'
+    'body': '# %% markdown\n# '
 '.source.gfm':
   'Insert Input Code Chunk':
     'prefix': 'rc'

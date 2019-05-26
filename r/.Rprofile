@@ -16,6 +16,7 @@ options(width = 80)
 options(digits = 8)
 options(graphics.record = TRUE)
 options(lubridate.week.start = 1)
+options(repr.plot.width = 5, repr.plot.height = 5)
 
 # set device
 invisible(cairo_pdf())
@@ -31,7 +32,7 @@ spren9er_palette <- function() {
   yellow  <- '#b58900'
   gray    <- '#586e75'
 
-  rep(c(black, red, green, blue, cyan, orange, yellow, gray), times = 2)
+  rep(c(black, red, green, blue, cyan, orange, yellow, gray), times = 3)
 }
 
 invisible(palette(spren9er_palette()))

@@ -1,6 +1,7 @@
 "*":
   Hydrogen:
     gateways: "[{ \"name\": \"R 3.5.1 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\", \"token\": 1 } }, { \"name\": \"Python 3.6 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8887\", \"token\": 1 } }]"
+    languageMappings: "{ \"python\": \"python\", \"wolfram language\": \"mathematica\" }"
     outputAreaDefault: true
     outputAreaFontSize: 12
     startDir: "dirOfFile"
@@ -58,7 +59,6 @@
     command: "/Users/spren9er/.rbenv/shims/rubocop"
   "linter-ui-default":
     decorateOnTreeView: "None"
-    panelHeight: 1103
   "markdown-preview":
     useGitHubStyle: true
   "platformio-ide-terminal":
