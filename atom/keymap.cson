@@ -35,3 +35,4 @@
   'cmd-ctrl-left': 'window:focus-pane-on-left'
   'cmd-ctrl-right': 'window:focus-pane-on-right'
   'ctrl-h': 'devdocs:doc'
+  'cmd-ctrl-r': 'hydrogen:connect-to-remote-kernel'

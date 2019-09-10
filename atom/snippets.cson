@@ -33,6 +33,13 @@
   'Insert Markdown':
     'prefix': 'md'
     'body': '# %% markdown\n# '
+'.source.python':
+  'Insert Cell':
+    'prefix': '#'
+    'body': '# %%\n'
+  'Insert Markdown':
+    'prefix': 'md'
+    'body': '# %% markdown\n# '
 '.source.gfm':
   'Insert Input Code Chunk':
     'prefix': 'rc'

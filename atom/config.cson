@@ -1,16 +1,24 @@
 "*":
   Hydrogen:
-    gateways: "[{ \"name\": \"R 3.5.1 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\", \"token\": 1 } }, { \"name\": \"Python 3.6 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8887\", \"token\": 1 } }]"
-    languageMappings: "{ \"python\": \"python\", \"wolfram language\": \"mathematica\" }"
+    gateways: "[{ \"name\": \"R 3.5.1 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\", \"token\": 1 } }]"
+    importNotebookURI: false
+    languageMappings: "{ \"analytics\": \"python\", \"wolfram language\": \"mathematica\" }"
     outputAreaDefault: true
+    outputAreaDock: true
     outputAreaFontSize: 12
     startDir: "dirOfFile"
   "atom-alignment": {}
   "atom-package-deps":
     ignored: []
+  "atom-python-test":
+    onlyShowPanelOnFailure: true
+    outputColored: true
   autosave:
     enabled: true
   core:
+    disabledPackages: [
+      "linter"
+    ]
     excludeVcsIgnoredPaths: true
     ignoredNames: [
       ".git"
@@ -24,6 +32,8 @@
     ]
     packagesWithKeymapsDisabled: [
       "devdocs"
+      "python-black"
+      "python-isort"
     ]
     projectHome: "/Users/spren9er/Development"
     telemetryConsent: "limited"
@@ -34,7 +44,7 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "Fira Code"
-    fontSize: 13
+    fontSize: 12
     invisibles: {}
     showIndentGuide: true
     softWrap: true
@@ -48,17 +58,56 @@
     scrollToResultOnLiveSearch: true
   "fuzzy-finder":
     preserveLastSearch: true
+    scoringSystem: "fast"
     searchAllPanes: true
+    useRipGrep: true
   "gfm-pdf":
     styleFontSize: "14px"
     type: "PDF+HTML"
   "git-blame":
     dateFormatString: "DD.MM.YYYY"
     showOnlyLastNames: true
+  "ide-python":
+    pylsPlugins:
+      autopep8:
+        enabled: false
+      jedi_completion: {}
+      jedi_definition:
+        enabled: false
+      jedi_hover:
+        enabled: false
+      jedi_references:
+        enabled: false
+      jedi_signature_help:
+        enabled: false
+      jedi_symbols:
+        all_scopes: false
+        enabled: false
+      mccabe:
+        enabled: false
+      preload:
+        enabled: false
+      pycodestyle:
+        enabled: false
+        maxLineLength: 88
+      pyflakes:
+        enabled: false
+      pylint: {}
+      yapf: {}
+    python: "/Users/spren9er/.pyenv/shims/python"
+  "linter-flake8":
+    executablePath: "/Users/spren9er/.pyenv/shims/flake8"
+    projectConfigFile: [
+      "setup.cfg"
+    ]
+  "linter-pycodestyle":
+    maxLineLength: 88
   "linter-rubocop":
     command: "/Users/spren9er/.rbenv/shims/rubocop"
   "linter-ui-default":
     decorateOnTreeView: "None"
+    panelHeight: 570
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "platformio-ide-terminal":
@@ -101,6 +150,14 @@
     toggles:
       autoClose: true
       runInsertedText: false
+  "python-black":
+    binPath: "/Users/spren9er/.pyenv/shims/black"
+    showErrors: "hide"
+    skipStringNormalization: true
+  "python-isort":
+    checkOnSave: false
+    isortPath: "/Users/spren9er/.pyenv/shims/isort"
+    sortOnSave: true
   "tree-view":
     hideIgnoredNames: true
   welcome:
@@ -108,3 +165,10 @@
 ".breakpoints.hydrogen":
   editor:
     autoIndentOnPaste: false
+".python.regexp.source":
+  editor:
+    preferredLineLength: 8
+".python.source":
+  editor:
+    autoIndentOnPaste: true
+    preferredLineLength: 88
