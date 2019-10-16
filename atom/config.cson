@@ -17,9 +17,9 @@
     enabled: true
   core:
     disabledPackages: [
-      "linter"
+      "ide-python"
+      "atom-ide-ui"
     ]
-    excludeVcsIgnoredPaths: true
     ignoredNames: [
       ".git"
       ".hg"
@@ -105,9 +105,9 @@
   "linter-rubocop":
     command: "/Users/spren9er/.rbenv/shims/rubocop"
   "linter-ui-default":
+    alwaysTakeMinimumSpace: true
     decorateOnTreeView: "None"
     panelHeight: 570
-    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "platformio-ide-terminal":
@@ -160,6 +160,7 @@
     sortOnSave: true
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
 ".breakpoints.hydrogen":
