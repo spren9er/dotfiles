@@ -36,3 +36,5 @@
   'cmd-ctrl-right': 'window:focus-pane-on-right'
   'ctrl-h': 'devdocs:doc'
   'cmd-ctrl-r': 'hydrogen:connect-to-remote-kernel'
+'atom-workspace':
+  'alt-s': 'unset!'
