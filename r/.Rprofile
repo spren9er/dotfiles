@@ -24,7 +24,7 @@ invisible(cairo_pdf())
 # define and set palette
 spren9er_palette <- function() {
   black   <- '#24292e' # '#555555'
-  red     <- '#c54950' # '#dc322f'
+  red     <- '#b50019' # '#dc322f'
   green   <- '#2a9e46' # '#859900'
   blue    <- '#3766aa' # '#268bd2'
   cyan    <- '#6b42b8' # '#2aa198'
@@ -51,77 +51,74 @@ theme_spren9er <- function(base_size = 9, scale = 1) {
   theme_bw(base_size = base_size * scale) +
 
   # set font styles
-  theme(text = element_text(color = 1)) +
-  theme(text = element_text(family = 'Source\ Sans\ Pro')) +
-  theme(title = element_text(face = 'bold')) +
+  theme(
+    text = element_text(color = 1, family = 'Source\ Sans\ Pro'),
+    title = element_text(face = 'bold')
+  ) +
 
   # format plot
   theme(
-    plot.title =
-      element_text(
-        color = title.color, size = scale * (base_size + 3),
-        vjust = 1.25, hjust = .5, face = 'bold'
-      )
-  ) +
-  theme(
-    plot.subtitle = element_text(hjust = 0.5)
-  ) +
-  theme(
-    plot.background =
-      element_rect(fill = background.color, color = background.color)
+    plot.title = element_text(
+      color = title.color, size = scale * (base_size + 3),
+      vjust = 1.25, hjust = .5, face = 'bold',
+      margin = margin(t = 5, b = 5)
+    ),
+    plot.subtitle = element_text(hjust = 0.5),
+    plot.background = element_rect(
+      fill = background.color, color = background.color
+    )
   ) +
 
   # format panel
   theme(
-    panel.background =
-      element_rect(fill = background.color, color = background.color, size = 0)
+    panel.background = element_rect(
+      fill = background.color, color = background.color, size = 0
+    ),
+    panel.border = element_rect(color = background.color)
   ) +
-  theme(panel.border = element_rect(color = background.color)) +
 
   # format grid
   theme(
-    panel.grid.major =
-      element_line(color = grid.major.color, size = .25 * scale)
-    ) +
-  theme(panel.grid.minor = element_blank()) +
-  theme(axis.ticks = element_blank()) +
+    panel.grid.major = element_line(
+      color = grid.major.color, size = .25 * scale
+    ),
+    panel.grid.minor = element_blank()
+  ) +
 
   # format strip
-  theme(strip.background = element_rect(fill = strip.background, color = NA)) +
-  theme(strip.text.x = element_text(color = title.color)) +
-  theme(strip.text.y = element_text(color = title.color)) +
+  theme(
+    strip.background = element_rect(fill = strip.background, color = NA),
+    strip.text.x = element_text(color = title.color),
+    strip.text.y = element_text(color = title.color)
+  ) +
 
   # format legend
-  theme(legend.background = element_rect(fill = background.color)) +
   theme(
-    legend.text =
-      element_text(size = scale * (base_size - 2), color = axis.text.color)
+    legend.background = element_rect(fill = background.color),
+    legend.text = element_text(
+      size = scale * (base_size - 2), color = axis.text.color
+    ),
+    legend.title = element_text(color = axis.title.color),
+    legend.key = element_rect(fill = background.color)
   ) +
-  theme(legend.title = element_text(color = axis.title.color)) +
-  theme(legend.key = element_rect(fill = background.color)) +
 
   # format axes labels and tick marks
   theme(
-    axis.text.x =
-      element_text(size = scale * (base_size - 2), color = axis.text.color)
-  ) +
-  theme(
-    axis.text.y =
-      element_text(size = scale * (base_size - 2), color = axis.text.color)
-  ) +
-  theme(
-    axis.title.x =
-      element_text(
-        color = axis.title.color, vjust = 0,
-        margin = margin(t = 8 * scale, r = 0, b = 0, l = 0)
-      )
-  ) +
-  theme(
-    axis.title.y =
-      element_text(
-        color = axis.title.color, vjust = 1.25,
-        margin = margin(t = 0, r = 8 * scale, b = 0, l = 0)
-      )
+    axis.ticks = element_blank(),
+    axis.text.x = element_text(
+      size = scale * (base_size - 2), color = axis.text.color
+    ),
+    axis.text.y = element_text(
+      size = scale * (base_size - 2), color = axis.text.color
+    ),
+    axis.title.x = element_text(
+      color = axis.title.color, vjust = 0,
+      margin = margin(t = 8 * scale, r = 0, b = 0, l = 0)
+    ),
+    axis.title.y = element_text(
+      color = axis.title.color, vjust = 1.25,
+      margin = margin(t = 0, r = 8 * scale, b = 0, l = 0)
+    )
   )
 }
 
@@ -148,7 +145,9 @@ replace_geom_aes_defaults('fill', 'grey35', 1)
 
 # redefine ggplot function
 ggplot <- function(...) {
-  ggplot2::ggplot(...) + scale_color_manual(values = spren9er_palette())
+  ggplot2::ggplot(...) +
+    scale_color_manual(values = spren9er_palette()) +
+    scale_fill_manual(values = spren9er_palette())
 }
 
 # set device off

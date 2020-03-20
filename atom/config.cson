@@ -1,13 +1,16 @@
 "*":
   Hydrogen:
-    gateways: "[{ \"name\": \"R 3.5.1 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\", \"token\": 1 } }]"
+    gateways: "[{ \"name\": \"R 3.5.1 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\", \"token\": 1 } }, { \"name\": \"R 3.6.2 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8889\", \"token\": 1 } }]"
     importNotebookURI: false
-    languageMappings: "{ \"analytics\": \"python\", \"wolfram language\": \"mathematica\" }"
+    languageMappings: "{ \"analytics\": \"python\", \"python\": \"python\", \"wolfram language\": \"mathematica\" }"
     outputAreaDefault: true
     outputAreaDock: true
     outputAreaFontSize: 12
     startDir: "dirOfFile"
   "atom-alignment": {}
+  "atom-beautify":
+    general:
+      _analyticsUserId: "930a007c-8bcb-4052-952f-3f2aebf5d676"
   "atom-package-deps":
     ignored: []
   "atom-python-test":
@@ -19,6 +22,7 @@
     disabledPackages: [
       "ide-python"
       "atom-ide-ui"
+      "pigments"
     ]
     ignoredNames: [
       ".git"
@@ -94,22 +98,27 @@
         enabled: false
       pylint: {}
       yapf: {}
-    python: "/Users/spren9er/.pyenv/shims/python"
+    python: "/Users/spren9er/.asdf/shims/python"
   "linter-flake8":
-    executablePath: "/Users/spren9er/.pyenv/shims/flake8"
+    executablePath: "/Users/spren9er/.asdf/shims/flake8"
     projectConfigFile: [
       "setup.cfg"
     ]
   "linter-pycodestyle":
     maxLineLength: 88
   "linter-rubocop":
-    command: "/Users/spren9er/.rbenv/shims/rubocop"
+    command: "/Users/spren9er/.asdf/shims/rubocop"
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
     decorateOnTreeView: "None"
-    panelHeight: 570
+    panelHeight: 576
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
+  "markdown-preview-enhanced":
+    enableLinkify: false
+  pigments:
+    markerType: "gutter"
   "platformio-ide-terminal":
     ansiColors:
       normal:
@@ -151,12 +160,12 @@
       autoClose: true
       runInsertedText: false
   "python-black":
-    binPath: "/Users/spren9er/.pyenv/shims/black"
+    binPath: "/Users/spren9er/.asdf/shims/black"
     showErrors: "hide"
     skipStringNormalization: true
   "python-isort":
     checkOnSave: false
-    isortPath: "/Users/spren9er/.pyenv/shims/isort"
+    isortPath: "/Users/spren9er/.asdf/shims/isort"
     sortOnSave: true
   "tree-view":
     hideIgnoredNames: true
