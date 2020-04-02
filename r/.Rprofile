@@ -21,15 +21,15 @@ options(repr.plot.width = 5, repr.plot.height = 5)
 # set device
 invisible(cairo_pdf())
 
-# define and set palette
+# define and set palettes
 spren9er_palette <- function() {
-  black   <- '#24292e' # '#555555'
-  red     <- '#b50019' # '#dc322f'
-  green   <- '#2a9e46' # '#859900'
-  blue    <- '#3766aa' # '#268bd2'
-  cyan    <- '#6b42b8' # '#2aa198'
-  orange  <- '#f46d25' # '#cb4b16'
-  yellow  <- '#b58900'
+  black   <- '#333333'
+  red     <- '#b50019'
+  green   <- '#2a9e46'
+  blue    <- '#3766aa'
+  cyan    <- '#6b42b8'
+  orange  <- '#ec6400'
+  yellow  <- '#f7ed42'
   gray    <- '#586e75'
 
   rep(c(black, red, green, blue, cyan, orange, yellow, gray), times = 3)
@@ -140,8 +140,8 @@ replace_geom_aes_defaults <- function(name, old_aes, new_aes) {
   walk(geoms, update_geom_defaults, setNames(list(new_aes), name))
 }
 
-replace_geom_aes_defaults('colour', 'black', 1)
-replace_geom_aes_defaults('fill', 'grey35', 1)
+replace_geom_aes_defaults('colour', 'black', '#333333')
+replace_geom_aes_defaults('fill', 'grey35', '#333333')
 
 # redefine ggplot function
 ggplot <- function(...) {
