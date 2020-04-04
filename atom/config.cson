@@ -1,6 +1,6 @@
 "*":
   Hydrogen:
-    gateways: "[{ \"name\": \"R 3.5.1 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8888\", \"token\": 1 } }, { \"name\": \"R 3.6.2 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8889\", \"token\": 1 } }]"
+    gateways: "[{ \"name\": \"R 3.6.2 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8889\", \"token\": 1 } }]"
     importNotebookURI: false
     languageMappings: "{ \"analytics\": \"python\", \"python\": \"python\", \"wolfram language\": \"mathematica\", \"r\": \"R Markdown\" }"
     outputAreaDefault: true
