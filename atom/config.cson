@@ -1,8 +1,9 @@
 "*":
   Hydrogen:
+    autocompleteSuggestionPriority: 2
     gateways: "[{ \"name\": \"R 3.6.2 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8889\", \"token\": 1 } }]"
-    importNotebookURI: false
-    languageMappings: "{ \"analytics\": \"python\", \"python\": \"python\", \"wolfram language\": \"mathematica\", \"r\": \"R Markdown\" }"
+    importNotebookResults: false
+    languageMappings: "{ \"python\": \"python\", \"wolfram language\": \"mathematica\", \"r\": \"R Markdown\", \"javascript\": \"JavaScript\" }"
     outputAreaDefault: true
     outputAreaDock: true
     outputAreaFontSize: 12
@@ -101,6 +102,7 @@
     python: "/Users/spren9er/.asdf/shims/python"
   "linter-flake8":
     executablePath: "/Users/spren9er/.asdf/shims/flake8"
+    maxLineLength: 88
     projectConfigFile: [
       "setup.cfg"
     ]
@@ -175,7 +177,7 @@
     showOnStartup: false
 ".breakpoints.hydrogen":
   editor:
-    autoIndentOnPaste: false
+    autoIndentOnPaste: true
 ".python.regexp.source":
   editor:
     preferredLineLength: 8
