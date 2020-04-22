@@ -15,3 +15,4 @@ with open(file_path, 'r') as json_file:
 alt.themes.enable('spren9er')
 alt.data_transformers.disable_max_rows()
 alt.renderers.enable('png')
+alt.renderers.set_embed_options(actions=False)

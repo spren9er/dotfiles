@@ -116,6 +116,7 @@
     alwaysTakeMinimumSpace: true
     decorateOnTreeView: "None"
     panelHeight: 714
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-enhanced":
