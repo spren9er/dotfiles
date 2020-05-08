@@ -2,15 +2,13 @@ Hydrogen
 atom-alignment
 atom-beautify
 atom-html-preview
-atom-ide-ui
 atom-language-r
 busy-signal
+cell-navigation
 devdocs
 file-icons
-gfm-pdf
 git-blame
 git-time-machine
-ide-python
 intentions
 language-latex
 language-mathematica
