@@ -13,6 +13,7 @@
   "editor.glyphMargin": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.highlightActiveIndentGuide": false,
+  "editor.letterSpacing": -0.35,
   "editor.links": false,
   "editor.matchBrackets": "near",
   "editor.minimap.enabled": false,
@@ -60,8 +61,11 @@
     "rubocop": true
   },
   "ruby.pathToBundler": "/Users/spren9er/.asdf/shims/bundler",
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
   "terminal.external.osxExec": "Hyper.app",
   "terminal.integrated.shell.osx": "/bin/zsh",
+  "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "focusBorder": "#00000000"
@@ -80,6 +84,5 @@
     ],
     "editor.tabSize": 4,
     "editor.wordWrapColumn": 88
-  },
-  "python.dataScience.jupyterServerURI": "http://127.0.0.1:8889?token=1"
+  }
 }

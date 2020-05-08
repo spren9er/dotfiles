@@ -64,40 +64,9 @@
     scoringSystem: "fast"
     searchAllPanes: true
     useRipGrep: true
-  "gfm-pdf":
-    styleFontSize: "14px"
-    type: "PDF+HTML"
   "git-blame":
-    dateFormatString: "DD.MM.YYYY"
+    dateFormatString: "YYYY/MM/DD"
     showOnlyLastNames: true
-  "ide-python":
-    pylsPlugins:
-      autopep8:
-        enabled: false
-      jedi_completion: {}
-      jedi_definition:
-        enabled: false
-      jedi_hover:
-        enabled: false
-      jedi_references:
-        enabled: false
-      jedi_signature_help:
-        enabled: false
-      jedi_symbols:
-        all_scopes: false
-        enabled: false
-      mccabe:
-        enabled: false
-      preload:
-        enabled: false
-      pycodestyle:
-        enabled: false
-        maxLineLength: 88
-      pyflakes:
-        enabled: false
-      pylint: {}
-      yapf: {}
-    python: "/Users/spren9er/.asdf/shims/python"
   "linter-flake8":
     executablePath: "/Users/spren9er/.asdf/shims/flake8"
     maxLineLength: 88
@@ -106,84 +75,32 @@
     ]
   "linter-lintr":
     linters: "default_linters[names(default_linters) != 'single_quotes_linter']"
-  "linter-pycodestyle":
-    maxLineLength: 88
   "linter-rubocop":
     command: "/Users/spren9er/.asdf/shims/rubocop"
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
     decorateOnTreeView: "None"
-    panelHeight: 714
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-enhanced":
     enableLinkify: false
   pigments:
     markerType: "gutter"
-  "platformio-ide-terminal":
-    ansiColors:
-      normal:
-        black: "#1f4a56"
-        blue: "#2f89ce"
-        cyan: "#339f96"
-        green: "#859926"
-        magenta: "#d13f84"
-        red: "#d11f25"
-        white: "#eee8d7"
-        yellow: "#b38a2a"
-      zBright:
-        brightBlack: "#022b34"
-        brightBlue: "#839496"
-        brightCyan: "#93a1a1"
-        brightGreen: "#586e75"
-        brightMagenta: "#6c71c0"
-        brightRed: "#c9512e"
-        brightWhite: "#fdf6e5"
-        brightYellow: "#657b81"
-    core:
-      autoRunCommand: "guard"
-    iconColors:
-      blue: "#61afef"
-      cyan: "#56b6c2"
-      green: "#98c379"
-      magenta: "#c678dd"
-      orange: "#d19965"
-      pink: "#c578dd"
-      purple: "#d682f0"
-      red: "#df6b75"
-      yellow: "#e2c08d"
-    style:
-      animationSpeed: 3
-      fontFamily: "Menlo"
-      fontSize: "11"
-      theme: "solarized-dark"
-    toggles:
-      autoClose: true
-      runInsertedText: false
   "python-black":
     binPath: "/Users/spren9er/.asdf/shims/black"
     showErrors: "hide"
     skipStringNormalization: true
-  "python-isort":
-    checkOnSave: false
-    isortPath: "/Users/spren9er/.asdf/shims/isort"
-    sortOnSave: true
+  "spell-check":
+    useLocales: false
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
-".breakpoints.hydrogen":
-  editor:
-    autoIndentOnPaste: true
-    tabType: "soft"
-".python.regexp.source":
-  editor:
-    preferredLineLength: 8
 ".python.source":
   editor:
-    autoIndentOnPaste: true
     preferredLineLength: 88
+    tabLength: 4
 ".python.text.traceback":
   editor:
     preferredLineLength: 88
