@@ -1,6 +1,6 @@
 "*":
   Hydrogen:
-    autocompleteSuggestionPriority: 2
+    autocompleteSuggestionPriority: 1
     gateways: "[{ \"name\": \"R 3.6.2 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8889\", \"token\": 1 } }]"
     importNotebookResults: false
     languageMappings: "{ \"python\": \"python\", \"wolfram language\": \"mathematica\", \"r\": \"R Markdown\", \"javascript\": \"JavaScript\" }"
@@ -21,8 +21,6 @@
     enabled: true
   core:
     disabledPackages: [
-      "ide-python"
-      "atom-ide-ui"
       "pigments"
     ]
     ignoredNames: [
@@ -116,7 +114,6 @@
     alwaysTakeMinimumSpace: true
     decorateOnTreeView: "None"
     panelHeight: 714
-    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-enhanced":
@@ -179,10 +176,14 @@
 ".breakpoints.hydrogen":
   editor:
     autoIndentOnPaste: true
+    tabType: "soft"
 ".python.regexp.source":
   editor:
     preferredLineLength: 8
 ".python.source":
   editor:
     autoIndentOnPaste: true
+    preferredLineLength: 88
+".python.text.traceback":
+  editor:
     preferredLineLength: 88
