@@ -1,6 +1,6 @@
 "*":
   Hydrogen:
-    autocompleteSuggestionPriority: 1
+    autocomplete: false
     gateways: "[{ \"name\": \"R 3.6.2 (local)\", \"options\": { \"baseUrl\": \"http://127.0.0.1:8889\", \"token\": 1 } }]"
     importNotebookResults: false
     languageMappings: "{ \"python\": \"python\", \"wolfram language\": \"mathematica\", \"r\": \"R Markdown\", \"javascript\": \"JavaScript\" }"
@@ -33,6 +33,7 @@
     packagesWithKeymapsDisabled: [
       "devdocs"
       "python-black"
+      "kite"
     ]
     projectHome: "/Users/spren9er/Development"
     telemetryConsent: "limited"
@@ -41,6 +42,7 @@
       "one-light-syntax"
     ]
     titleBar: "custom-inset"
+    useTreeSitterParsers: false
   editor:
     fontFamily: "Fira Code"
     fontSize: 12
@@ -63,6 +65,11 @@
   "git-blame":
     dateFormatString: "YYYY/MM/DD"
     showOnlyLastNames: true
+  kite:
+    enableHoverUI: false
+    showGoBetaNotification: false
+    showWelcomeNotificationOnStartup: false
+    signatureKwargsVisible: true
   "linter-flake8":
     executablePath: "/Users/spren9er/.asdf/shims/flake8"
     maxLineLength: 88
