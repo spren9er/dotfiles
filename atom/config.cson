@@ -51,7 +51,7 @@
     softWrap: true
     softWrapAtPreferredLineLength: true
   "exception-reporting":
-    userId: "e15f02c2-795d-94b8-5873-9c543c6defd8"
+    userId: "d23ad352-d22c-4d0b-aa84-d34b4cfd78da"
   "file-icons":
     coloured: false
   "find-and-replace":
@@ -69,7 +69,7 @@
     enableHoverUI: false
     showGoBetaNotification: false
     showWelcomeNotificationOnStartup: false
-    signatureKwargsVisible: true
+    startKiteAtStartup: false
   "linter-flake8":
     executablePath: "/Users/spren9er/.asdf/shims/flake8"
     maxLineLength: 88

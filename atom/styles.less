@@ -44,12 +44,15 @@ atom-workspace atom-panel-container.right atom-dock.right .atom-dock-open.right 
   display: none;
 }
 
-
 .hydrogen .output-area {
   color: #333333;
 
-  .block, .slider, .background-message {
+  .block, .slider .input-range, .background-message {
     display: none;
+  }
+
+  .slider {
+    margin-bottom: 12px;
   }
 
   p {
