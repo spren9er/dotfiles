@@ -79,7 +79,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "none",
-  "workbench.tree.indent": 16,
+  "workbench.tree.indent": 14,
   "[python]": {
     "editor.rulers": [
       88
