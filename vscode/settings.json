@@ -72,6 +72,7 @@
     "focusBorder": "#00000000"
   },
   "workbench.colorTheme": "Atom One Light",
+  "workbench.editor.openPositioning": "last",
   "workbench.editor.tabSizing": "shrink",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "file-icons-colourless",
