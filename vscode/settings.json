@@ -6,7 +6,7 @@
   "editor.cursorWidth": 3,
   "editor.find.addExtraSpaceOnTop": false,
   "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": "'ss02'",
+  "editor.fontLigatures": "'ss02', 'calt'",
   "editor.fontSize": 13,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
