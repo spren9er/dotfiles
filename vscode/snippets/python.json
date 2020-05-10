@@ -16,5 +16,19 @@
 		"prefix": "#",
 		"body": "# %%\n",
 		"description": "Insert jupyter cell"
+	},
+	"Create Altair Chart": {
+		"prefix": "alt",
+		"body": [
+			"(",
+			"\t$1",
+			"\t.pipe(alt.Chart)",
+			"\t.mark_$2()",
+			"\t.encode(",
+			"\t\t$0",
+			"\t)",
+			")"
+		],
+		"description": "Create altair chart"
 	}
 }
