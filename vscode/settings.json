@@ -40,6 +40,7 @@
   "explorer.incrementalNaming": "smart",
   "files.autoSave": "onFocusChange",
   "files.enableTrash": false,
+  "git.enableSmartCommit": true,
   "python.dataScience.addGotoCodeLenses": false,
   "python.dataScience.allowInput": false,
   "python.dataScience.askForKernelRestart": false,
@@ -50,6 +51,7 @@
   "python.dataScience.enableAutoMoveToNextCell": false,
   "python.dataScience.enableGather": false,
   "python.dataScience.jupyterServerURI": "http://localhost:8890?token=x",
+  "python.dataScience.searchForJupyter": false,
   "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.dataScience.showCellInputCode": false,
   "python.formatting.blackPath": "/Users/spren9er/.asdf/shims/black",
@@ -78,6 +80,14 @@
   "window.zoomLevel": -0.4,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
+    "[Atom One Light]": {
+      "badge.background": "#fafafa",
+      "descriptionForeground": "#fafafa",
+      "editor.foreground": "#555555",
+      "editor.lineHighlightBorder": "#fafafa",
+      "editor.selectionBackground": "#efefef",
+      "notifications.background": "#fafafa"
+    },
     "focusBorder": "#00000000",
     "terminal.foreground": "#839496",
     "terminal.background": "#002833",
@@ -115,6 +125,5 @@
     ],
     "editor.tabSize": 4,
     "editor.wordWrapColumn": 88
-  },
-  "git.enableSmartCommit": true
+  }
 }
