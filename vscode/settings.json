@@ -115,5 +115,6 @@
     ],
     "editor.tabSize": 4,
     "editor.wordWrapColumn": 88
-  }
+  },
+  "git.enableSmartCommit": true
 }
