@@ -35,11 +35,12 @@
   "editor.wordWrapColumn": 80,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "explorer.decorations.badges": false,
-  "explorer.decorations.colors": false,
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": true,
   "explorer.incrementalNaming": "smart",
   "files.autoSave": "onFocusChange",
   "files.enableTrash": false,
+  "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
   "python.dataScience.addGotoCodeLenses": false,
   "python.dataScience.allowInput": false,
@@ -81,6 +82,13 @@
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "[Atom One Light]": {
+      "gitDecoration.addedResourceForeground": "#2db448",
+      "gitDecoration.deletedResourceForeground": "#f42a2a",
+      "gitDecoration.ignoredResourceForeground": "#8e8e90",
+      "gitDecoration.modifiedResourceForeground": "#d5880b",
+      "gitDecoration.untrackedResourceForeground": "#2db448"
+    },
+    "[Jupyter Atom One Light]": {
       "badge.background": "#fafafa",
       "descriptionForeground": "#fafafa",
       "editor.foreground": "#555555",
