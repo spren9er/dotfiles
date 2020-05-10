@@ -11,5 +11,13 @@
   {
     "key": "ctrl+shift+g",
     "command": "-workbench.view.scm"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "workbench.view.extension.test"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "-workbench.action.reopenClosedEditor"
   }
 ]
