@@ -21,9 +21,9 @@
 		"prefix": "alt",
 		"body": [
 			"(",
-			"\t$1",
+			"\t${1:df}",
 			"\t.pipe(alt.Chart)",
-			"\t.mark_$2()",
+			"\t.mark_${2:bar}()",
 			"\t.encode(",
 			"\t\t$0",
 			"\t)",
