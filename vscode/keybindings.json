@@ -19,5 +19,15 @@
   {
     "key": "shift+cmd+t",
     "command": "-workbench.action.reopenClosedEditor"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "-deleteLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "extension.devDocs",
+    "when": "editorTextFocus"
   }
 ]

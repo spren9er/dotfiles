@@ -9,7 +9,7 @@
   "editor.fontLigatures": "'ss02', 'calt'",
   "editor.fontSize": 13,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.formatOnType": true,
   "editor.glyphMargin": false,
   "editor.hideCursorInOverviewRuler": true,
@@ -88,14 +88,14 @@
       "gitDecoration.modifiedResourceForeground": "#d5880b",
       "gitDecoration.untrackedResourceForeground": "#2db448"
     },
-    "[Jupyter Atom One Light]": {
-      "badge.background": "#fafafa",
-      "descriptionForeground": "#fafafa",
-      "editor.foreground": "#555555",
-      "editor.lineHighlightBorder": "#fafafa",
-      "editor.selectionBackground": "#efefef",
-      "notifications.background": "#fafafa"
-    },
+    // "[Jupyter Atom One Light]": {
+    // "badge.background": "#fafafa",
+    // "descriptionForeground": "#fafafa",
+    // "editor.foreground": "#555555",
+    // "editor.lineHighlightBorder": "#fafafa",
+    // "editor.selectionBackground": "#efefef",
+    // "notifications.background": "#fafafa"
+    // },
     "focusBorder": "#00000000",
     "terminal.foreground": "#839496",
     "terminal.background": "#002833",
@@ -132,6 +132,7 @@
       88
     ],
     "editor.tabSize": 4,
-    "editor.wordWrapColumn": 88
+    "editor.wordWrapColumn": 88,
+    "editor.formatOnSave": true
   }
 }
