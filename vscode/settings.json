@@ -128,11 +128,12 @@
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 14,
   "[python]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
     "editor.rulers": [
       88
     ],
     "editor.tabSize": 4,
-    "editor.wordWrapColumn": 88,
-    "editor.formatOnSave": true
+    "editor.wordWrapColumn": 88
   }
 }
