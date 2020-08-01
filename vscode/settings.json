@@ -4,10 +4,30 @@
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
   "editor.cursorWidth": 3,
+  "editor.tokenColorCustomizations": {
+    "[Material Theme]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "Keyword",
+            "Storage",
+            "keyword.control",
+            "variable.language",
+            "variable.language",
+            "entity.name.method.js"
+          ],
+          "settings": {
+            "fontStyle": "normal"
+          }
+        }
+      ]
+    },
+  },
   "editor.find.addExtraSpaceOnTop": false,
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Cascadia Code",
   "editor.fontLigatures": "'ss02', 'calt'",
-  "editor.fontSize": 13,
+  "editor.fontSize": 13.5,
+  "editor.fontWeight": "300",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
   "editor.formatOnType": true,
@@ -55,23 +75,23 @@
   "python.dataScience.jupyterServerURI": "http://localhost:8890?token=x",
   "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.dataScience.showCellInputCode": false,
-  "python.formatting.blackPath": "/Users/spren9er/.asdf/shims/black",
+  "python.formatting.blackPath": "~/.asdf/shims/black",
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.linting.flake8Args": [
     "--max-line-length=88"
   ],
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "/Users/spren9er/.asdf/shims/flake8",
+  "python.linting.flake8Path": "~/.asdf/shims/flake8",
   "python.linting.pylintEnabled": false,
+  "python.pythonPath": "~/.asdf/shims/python",
   "python.showStartPage": false,
-  "python.sortImports.path": "/Users/spren9er/.asdf/shims/isort",
   "ruby.format": "rubocop",
-  "ruby.interpreter.commandPath": "/Users/spren9er/.asdf/shims",
+  "ruby.interpreter.commandPath": "~/.asdf/shims",
   "ruby.lint": {
     "rubocop": true
   },
-  "ruby.pathToBundler": "/Users/spren9er/.asdf/shims/bundler",
+  "ruby.pathToBundler": "~/.asdf/shims/bundler",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "terminal.external.osxExec": "Hyper.app",
@@ -90,14 +110,6 @@
       "gitDecoration.modifiedResourceForeground": "#d5880b",
       "gitDecoration.untrackedResourceForeground": "#2db448"
     },
-    // "[Jupyter Atom One Light]": {
-    // "badge.background": "#fafafa",
-    // "descriptionForeground": "#fafafa",
-    // "editor.foreground": "#555555",
-    // "editor.lineHighlightBorder": "#fafafa",
-    // "editor.selectionBackground": "#efefef",
-    // "notifications.background": "#fafafa"
-    // },
     "focusBorder": "#00000000",
     "terminal.foreground": "#839496",
     "terminal.background": "#002833",
@@ -120,7 +132,7 @@
     "terminalCursor.foreground": "#839496",
     "terminalCursor.background": "#003541"
   },
-  "workbench.colorTheme": "Atom One Light",
+  "workbench.colorTheme": "Material Theme",
   "workbench.editor.openPositioning": "last",
   "workbench.editor.tabSizing": "shrink",
   "workbench.fontAliasing": "default",
@@ -130,6 +142,9 @@
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 14,
   "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
     "editor.formatOnPaste": false,
     "editor.formatOnSave": true,
     "editor.rulers": [

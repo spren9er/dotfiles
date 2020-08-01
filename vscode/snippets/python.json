@@ -19,7 +19,7 @@
 		"description": "Create altair chart"
 	},
 	"Import Altair": {
-		"prefix": "ialt",
+		"prefix": "alt",
 		"body": [
 			"import altair as alt",
 			"$0"
@@ -27,7 +27,7 @@
 		"description": "Import altair package"
 	},
 	"Import NumPy": {
-		"prefix": "inp",
+		"prefix": "np",
 		"body": [
 			"import numpy as np",
 			"$0"
@@ -35,7 +35,7 @@
 		"description": "Import numpy package"
 	},
 	"Import Pandas": {
-		"prefix": "ipd",
+		"prefix": "pd",
 		"body": [
 			"import pandas as pd",
 			"$0"
@@ -43,7 +43,7 @@
 		"description": "Import pandas package"
 	},
 	"Import SciKit-Learn Submodule": {
-		"prefix": "isk",
+		"prefix": "sk",
 		"body": [
 			"from sklearn.${1:preprocessing} import ${2:StandardScaler}",
 			"$0"
@@ -51,7 +51,7 @@
 		"description": "Import scikit-learn subpackage"
 	},
 	"Import TensorFlow": {
-		"prefix": "itf",
+		"prefix": "tf",
 		"body": [
 			"import tensorflow as tf",
 			"$0"
