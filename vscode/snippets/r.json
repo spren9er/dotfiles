@@ -1,0 +1,20 @@
+{
+	"Insert Pipe Command": {
+		"prefix": [
+			">"
+		],
+		"body": [
+			"%>%\n"
+		],
+		"description": "Insert pipe command"
+	},
+	"Insert Assignment Operator": {
+		"prefix": [
+			"<"
+		],
+		"body": [
+			"<--"
+		],
+		"description": "Insert assignment operator"
+	}
+}
