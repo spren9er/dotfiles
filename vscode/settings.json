@@ -4,25 +4,6 @@
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
   "editor.cursorWidth": 3,
-  "editor.tokenColorCustomizations": {
-    "[Material Theme]": {
-      "textMateRules": [
-        {
-          "scope": [
-            "Keyword",
-            "Storage",
-            "keyword.control",
-            "variable.language",
-            "variable.language",
-            "entity.name.method.js"
-          ],
-          "settings": {
-            "fontStyle": "normal"
-          }
-        }
-      ]
-    },
-  },
   "editor.find.addExtraSpaceOnTop": false,
   "editor.fontFamily": "Cascadia Code",
   "editor.fontLigatures": "'ss02', 'calt'",
@@ -66,6 +47,7 @@
   "markdown-pdf.displayHeaderFooter": false,
   "plantuml.server": "https://www.plantuml.com/plantuml",
   "python.dataScience.addGotoCodeLenses": false,
+  "python.dataScience.allowInput": false,
   "python.dataScience.alwaysScrollOnNewCell": true,
   "python.dataScience.askForKernelRestart": false,
   "python.dataScience.codeLenses": "python.datascience.runcell",
@@ -132,7 +114,7 @@
     "terminalCursor.foreground": "#839496",
     "terminalCursor.background": "#003541"
   },
-  "workbench.colorTheme": "Material Theme",
+  "workbench.colorTheme": "Atom One Light",
   "workbench.editor.openPositioning": "last",
   "workbench.editor.tabSizing": "shrink",
   "workbench.fontAliasing": "default",
