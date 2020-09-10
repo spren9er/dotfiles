@@ -11,7 +11,7 @@ bindkey \^U backward-kill-line
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-export EDITOR="atom --wait"
+export EDITOR="code --wait"
 
 # development folder
 c() { cd ~/Development/$1; }
