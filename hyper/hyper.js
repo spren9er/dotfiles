@@ -54,7 +54,6 @@ module.exports = {
     // custom CSS to embed in the terminal window
     termCSS: '-webkit-font-smoothing: antialiased',
 
-
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
     showHamburgerMenu: '',
@@ -65,7 +64,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+    padding: '0px 4px 0px 10px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -153,8 +152,7 @@ module.exports = {
     'hyper-solarized-dark',
     'hyper-statusline',
     'hyper-tabs-enhanced',
-    'hypercwd',
-    'hyper-search'
+    'hypercwd'
   ],
 
   // in development, you can create a directory under
