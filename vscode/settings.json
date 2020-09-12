@@ -44,8 +44,6 @@
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
   "markdown.preview.fontFamily": "PT Sans",
-  "markdown-pdf.displayHeaderFooter": false,
-  "plantuml.server": "https://www.plantuml.com/plantuml",
   "python.dataScience.addGotoCodeLenses": false,
   "python.dataScience.allowInput": false,
   "python.dataScience.alwaysScrollOnNewCell": true,
