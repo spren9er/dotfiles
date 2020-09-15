@@ -1,0 +1,7 @@
+akamud.vscode-theme-onelight
+file-icons.file-icons
+ms-python.python
+ms-python.vscode-pylance
+ms-vscode.atom-keybindings
+rebornix.ruby
+wingrunr21.vscode-ruby

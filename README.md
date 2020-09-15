@@ -2,7 +2,9 @@
 
 Configuration Settings of macOS Development Environment
 
-## Atom
+## Export
+
+### Atom
 
 Archiving a list of packages is done via
 
@@ -15,7 +17,24 @@ Installing all packages from list can be done by
 apm install --packages-file ~/.dotfiles/atom/packages.list
 ```
 
-## Symlinking
+### Visual Studio Code Extensions
+
+Exporting a list of all extensions
+
+```bash
+code --list-extensions > ~/.dotfiles/vscode/extensions.txt
+```
+
+## Import
+
+First, clone git repository
+
+```bash
+git clone git@github.com:spren9er/dotfiles.git ~/.dotfiles
+```
+
+Import configuration files selectively by creating some/all of the following
+symlinks:
 
 ### Git
 
@@ -71,3 +90,14 @@ ln -s ~/.dotfiles/python/.ipython/profile_default/startup \
 ```bash
 ln -s ~/.dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ```
+
+### iTerm
+
+Import profile `spren9er.json` and add path
+
+```
+~/.dotfiles/iterm2/com.googlecode.iterm2.plist
+```
+
+within `Preferences` of iTerm. 
+
