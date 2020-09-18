@@ -44,6 +44,7 @@
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
   "markdown.preview.fontFamily": "PT Sans",
+  "markdown-pdf.displayHeaderFooter": false,
   "python.dataScience.addGotoCodeLenses": false,
   "python.dataScience.allowInput": false,
   "python.dataScience.alwaysScrollOnNewCell": true,
@@ -55,16 +56,17 @@
   "python.dataScience.jupyterServerURI": "http://localhost:8890?token=x",
   "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.dataScience.showCellInputCode": false,
-  "python.formatting.blackPath": "~/.asdf/shims/black",
   "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.local/bin/black", 
   "python.languageServer": "Pylance",
   "python.linting.flake8Args": [
     "--max-line-length=88"
   ],
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "~/.asdf/shims/flake8",
+  "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.pylintEnabled": false,
   "python.pythonPath": "~/.asdf/shims/python",
+  "python.venvPath": "~/.local/share/virtualenvs",
   "python.showStartPage": false,
   "ruby.format": "rubocop",
   "ruby.interpreter.commandPath": "~/.asdf/shims",
@@ -133,3 +135,4 @@
     "editor.tabSize": 4,
     "editor.wordWrapColumn": 88
   }
+}
