@@ -43,6 +43,7 @@
   "files.enableTrash": false,
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
+  "markdown.extension.italic.indicator": "_",
   "markdown.extension.preview.autoShowPreviewToSide": true,
   "markdown.extension.syntax.decorations": false,
   "markdown.preview.fontFamily": "Inconsolata",
