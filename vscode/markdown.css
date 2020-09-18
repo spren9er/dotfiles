@@ -28,9 +28,9 @@ h3 {
 }
 
 code {
-  font-size: 11px;
+  font-size: 10.5px!important;
   font-weight: 400;
-  color: #333333;
+  color: #333333!important;
   background-color: #efefef;
   border-radius: 2px;
   padding: 0 2px;

@@ -29,6 +29,11 @@
     "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
   },
   {
+    "key": "cmd+shift+c",
+    "command": "markdown.extension.editing.toggleCodeSpan",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+  {
     "key": "cmd+shift+x",
     "command": "markdown.extension.editing.toggleStrikethrough",
     "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
