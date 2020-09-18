@@ -46,7 +46,7 @@
   "markdown.extension.preview.autoShowPreviewToSide": true,
   "markdown.extension.syntax.decorations": false,
   "markdown.preview.fontFamily": "Inconsolata",
-  "markdown.preview.fontSize": 12,
+  "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
     "markdown.css"
