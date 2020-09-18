@@ -33,6 +33,20 @@ code {
   padding: 0 2px;
 }
 
+blockquote {
+  font-size: 11px;
+  font-style: italic;
+  color: #aaaaaa;
+  border-left: 2px solid #aaaaaa;
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #efefef;
+}
+
+blockquote p {
+  margin: 0;
+}
+
 pre {
   margin: 5px 0;
   padding: 2px 0;

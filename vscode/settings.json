@@ -144,5 +144,6 @@
     ],
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 114
-  }
+  },
+  "markdown.extension.preview.autoShowPreviewToSide": true
 }

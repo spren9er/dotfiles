@@ -1,18 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "ctrl+shift+8",
-    "command": "workbench.view.extension.github-pull-requests"
-  },
-  {
-    "key": "ctrl+shift+9",
-    "command": "workbench.view.scm"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm"
-  },
-  {
     "key": "shift+cmd+t",
     "command": "workbench.view.extension.test"
   },
@@ -29,5 +17,20 @@
     "key": "ctrl+h",
     "command": "extension.devDocs",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+b",
+    "command": "markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+i",
+    "command": "markdown.extension.editing.toggleItalic",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+shift+x",
+    "command": "markdown.extension.editing.toggleStrikethrough",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
   }
 ]
