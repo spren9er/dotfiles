@@ -43,8 +43,11 @@
   "files.enableTrash": false,
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
-  "markdown.preview.fontFamily": "PT Sans",
-  "markdown-pdf.displayHeaderFooter": false,
+  "markdown.preview.fontFamily": "Inconsolata",
+  "markdown.preview.fontSize": 12,
+  "markdown.styles": [
+    "markdown.css"
+  ],
   "python.dataScience.addGotoCodeLenses": false,
   "python.dataScience.allowInput": false,
   "python.dataScience.alwaysScrollOnNewCell": true,
@@ -134,5 +137,12 @@
     ],
     "editor.tabSize": 4,
     "editor.wordWrapColumn": 88
+  },
+  "[markdown]": {
+    "editor.rulers": [
+      114
+    ],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 114
   }
 }

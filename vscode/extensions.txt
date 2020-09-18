@@ -1,7 +1,9 @@
 akamud.vscode-theme-onelight
+deibit.devdocs
 file-icons.file-icons
 ms-python.python
 ms-python.vscode-pylance
 ms-vscode.atom-keybindings
 rebornix.ruby
 wingrunr21.vscode-ruby
+yzane.markdown-pdf
