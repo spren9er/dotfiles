@@ -32,18 +32,19 @@ code {
   font-weight: 600;
   color: #333333!important;
   background-color: #efefef;
-  border-radius: 2px;
   padding: 0 2px;
+  border-radius: 2px;
 }
 
 blockquote {
   font-size: 13px;
-  font-style: italic;
   color: #aaaaaa;
-  border-left: 2px solid #aaaaaa;
-  padding: 5px;
+  border-left: 4px solid #aaaaaa;
+  padding: 5px 7px;
   margin: 5px 0;
+  border-radius: 2px;
   background-color: #efefef;
+  border-radius: 3px;
 }
 
 blockquote p {
@@ -57,6 +58,7 @@ pre {
 
 pre code {
   padding: 0px;
+  border-radius: 3px;
 }
 
 @media print {
