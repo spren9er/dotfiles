@@ -32,7 +32,7 @@ h2 {
 h3 {
   font-style: normal;
   font-weight: 600;
-  padding: 12px 0 5px 0;
+  margin: 12px 0 5px 0;
 }
 
 code {
@@ -61,11 +61,13 @@ blockquote p {
 
 pre {
   margin: 5px 0;
-  padding: 2px 0;
+  padding: 0;
+  border: none;
 }
 
 pre code {
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   border-radius: 3px;
 }
 
