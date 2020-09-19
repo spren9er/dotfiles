@@ -50,7 +50,7 @@
   "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
-    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles/vscode/markdown.css"
+    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles@latest/vscode/markdown.css"
   ],
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.styles": [
