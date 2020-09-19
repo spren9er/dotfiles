@@ -41,10 +41,11 @@ h4 {
 
 code {
   font-family: "Inconsolata";
+  font-size: 12px;
   font-weight: normal;
   color: #333333!important;
   background-color: #efefef;
-  padding: 2px;
+  padding: 1px 2px 2px 2px;
   border-radius: 2px;
 }
 
