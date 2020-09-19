@@ -65,6 +65,7 @@ blockquote p {
 }
 
 pre {
+  background-color: #efefef!important;
   margin: 3px 0 8px 0;
   padding: 8px 10px!important;
   border: none;
