@@ -30,12 +30,14 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 600;
+  padding: 12px 0 5px 0;
 }
 
 code {
   font-size: 11px!important;
-  font-weight: 600;
+  font-weight: normal;
   color: #333333!important;
   background-color: #efefef;
   padding: 0 2px;
