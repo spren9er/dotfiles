@@ -46,11 +46,11 @@
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.preview.autoShowPreviewToSide": true,
   "markdown.extension.syntax.decorations": false,
-  "markdown.preview.fontFamily": "Inconsolata",
+  "markdown.preview.fontFamily": "Roboto",
   "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
-    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles@latest/vscode/markdown.css"
+    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles@master/vscode/markdown.css"
   ],
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.styles": [
@@ -68,7 +68,7 @@
   "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.dataScience.showCellInputCode": false,
   "python.formatting.provider": "black",
-  "python.formatting.blackPath": "~/.local/bin/black", 
+  "python.formatting.blackPath": "~/.local/bin/black",
   "python.languageServer": "Pylance",
   "python.linting.flake8Args": [
     "--max-line-length=88"
