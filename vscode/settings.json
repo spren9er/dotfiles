@@ -50,7 +50,7 @@
   "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
-    "markdown.css"
+    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles/vscode/markdown.css"
   ],
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.styles": [
@@ -76,9 +76,10 @@
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.pylintEnabled": false,
-  "python.pythonPath": "~/.asdf/shims/python",
+  "python.pythonPath": "~/.local/share/virtualenvs/python-env-OEBx1zU1/bin/python",
   "python.venvPath": "~/.local/share/virtualenvs",
   "python.showStartPage": false,
+  "python.sortImports.path": "/Users/spren9er/.local/bin/isort",
   "ruby.format": "rubocop",
   "ruby.interpreter.commandPath": "~/.asdf/shims",
   "ruby.lint": {
