@@ -76,7 +76,7 @@
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.pylintEnabled": false,
-  "python.pythonPath": "~/.local/share/virtualenvs/python-env-OEBx1zU1/bin/python",
+  "python.pythonPath": "~/.local/share/virtualenvs/dev-env-cKMx_9GM/bin/python",
   "python.venvPath": "~/.local/share/virtualenvs",
   "python.showStartPage": false,
   "python.sortImports.path": "/Users/spren9er/.local/bin/isort",
