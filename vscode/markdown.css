@@ -35,6 +35,10 @@ h3 {
   margin: 12px 0 5px 0;
 }
 
+h4 {
+  font-weight: bold;
+}
+
 code {
   font-size: 11px!important;
   font-weight: normal;
