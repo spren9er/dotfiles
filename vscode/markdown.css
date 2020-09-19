@@ -12,6 +12,12 @@ body {
   line-height: 1.5;
 }
 
+a {
+  color: #333333;
+  text-decoration: underline;
+  font-style: italic;
+}
+
 h1 {
   margin: 20px 0;
   padding: 1px 0;
