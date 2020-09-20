@@ -46,13 +46,14 @@
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.preview.autoShowPreviewToSide": true,
   "markdown.extension.syntax.decorations": false,
-  "markdown.preview.fontFamily": "Roboto",
+  "markdown.preview.fontFamily": "Source Sans Pro",
   "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
     "https://cdn.jsdelivr.net/gh/spren9er/dotfiles@master/vscode/markdown.css"
   ],
   "markdown-pdf.displayHeaderFooter": false,
+  "markdown-pdf.highlight": false,
   "markdown-pdf.styles": [
     "~/.dotfiles/vscode/markdown.css"
   ],
@@ -149,9 +150,9 @@
   },
   "[markdown]": {
     "editor.rulers": [
-      115
+      121
     ],
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 115
+    "editor.wordWrapColumn": 121
   }
 }
