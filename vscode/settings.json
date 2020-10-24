@@ -1,5 +1,8 @@
 {
   "breadcrumbs.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.codeLens": false,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
@@ -34,17 +37,21 @@
   "editor.unfoldOnClickAfterEndOfLine": true,
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
+  "eslint.validate": [
+    "javascript",
+    "svelte"
+  ],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.decorations.badges": true,
   "explorer.decorations.colors": true,
   "explorer.incrementalNaming": "smart",
+  "extensions.ignoreRecommendations": true,
   "files.autoSave": "onFocusChange",
   "files.enableTrash": false,
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
   "markdown.extension.italic.indicator": "_",
-  "markdown.extension.preview.autoShowPreviewToSide": true,
   "markdown.extension.syntax.decorations": false,
   "markdown.preview.fontFamily": "Source Sans Pro",
   "markdown.preview.fontSize": 13,
@@ -54,9 +61,14 @@
   ],
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.highlight": false,
+  "markdown-pdf.plantumlCloseMarker": "```",
+  "markdown-pdf.plantumlOpenMarker": "```plantuml",
+  "markdown-pdf.plantumlServer": "http://localhost:8080",
   "markdown-pdf.styles": [
     "~/.dotfiles/vscode/markdown.css"
   ],
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.server": "http://localhost:8080",
   "python.dataScience.addGotoCodeLenses": false,
   "python.dataScience.allowInput": false,
   "python.dataScience.alwaysScrollOnNewCell": true,
@@ -87,6 +99,7 @@
     "rubocop": true
   },
   "ruby.pathToBundler": "~/.asdf/shims/bundler",
+  "ruby.rubocop.onSave": false,
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "terminal.external.osxExec": "Hyper.app",
@@ -154,5 +167,8 @@
     ],
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 121
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
   }
 }

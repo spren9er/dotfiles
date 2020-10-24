@@ -57,5 +57,9 @@
     "key": "ctrl+shift+]",
     "command": "-markdown.extension.editing.toggleHeadingUp",
     "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+k right",
+    "command": "workbench.action.splitEditorRight"
   }
 ]
