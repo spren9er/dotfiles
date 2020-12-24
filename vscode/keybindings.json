@@ -61,5 +61,10 @@
   {
     "key": "cmd+k right",
     "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
   }
 ]
