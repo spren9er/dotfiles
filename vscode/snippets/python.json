@@ -1,9 +1,4 @@
 {
-	"Insert Jupyter Cell": {
-		"prefix": ["#"],
-		"body": "# %%\n",
-		"description": "Insert new jupyter cell"
-	},
 	"Create Altair Chart": {
 		"prefix": "chart",
 		"body": [
