@@ -106,7 +106,7 @@
   "terminal.integrated.fontFamily": "Menlo",
   "terminal.integrated.letterSpacing": 1,
   "terminal.integrated.shell.osx": "/bin/zsh",
-  "window.zoomLevel": -0.4,
+  "window.zoomLevel": -0.7,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "[Atom One Light]": {
@@ -138,7 +138,7 @@
     "terminalCursor.foreground": "#839496",
     "terminalCursor.background": "#003541"
   },
-  "workbench.colorTheme": "Iceberg Light",
+  "workbench.colorTheme": "Atom One Light",
   "workbench.editor.openPositioning": "last",
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.tabSizing": "shrink",
