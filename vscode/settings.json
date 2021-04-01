@@ -46,6 +46,7 @@
   "extensions.ignoreRecommendations": true,
   "files.autoSave": "onFocusChange",
   "files.enableTrash": false,
+  "files.trimTrailingWhitespace": true,
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
   "jupyter.addGotoCodeLenses": false,
@@ -56,7 +57,6 @@
   "jupyter.decorateCells": false,
   "jupyter.defaultCellMarker": "# %%",
   "jupyter.enableCellCodeLens": false,
-  "jupyter.insidersChannel": "off",
   "jupyter.jupyterServerType": "remote",
   "jupyter.sendSelectionToInteractiveWindow": true,
   "jupyter.showCellInputCode": false,
@@ -154,6 +154,9 @@
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 14,
+  "[json]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "[markdown]": {
     "editor.rulers": [
       121
