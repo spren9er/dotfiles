@@ -4,10 +4,11 @@
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
   "editor.cursorWidth": 3,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.find.addExtraSpaceOnTop": false,
-  "editor.fontFamily": "Cascadia Code",
+  "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": "'ss02', 'calt'",
-  "editor.fontSize": 13.5,
+  "editor.fontSize": 13,
   "editor.fontWeight": "normal",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
@@ -15,16 +16,13 @@
   "editor.glyphMargin": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.highlightActiveIndentGuide": false,
-  "editor.letterSpacing": -0.5,
   "editor.links": false,
   "editor.matchBrackets": "near",
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.overviewRulerBorder": false,
   "editor.quickSuggestions": true,
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "editor.scrollBeyondLastLine": false,
   "editor.smoothScrolling": true,
   "editor.suggestFontSize": 12,
@@ -33,11 +31,8 @@
   "editor.tabSize": 2,
   "editor.unfoldOnClickAfterEndOfLine": true,
   "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 80,
-  "eslint.validate": [
-    "javascript",
-    "svelte"
-  ],
+  "editor.wordWrapColumn": 1680,
+  "eslint.validate": ["javascript", "typescript", "svelte"],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.decorations.badges": true,
@@ -73,17 +68,13 @@
   "markdown-pdf.plantumlCloseMarker": "```",
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
   "markdown-pdf.plantumlServer": "http://localhost:8080",
-  "markdown-pdf.styles": [
-    "~/.dotfiles/vscode/markdown.css"
-  ],
+  "markdown-pdf.styles": ["~/.dotfiles/vscode/markdown.css"],
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "https://www.plantuml.com/plantuml",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "python.languageServer": "Pylance",
-  "python.linting.flake8Args": [
-    "--max-line-length=88"
-  ],
+  "python.linting.flake8Args": ["--max-line-length=88"],
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.pylintEnabled": false,
@@ -106,6 +97,7 @@
   "terminal.integrated.fontFamily": "Menlo",
   "terminal.integrated.letterSpacing": 1,
   "terminal.integrated.shell.osx": "/bin/zsh",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "window.zoomLevel": -0.7,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
@@ -154,13 +146,14 @@
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 14,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
   "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.formatOnSave": true
   },
   "[markdown]": {
-    "editor.rulers": [
-      121
-    ],
+    "editor.rulers": [121],
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 121
   },
@@ -170,9 +163,7 @@
     },
     "editor.formatOnPaste": false,
     "editor.formatOnSave": true,
-    "editor.rulers": [
-      88
-    ],
+    "editor.rulers": [88],
     "editor.tabSize": 4,
     "editor.wordWrapColumn": 88
   },
@@ -180,8 +171,10 @@
     "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "[svelte]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true,
-    }
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
   }
 }
