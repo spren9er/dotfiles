@@ -24,7 +24,7 @@
   },
   "Use Custom Window Title" : false,
   "Right Option Key Sends" : 0,
-  "Show Status Bar" : true,
+  "Show Status Bar" : false,
   "Character Encoding" : 4,
   "Selection Color" : {
     "Red Component" : 0.28235294117647058,
@@ -124,7 +124,7 @@
       }
     ],
     "advanced configuration" : {
-      "font" : "Menlo-Regular 11",
+      "algorithm" : 1,
       "default text color" : {
         "Red Component" : 0.25490197539329529,
         "Color Space" : "sRGB",
@@ -132,6 +132,8 @@
         "Alpha Component" : 1,
         "Green Component" : 0.37647059559822083
       },
+      "remove empty components" : false,
+      "font" : "Menlo-Regular 11",
       "background color" : {
         "Red Component" : 0,
         "Color Space" : "sRGB",
@@ -139,9 +141,7 @@
         "Alpha Component" : 1,
         "Green Component" : 0.21568627655506134
       },
-      "auto-rainbow style" : 0,
-      "remove empty components" : false,
-      "algorithm" : 1
+      "auto-rainbow style" : 0
     }
   },
   "Hide After Opening" : false,
