@@ -221,9 +221,9 @@
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
-  typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
+  typeset -g POWERLEVEL9K_SHORTEN_DELIMITER='...'
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=250
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=3
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=3
@@ -385,11 +385,11 @@
     fi
 
     # Styling for different parts of Git status.
-    local       meta='%14F' # white foreground
-    local      clean='%14F' # black foreground
-    local   modified='%14F' # black foreground
-    local  untracked='%14F' # black foreground
-    local conflicted='%14F' # red foreground
+    local       meta='%10F'
+    local      clean='%10F'
+    local   modified='%10F'
+    local  untracked='%10F'
+    local conflicted='%10F'
 
     local res
 
@@ -399,7 +399,7 @@
       # Otherwise show the first 12 … the last 12.
       # Tip: To always show local branch name in full without truncation, delete the next line.
       (( $#branch > 32 )) && branch[13,-13]="…"  # <-- this line
-      res+="${clean}${(g::)POWERLEVEL9K_VCS_BRANCH_ICON}[${branch//\%/%%}]"
+      res+="${clean}${(g::)POWERLEVEL9K_VCS_BRANCH_ICON}[%B%F{14}${branch//\%/%%}%b%f]"
     fi
 
     if [[ -n $VCS_STATUS_TAG
@@ -422,7 +422,7 @@
 
     # Show tracking branch name if it differs from local branch.
     if [[ -n ${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH} ]]; then
-      res+="${meta}:${clean}${(V)VCS_STATUS_REMOTE_BRANCH//\%/%%}"
+      res+="${meta}:${clean}[%B%F{14}${(V)VCS_STATUS_REMOTE_BRANCH//\%/%%}%b%f]"
     fi
 
     # Display "wip" if the latest commit's summary contains "wip" or "WIP".
@@ -631,105 +631,105 @@
   typeset -g POWERLEVEL9K_ASDF_SHOW_ON_UPGLOB=
 
   # Ruby version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_RUBY_FOREGROUND=14
+  typeset -g POWERLEVEL9K_ASDF_RUBY_FOREGROUND=10
   typeset -g POWERLEVEL9K_ASDF_RUBY_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_RUBY_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_RUBY_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Python version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_PYTHON_FOREGROUND=14
+  typeset -g POWERLEVEL9K_ASDF_PYTHON_FOREGROUND=10
   typeset -g POWERLEVEL9K_ASDF_PYTHON_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_PYTHON_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_PYTHON_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Go version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_GOLANG_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_GOLANG_BACKGROUND=4
+  typeset -g POWERLEVEL9K_ASDF_GOLANG_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_GOLANG_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_GOLANG_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_GOLANG_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Node.js version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_NODEJS_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_NODEJS_BACKGROUND=2
+  typeset -g POWERLEVEL9K_ASDF_NODEJS_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_NODEJS_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_NODEJS_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_NODEJS_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Rust version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_RUST_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_RUST_BACKGROUND=208
+  typeset -g POWERLEVEL9K_ASDF_RUST_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_RUST_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_RUST_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_RUST_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # .NET Core version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_BACKGROUND=5
+  typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Flutter version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_FLUTTER_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_FLUTTER_BACKGROUND=4
+  typeset -g POWERLEVEL9K_ASDF_FLUTTER_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_FLUTTER_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_FLUTTER_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_FLUTTER_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Lua version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_LUA_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_LUA_BACKGROUND=4
+  typeset -g POWERLEVEL9K_ASDF_LUA_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_LUA_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_LUA_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_LUA_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Java version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_JAVA_FOREGROUND=1
-  typeset -g POWERLEVEL9K_ASDF_JAVA_BACKGROUND=7
+  typeset -g POWERLEVEL9K_ASDF_JAVA_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_JAVA_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_JAVA_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_JAVA_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Perl version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_PERL_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_PERL_BACKGROUND=4
+  typeset -g POWERLEVEL9K_ASDF_PERL_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_PERL_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_PERL_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_PERL_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Erlang version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_ERLANG_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_ERLANG_BACKGROUND=1
+  typeset -g POWERLEVEL9K_ASDF_ERLANG_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_ERLANG_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_ERLANG_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_ERLANG_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Elixir version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_ELIXIR_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_ELIXIR_BACKGROUND=5
+  typeset -g POWERLEVEL9K_ASDF_ELIXIR_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_ELIXIR_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_ELIXIR_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_ELIXIR_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Postgres version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_POSTGRES_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_POSTGRES_BACKGROUND=6
+  typeset -g POWERLEVEL9K_ASDF_POSTGRES_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_POSTGRES_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_POSTGRES_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_POSTGRES_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # PHP version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_PHP_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_PHP_BACKGROUND=5
+  typeset -g POWERLEVEL9K_ASDF_PHP_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_PHP_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_PHP_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_PHP_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Haskell version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_HASKELL_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_HASKELL_BACKGROUND=3
+  typeset -g POWERLEVEL9K_ASDF_HASKELL_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_HASKELL_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_HASKELL_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_HASKELL_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Julia version from asdf.
-  typeset -g POWERLEVEL9K_ASDF_JULIA_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_JULIA_BACKGROUND=2
+  typeset -g POWERLEVEL9K_ASDF_JULIA_FOREGROUND=10
+  typeset -g POWERLEVEL9K_ASDF_JULIA_BACKGROUND=0
   # typeset -g POWERLEVEL9K_ASDF_JULIA_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_JULIA_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   ##########[ nordvpn: nordvpn connection status, linux only (https://nordvpn.com/) ]###########
   # NordVPN connection indicator color.
-  typeset -g POWERLEVEL9K_NORDVPN_FOREGROUND=7
-  typeset -g POWERLEVEL9K_NORDVPN_BACKGROUND=4
+  typeset -g POWERLEVEL9K_NORDVPN_FOREGROUND=10
+  typeset -g POWERLEVEL9K_NORDVPN_BACKGROUND=0
   # Hide NordVPN connection indicator when not connected.
   typeset -g POWERLEVEL9K_NORDVPN_{DISCONNECTED,CONNECTING,DISCONNECTING}_CONTENT_EXPANSION=
   typeset -g POWERLEVEL9K_NORDVPN_{DISCONNECTED,CONNECTING,DISCONNECTING}_VISUAL_IDENTIFIER_EXPANSION=
@@ -915,11 +915,11 @@
   typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=3
 
   # Context format when running with privileges: user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%B%F{0}%n@%m"
   # Context format when in SSH without privileges: user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE="%B%F{0}%n@%m"
   # Default context format (no privileges, no SSH): user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%B%F{0}%n@%m"
 
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
@@ -928,21 +928,21 @@
   # Custom icon.
   # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
-  # typeset -g POWERLEVEL9K_CONTEXT_PREFIX='with '
+  # typeset -g POWERLEVEL9K_CONTEXT_PREFIX="with "
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
-  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=14
+  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=10
   typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND=0
   # Don't show Python version next to the virtual environment name.
-  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
+  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=true
   # If set to "false", won't show virtualenv if pyenv is already shown.
   # If set to "if-different", won't show virtualenv if it's the same as pyenv.
-  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
+  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=true
   # Separate environment name from Python version only with a space.
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
   # Custom icon.
-  # typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION='penv'
 
   #####################[ anaconda: conda environment (https://conda.io/) ]######################
   # Anaconda environment color.
@@ -1007,8 +1007,8 @@
 
   ################[ goenv: go environment (https://github.com/syndbg/goenv) ]################
   # Goenv color.
-  typeset -g POWERLEVEL9K_GOENV_FOREGROUND=0
-  typeset -g POWERLEVEL9K_GOENV_BACKGROUND=4
+  typeset -g POWERLEVEL9K_GOENV_FOREGROUND=10
+  typeset -g POWERLEVEL9K_GOENV_BACKGROUND=0
   # Hide go version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_GOENV_SOURCES=(shell local global)
   # If set to false, hide go version if it's the same as global:
@@ -1021,7 +1021,7 @@
 
   ##########[ nodenv: node.js version from nodenv (https://github.com/nodenv/nodenv) ]##########
   # Nodenv color.
-  typeset -g POWERLEVEL9K_NODENV_FOREGROUND=2
+  typeset -g POWERLEVEL9K_NODENV_FOREGROUND=10
   typeset -g POWERLEVEL9K_NODENV_BACKGROUND=0
   # Hide node version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_NODENV_SOURCES=(shell local global)
@@ -1035,14 +1035,14 @@
 
   ##############[ nvm: node.js version from nvm (https://github.com/nvm-sh/nvm) ]###############
   # Nvm color.
-  typeset -g POWERLEVEL9K_NVM_FOREGROUND=14
+  typeset -g POWERLEVEL9K_NVM_FOREGROUND=10
   typeset -g POWERLEVEL9K_NVM_BACKGROUND=0
   # Custom icon.
   # typeset -g POWERLEVEL9K_NVM_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   ############[ nodeenv: node.js environment (https://github.com/ekalinin/nodeenv) ]############
   # Nodeenv color.
-  typeset -g POWERLEVEL9K_NODEENV_FOREGROUND=14
+  typeset -g POWERLEVEL9K_NODEENV_FOREGROUND=10
   typeset -g POWERLEVEL9K_NODEENV_BACKGROUND=0
   # Don't show Node version next to the environment name.
   typeset -g POWERLEVEL9K_NODEENV_SHOW_NODE_VERSION=false
@@ -1053,17 +1053,17 @@
 
   ##############################[ node_version: node.js version ]###############################
   # Node version color.
-  typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=14
+  typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=10
   typeset -g POWERLEVEL9K_NODE_VERSION_BACKGROUND=0
   # Show node version only when in a directory tree containing package.json.
   typeset -g POWERLEVEL9K_NODE_VERSION_PROJECT_ONLY=true
   # Custom icon.
-  # typeset -g POWERLEVEL9K_NODE_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_NODE_VERSION_VISUAL_IDENTIFIER_EXPANSION='node'
 
   #######################[ go_version: go version (https://golang.org) ]########################
   # Go version color.
-  typeset -g POWERLEVEL9K_GO_VERSION_FOREGROUND=255
-  typeset -g POWERLEVEL9K_GO_VERSION_BACKGROUND=2
+  typeset -g POWERLEVEL9K_GO_VERSION_FOREGROUND=10
+  typeset -g POWERLEVEL9K_GO_VERSION_BACKGROUND=0
   # Show go version only when in a go project subdirectory.
   typeset -g POWERLEVEL9K_GO_VERSION_PROJECT_ONLY=true
   # Custom icon.
@@ -1071,8 +1071,8 @@
 
   #################[ rust_version: rustc version (https://www.rust-lang.org) ]##################
   # Rust version color.
-  typeset -g POWERLEVEL9K_RUST_VERSION_FOREGROUND=0
-  typeset -g POWERLEVEL9K_RUST_VERSION_BACKGROUND=208
+  typeset -g POWERLEVEL9K_RUST_VERSION_FOREGROUND=10
+  typeset -g POWERLEVEL9K_RUST_VERSION_BACKGROUND=0
   # Show rust version only when in a rust project subdirectory.
   typeset -g POWERLEVEL9K_RUST_VERSION_PROJECT_ONLY=true
   # Custom icon.
@@ -1080,8 +1080,8 @@
 
   ###############[ dotnet_version: .NET version (https://dotnet.microsoft.com) ]################
   # .NET version color.
-  typeset -g POWERLEVEL9K_DOTNET_VERSION_FOREGROUND=7
-  typeset -g POWERLEVEL9K_DOTNET_VERSION_BACKGROUND=5
+  typeset -g POWERLEVEL9K_DOTNET_VERSION_FOREGROUND=10
+  typeset -g POWERLEVEL9K_DOTNET_VERSION_BACKGROUND=0
   # Show .NET version only when in a .NET project subdirectory.
   typeset -g POWERLEVEL9K_DOTNET_VERSION_PROJECT_ONLY=true
   # Custom icon.
@@ -1089,8 +1089,8 @@
 
   #####################[ php_version: php version (https://www.php.net/) ]######################
   # PHP version color.
-  typeset -g POWERLEVEL9K_PHP_VERSION_FOREGROUND=0
-  typeset -g POWERLEVEL9K_PHP_VERSION_BACKGROUND=5
+  typeset -g POWERLEVEL9K_PHP_VERSION_FOREGROUND=10
+  typeset -g POWERLEVEL9K_PHP_VERSION_BACKGROUND=0
   # Show PHP version only when in a PHP project subdirectory.
   typeset -g POWERLEVEL9K_PHP_VERSION_PROJECT_ONLY=true
   # Custom icon.
@@ -1105,8 +1105,8 @@
 
   #############[ rbenv: ruby version from rbenv (https://github.com/rbenv/rbenv) ]##############
   # Rbenv color.
-  typeset -g POWERLEVEL9K_RBENV_FOREGROUND=0
-  typeset -g POWERLEVEL9K_RBENV_BACKGROUND=3
+  typeset -g POWERLEVEL9K_RBENV_FOREGROUND=10
+  typeset -g POWERLEVEL9K_RBENV_BACKGROUND=0
   # Hide ruby version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_RBENV_SOURCES=(shell local global)
   # If set to false, hide ruby version if it's the same as global:
@@ -1119,8 +1119,8 @@
 
   ####################[ java_version: java version (https://www.java.com/) ]####################
   # Java version color.
-  typeset -g POWERLEVEL9K_JAVA_VERSION_FOREGROUND=1
-  typeset -g POWERLEVEL9K_JAVA_VERSION_BACKGROUND=7
+  typeset -g POWERLEVEL9K_JAVA_VERSION_FOREGROUND=10
+  typeset -g POWERLEVEL9K_JAVA_VERSION_BACKGROUND=0
   # Show java version only when in a java project subdirectory.
   typeset -g POWERLEVEL9K_JAVA_VERSION_PROJECT_ONLY=true
   # Show brief version.
@@ -1130,8 +1130,8 @@
 
   ###[ package: name@version from package.json (https://docs.npmjs.com/files/package.json) ]####
   # Package color.
-  typeset -g POWERLEVEL9K_PACKAGE_FOREGROUND=0
-  typeset -g POWERLEVEL9K_PACKAGE_BACKGROUND=10
+  typeset -g POWERLEVEL9K_PACKAGE_FOREGROUND=10
+  typeset -g POWERLEVEL9K_PACKAGE_BACKGROUND=0
 
   # Package format. The following parameters are available within the expansion.
   #
@@ -1145,8 +1145,8 @@
 
   #######################[ rvm: ruby version from rvm (https://rvm.io) ]########################
   # Rvm color.
-  typeset -g POWERLEVEL9K_RVM_FOREGROUND=0
-  typeset -g POWERLEVEL9K_RVM_BACKGROUND=240
+  typeset -g POWERLEVEL9K_RVM_FOREGROUND=10
+  typeset -g POWERLEVEL9K_RVM_BACKGROUND=0
   # Don't show @gemset at the end.
   typeset -g POWERLEVEL9K_RVM_SHOW_GEMSET=false
   # Don't show ruby- at the front.
@@ -1156,15 +1156,15 @@
 
   ###########[ fvm: flutter version management (https://github.com/leoafarias/fvm) ]############
   # Fvm color.
-  typeset -g POWERLEVEL9K_FVM_FOREGROUND=0
-  typeset -g POWERLEVEL9K_FVM_BACKGROUND=4
+  typeset -g POWERLEVEL9K_FVM_FOREGROUND=10
+  typeset -g POWERLEVEL9K_FVM_BACKGROUND=0
   # Custom icon.
   # typeset -g POWERLEVEL9K_FVM_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   ##########[ luaenv: lua version from luaenv (https://github.com/cehoffman/luaenv) ]###########
   # Lua color.
-  typeset -g POWERLEVEL9K_LUAENV_FOREGROUND=0
-  typeset -g POWERLEVEL9K_LUAENV_BACKGROUND=4
+  typeset -g POWERLEVEL9K_LUAENV_FOREGROUND=10
+  typeset -g POWERLEVEL9K_LUAENV_BACKGROUND=0
   # Hide lua version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_LUAENV_SOURCES=(shell local global)
   # If set to false, hide lua version if it's the same as global:
@@ -1177,8 +1177,8 @@
 
   ###############[ jenv: java version from jenv (https://github.com/jenv/jenv) ]################
   # Java color.
-  typeset -g POWERLEVEL9K_JENV_FOREGROUND=1
-  typeset -g POWERLEVEL9K_JENV_BACKGROUND=7
+  typeset -g POWERLEVEL9K_JENV_FOREGROUND=10
+  typeset -g POWERLEVEL9K_JENV_BACKGROUND=0
   # Hide java version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_JENV_SOURCES=(shell local global)
   # If set to false, hide java version if it's the same as global:
@@ -1328,9 +1328,9 @@
       # '*prod*'  PROD    # These values are examples that are unlikely
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=14
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=10
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND=0
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='○'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⎈'
 
   # Use POWERLEVEL9K_KUBECONTEXT_CONTENT_EXPANSION to specify the content displayed by kubecontext
   # segment. Parameter expansions are very flexible and fast, too. See reference:
@@ -1413,8 +1413,8 @@
       # '*prod*'  PROD    # These values are examples that are unlikely
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
-  typeset -g POWERLEVEL9K_AWS_DEFAULT_FOREGROUND=7
-  typeset -g POWERLEVEL9K_AWS_DEFAULT_BACKGROUND=1
+  typeset -g POWERLEVEL9K_AWS_DEFAULT_FOREGROUND=10
+  typeset -g POWERLEVEL9K_AWS_DEFAULT_BACKGROUND=0
   # typeset -g POWERLEVEL9K_AWS_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   # AWS segment format. The following parameters are available within the expansion.
@@ -1425,7 +1425,7 @@
 
   #[ aws_eb_env: aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/) ]#
   # AWS Elastic Beanstalk environment color.
-  typeset -g POWERLEVEL9K_AWS_EB_ENV_FOREGROUND=2
+  typeset -g POWERLEVEL9K_AWS_EB_ENV_FOREGROUND=10
   typeset -g POWERLEVEL9K_AWS_EB_ENV_BACKGROUND=0
   # Custom icon.
   typeset -g POWERLEVEL9K_AWS_EB_ENV_VISUAL_IDENTIFIER_EXPANSION='eb'
@@ -1435,8 +1435,8 @@
   # Tip: Remove the next line to always show azure.
   typeset -g POWERLEVEL9K_AZURE_SHOW_ON_COMMAND='az|terraform|pulumi|terragrunt'
   # Azure account name color.
-  typeset -g POWERLEVEL9K_AZURE_FOREGROUND=7
-  typeset -g POWERLEVEL9K_AZURE_BACKGROUND=4
+  typeset -g POWERLEVEL9K_AZURE_FOREGROUND=10
+  typeset -g POWERLEVEL9K_AZURE_BACKGROUND=0
   # Custom icon.
   typeset -g POWERLEVEL9K_AZURE_VISUAL_IDENTIFIER_EXPANSION='az'
 
@@ -1445,8 +1445,8 @@
   # Tip: Remove the next line to always show gcloud.
   typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs'
   # Google cloud color.
-  typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND=7
-  typeset -g POWERLEVEL9K_GCLOUD_BACKGROUND=4
+  typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND=10
+  typeset -g POWERLEVEL9K_GCLOUD_BACKGROUND=0
 
   # Google cloud format. Change the value of POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION and/or
   # POWERLEVEL9K_GCLOUD_COMPLETE_CONTENT_EXPANSION if the default is too verbose or not informative
