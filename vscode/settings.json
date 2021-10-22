@@ -4,18 +4,17 @@
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
   "editor.cursorWidth": 3,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.find.addExtraSpaceOnTop": false,
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "JetBrains Mono, Monaco",
   "editor.fontLigatures": "'ss02', 'calt'",
   "editor.fontSize": 13,
   "editor.fontWeight": "normal",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
   "editor.formatOnType": true,
-  "editor.glyphMargin": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.highlightActiveIndentGuide": false,
+  "editor.inlineSuggest.enabled": true,
   "editor.links": false,
   "editor.matchBrackets": "near",
   "editor.minimap.enabled": false,
@@ -44,17 +43,21 @@
   "files.trimTrailingWhitespace": true,
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": false
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "jupyter.addGotoCodeLenses": false,
-  "jupyter.allowInput": false,
   "jupyter.alwaysScrollOnNewCell": true,
   "jupyter.askForKernelRestart": false,
-  "jupyter.colorizeInputBox": false,
   "jupyter.decorateCells": false,
   "jupyter.defaultCellMarker": "# %%",
   "jupyter.enableCellCodeLens": false,
-  "jupyter.jupyterServerType": "remote",
+  "jupyter.jupyterServerType": "local",
   "jupyter.sendSelectionToInteractiveWindow": true,
-  "jupyter.showCellInputCode": false,
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.syntax.decorations": false,
   "markdown.preview.fontFamily": "Source Sans Pro",
@@ -68,9 +71,12 @@
   "markdown-pdf.plantumlCloseMarker": "```",
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
   "markdown-pdf.plantumlServer": "http://localhost:8080",
-  "markdown-pdf.styles": ["~/.dotfiles/vscode/markdown.css"],
+  "markdown-pdf.styles": [
+    "~/.dotfiles/vscode/markdown.css"
+  ],
   "plantuml.render": "PlantUMLServer",
-  "plantuml.server": "https://www.plantuml.com/plantuml",
+  "plantuml.server": "http://localhost:8080",
+  "python.defaultInterpreterPath": "~/.local/share/virtualenvs/analytics-2ONAH3Mv/bin/python",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "python.languageServer": "Pylance",
@@ -78,9 +84,7 @@
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.pylintEnabled": false,
-  "python.pythonPath": "~/.local/share/virtualenvs/dev-env-cKMx_9GM/bin/python",
   "python.venvPath": "~/.local/share/virtualenvs",
-  "python.showStartPage": false,
   "python.sortImports.path": "/Users/spren9er/.local/bin/isort",
   "ruby.format": "rubocop",
   "ruby.interpreter.commandPath": "~/.asdf/shims",
@@ -89,14 +93,11 @@
   },
   "ruby.pathToBundler": "~/.asdf/shims/bundler",
   "ruby.rubocop.onSave": false,
-  "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false,
-  "terminal.external.osxExec": "Hyper.app",
+  "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontFamily": "Menlo",
   "terminal.integrated.letterSpacing": 1,
-  "terminal.integrated.shell.osx": "/bin/zsh",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.zoomLevel": -0.7,
   "workbench.activityBar.visible": false,
@@ -134,28 +135,33 @@
   "workbench.editor.openPositioning": "last",
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.tabSizing": "shrink",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
   "workbench.fontAliasing": "default",
+  "workbench.list.automaticKeyboardNavigation": false,
   "workbench.iconTheme": "file-icons-colourless",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 14,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
   "[markdown]": {
     "editor.rulers": [121],
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 121
+    "editor.wordWrapColumn": 121,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[python]": {
     "editor.codeActionsOnSave": {
@@ -171,10 +177,14 @@
     "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "[svelte]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "svelte.svelte-vscode"
+    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "editor.formatOnSave": true
   },
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
-  }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

@@ -4,6 +4,8 @@
 <dict>
 	<key>AllowDragOfTabIntoNewWindow</key>
 	<false/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>ColoredSelectedTabOutlineStrength</key>
 	<real>0.0</real>
 	<key>ColoredUnselectedTabTextProminence</key>
@@ -370,8 +372,18 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Badge Font</key>
+			<string>Menlo-Bold</string>
+			<key>Badge Max Height</key>
+			<real>0.089999999999999997</real>
+			<key>Badge Max Width</key>
+			<real>0.5</real>
+			<key>Badge Right Margin</key>
+			<real>10</real>
 			<key>Badge Text</key>
 			<string></string>
+			<key>Badge Top Margin</key>
+			<real>10</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
@@ -874,7 +886,7 @@
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Place Prompt at First Column</key>
-			<true/>
+			<false/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -913,6 +925,8 @@
 			<false/>
 			<key>Shortcut</key>
 			<string></string>
+			<key>Show Mark Indicators</key>
+			<false/>
 			<key>Show Status Bar</key>
 			<true/>
 			<key>Silence Bell</key>
@@ -957,6 +971,8 @@
 					</dict>
 					<key>font</key>
 					<string>Menlo-Regular 11</string>
+					<key>remove empty components</key>
+					<false/>
 				</dict>
 				<key>components</key>
 				<array>
@@ -984,6 +1000,36 @@
 								<integer>1</integer>
 								<key>auto-rainbow style</key>
 								<integer>0</integer>
+								<key>background color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.26666668057441711</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.21568627655506134</real>
+									<key>Red Component</key>
+									<real>0.0</real>
+								</dict>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.40000000596046448</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.37647059559822083</real>
+									<key>Red Component</key>
+									<real>0.25490197539329529</real>
+								</dict>
+								<key>font</key>
+								<string>Menlo-Regular 11</string>
+								<key>remove empty components</key>
+								<false/>
 							</dict>
 						</dict>
 					</dict>
@@ -1039,6 +1085,8 @@
 								</dict>
 								<key>font</key>
 								<string>Menlo-Regular 11</string>
+								<key>remove empty components</key>
+								<false/>
 							</dict>
 						</dict>
 					</dict>
@@ -1099,6 +1147,8 @@
 	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<true/>
+	<key>OpenBookmark</key>
+	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>OptimumTabWidth</key>

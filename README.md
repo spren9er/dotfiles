@@ -99,5 +99,10 @@ Import profile `spren9er.json` and add path
 ~/.dotfiles/iterm2/com.googlecode.iterm2.plist
 ```
 
-within `Preferences` of iTerm. 
+within `Preferences` of iTerm.
 
+### Powerlevel10K
+
+```bash
+ln -s ~/.dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
+```
