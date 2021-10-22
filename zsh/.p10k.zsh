@@ -191,7 +191,7 @@
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_BACKGROUND=0
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_BACKGROUND=
   # Green prompt symbol if the last command succeeded.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=14
   # Red prompt symbol if the last command failed.
@@ -633,13 +633,13 @@
   # Ruby version from asdf.
   typeset -g POWERLEVEL9K_ASDF_RUBY_FOREGROUND=10
   typeset -g POWERLEVEL9K_ASDF_RUBY_BACKGROUND=0
-  # typeset -g POWERLEVEL9K_ASDF_RUBY_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_ASDF_RUBY_VISUAL_IDENTIFIER_EXPANSION='ruby'
   # typeset -g POWERLEVEL9K_ASDF_RUBY_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Python version from asdf.
   typeset -g POWERLEVEL9K_ASDF_PYTHON_FOREGROUND=10
   typeset -g POWERLEVEL9K_ASDF_PYTHON_BACKGROUND=0
-  # typeset -g POWERLEVEL9K_ASDF_PYTHON_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_ASDF_PYTHON_VISUAL_IDENTIFIER_EXPANSION='py'
   # typeset -g POWERLEVEL9K_ASDF_PYTHON_SHOW_ON_UPGLOB='*.foo|*.bar'
 
   # Go version from asdf.
