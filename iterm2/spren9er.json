@@ -1,5 +1,6 @@
 {
   "Badge Text" : "",
+  "Thin Strokes" : 3,
   "Working Directory" : "\/Users\/spren9er",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -477,7 +478,7 @@
     "Green Component" : 0.21176470588235294
   },
   "Blur" : false,
-  "Normal Font" : "Menlo-Regular 11",
+  "Normal Font" : "MesloLGS-NF-Regular 11",
   "Vertical Spacing" : 1,
   "Ansi 7 Color" : {
     "Red Component" : 0.93333333333333335,
@@ -534,12 +535,12 @@
   "Columns" : 80,
   "Use Tab Color" : false,
   "Visual Bell" : false,
+  "ASCII Ligatures" : false,
   "Custom Directory" : "Recycle",
   "Ansi 5 Color" : {
     "Red Component" : 0.82745098039215681,
     "Color Space" : "sRGB",
     "Blue Component" : 0.50980392156862742,
     "Green Component" : 0.21176470588235294
-  },
-  "Thin Strokes" : 3
+  }
 }
