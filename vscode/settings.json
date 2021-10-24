@@ -96,7 +96,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontFamily": "Menlo",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
   "terminal.integrated.letterSpacing": 1,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.zoomLevel": -0.7,
@@ -131,7 +131,7 @@
     "terminalCursor.foreground": "#839496",
     "terminalCursor.background": "#003541"
   },
-  "workbench.colorTheme": "Atom One Light",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.editor.openPositioning": "last",
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.tabSizing": "shrink",
