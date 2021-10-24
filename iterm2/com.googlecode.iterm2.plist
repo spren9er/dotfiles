@@ -6,6 +6,10 @@
 	<false/>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>BadgeRightMargin</key>
+	<integer>0</integer>
+	<key>BadgeTopMargin</key>
+	<integer>0</integer>
 	<key>ColoredSelectedTabOutlineStrength</key>
 	<real>0.0</real>
 	<key>ColoredUnselectedTabTextProminence</key>
@@ -28,12 +32,16 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>DisableWindowSizeSnap</key>
+	<true/>
 	<key>DrawBottomLineForHorizontalTabBar</key>
 	<true/>
 	<key>EnableDivisionView</key>
 	<true/>
 	<key>ExtraSpaceBeforeCompactTopTabBar</key>
 	<real>0.0</real>
+	<key>FractionOfCharacterSelectingNextNeighbor</key>
+	<real>0.34999999403953552</real>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x19-0x60000</key>
@@ -164,6 +172,8 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>ASCII Ligatures</key>
+			<false/>
 			<key>Allow Title Setting</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
@@ -878,7 +888,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 11</string>
+			<string>MesloLGS-NF-Regular 11</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -928,7 +938,7 @@
 			<key>Show Mark Indicators</key>
 			<false/>
 			<key>Show Status Bar</key>
-			<true/>
+			<false/>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Smart Cursor Color</key>
@@ -1146,11 +1156,11 @@
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
-	<true/>
+	<false/>
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
-	<false/>
+	<true/>
 	<key>OptimumTabWidth</key>
 	<integer>175</integer>
 	<key>PointerActions</key>
@@ -1216,6 +1226,10 @@
 	<integer>2</integer>
 	<key>TabsHaveCloseButton</key>
 	<true/>
+	<key>TerminalMargin</key>
+	<integer>0</integer>
+	<key>TerminalVMargin</key>
+	<integer>2</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseCustomTabBarFontSize</key>
