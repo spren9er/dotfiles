@@ -106,3 +106,9 @@ within `Preferences` of iTerm.
 ```bash
 ln -s ~/.dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 ```
+
+### visidata
+
+```bash
+ln -s ~/visidata/.visidatarc ~/.visidatarc
+```
