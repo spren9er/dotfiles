@@ -1,3 +1,5 @@
+import plugins
+
 options.color_active_status = "black on white"
 options.color_column_sep = "12"
 options.color_current_col = "bold white"

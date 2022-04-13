@@ -13,7 +13,6 @@
   "editor.formatOnSave": false,
   "editor.formatOnType": true,
   "editor.hideCursorInOverviewRuler": true,
-  "editor.highlightActiveIndentGuide": false,
   "editor.inlineSuggest.enabled": true,
   "editor.links": false,
   "editor.matchBrackets": "near",
@@ -71,9 +70,8 @@
   "markdown-pdf.plantumlCloseMarker": "```",
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
   "markdown-pdf.plantumlServer": "http://localhost:8080",
-  "markdown-pdf.styles": [
-    "~/.dotfiles/vscode/markdown.css"
-  ],
+  "markdown-pdf.printBackground": false,
+  "markdown-pdf.styles": ["~/.dotfiles/vscode/markdown.css"],
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "http://localhost:8080",
   "python.defaultInterpreterPath": "~/.local/share/virtualenvs/analytics-2ONAH3Mv/bin/python",
@@ -187,5 +185,5 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }
 }
