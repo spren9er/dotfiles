@@ -1,6 +1,5 @@
 {
   "breadcrumbs.enabled": false,
-  "editor.codeLens": false,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
   "editor.cursorWidth": 3,
@@ -19,7 +18,11 @@
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.overviewRulerBorder": false,
-  "editor.quickSuggestions": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
   "editor.rulers": [80],
   "editor.scrollBeyondLastLine": false,
   "editor.smoothScrolling": true,
@@ -42,20 +45,12 @@
   "files.trimTrailingWhitespace": true,
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": true,
-    "markdown": false
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "interactiveWindow.alwaysScrollOnNewCell": true,
+  "javascript.suggest.autoImports": false,
   "jupyter.addGotoCodeLenses": false,
-  "jupyter.alwaysScrollOnNewCell": true,
   "jupyter.askForKernelRestart": false,
   "jupyter.decorateCells": false,
   "jupyter.defaultCellMarker": "# %%",
-  "jupyter.enableCellCodeLens": false,
-  "jupyter.jupyterServerType": "local",
   "jupyter.sendSelectionToInteractiveWindow": true,
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.syntax.decorations": false,
@@ -90,7 +85,6 @@
     "rubocop": true
   },
   "ruby.pathToBundler": "~/.asdf/shims/bundler",
-  "ruby.rubocop.onSave": false,
   "security.workspace.trust.untrustedFiles": "open",
   "svelte.enable-ts-plugin": true,
   "terminal.integrated.copyOnSelection": true,
@@ -156,6 +150,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.rulers": [121],
     "editor.wordWrap": "wordWrapColumn",
@@ -183,7 +180,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "quarto.mathjax.theme": "light",
+  "jupyter.enableCellCodeLens": false,
+  "editor.codeLens": false,
 }
