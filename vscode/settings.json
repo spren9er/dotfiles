@@ -133,7 +133,6 @@
     "*.ipynb": "jupyter-notebook"
   },
   "workbench.fontAliasing": "default",
-  "workbench.list.automaticKeyboardNavigation": false,
   "workbench.iconTheme": "file-icons-colourless",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
