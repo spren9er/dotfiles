@@ -1,5 +1,11 @@
 {
+  "aws.profile": "env:variables",
+  "aws.experiments": {
+    "jsonResourceModification": true,
+    "CodeWhisperer": true
+  },
   "breadcrumbs.enabled": false,
+  "editor.codeLens": false,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
   "editor.cursorWidth": 3,
@@ -26,6 +32,7 @@
   "editor.rulers": [80],
   "editor.scrollBeyondLastLine": false,
   "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
   "editor.suggestFontSize": 12,
   "editor.suggestLineHeight": 20,
   "editor.tabCompletion": "on",
@@ -51,6 +58,7 @@
   "jupyter.askForKernelRestart": false,
   "jupyter.decorateCells": false,
   "jupyter.defaultCellMarker": "# %%",
+  "jupyter.enableCellCodeLens": false,
   "jupyter.sendSelectionToInteractiveWindow": true,
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.syntax.decorations": false,
@@ -92,7 +100,6 @@
   "terminal.integrated.fontFamily": "MesloLGS NF",
   "terminal.integrated.letterSpacing": 1,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": -0.7,
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "[Atom One Light]": {
@@ -179,7 +186,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "quarto.mathjax.theme": "light",
-  "jupyter.enableCellCodeLens": false,
-  "editor.codeLens": false,
+  "window.zoomLevel": -0.7
 }
