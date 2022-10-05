@@ -1,6 +1,7 @@
 [init]
   defaultBranch = main
 [core]
+	ignorecase = false
 	editor = code --wait
 	excludesfile = ~/.gitignore_global
 [user]

@@ -5,10 +5,8 @@
     "fontSize": 20,
     "color": "#333333",
     "fontWeight": "bold",
-    "subtitleFontWeight": "plain",
-    "subtitleFontSize": 16,
-    "subtitleColor": "#333333",
-    "subtitleLineHeight": 20,
+    "subtitleFontSize": 14,
+    "subtitleColor": "#777777",
     "anchor": "middle",
     "align": "center",
     "dy": -10
