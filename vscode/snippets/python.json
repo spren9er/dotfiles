@@ -1,56 +1,44 @@
 {
-	"Create Altair Chart": {
-		"prefix": "chart",
-		"body": [
-			"(",
-			"\t${1:df}",
-			"\t.pipe(alt.Chart)",
-			"\t.mark_${2:bar}()",
-			"\t.encode(",
-			"\t\t$0",
-			"\t)",
-			")"
-		],
-		"description": "Create altair chart"
-	},
-	"Import Altair": {
-		"prefix": "alt",
-		"body": [
-			"import altair as alt",
-			"$0"
-		],
-		"description": "Import altair package"
-	},
-	"Import NumPy": {
-		"prefix": "np",
-		"body": [
-			"import numpy as np",
-			"$0"
-		],
-		"description": "Import numpy package"
-	},
-	"Import Pandas": {
-		"prefix": "pd",
-		"body": [
-			"import pandas as pd",
-			"$0"
-		],
-		"description": "Import pandas package"
-	},
-	"Import SciKit-Learn Submodule": {
-		"prefix": "sk",
-		"body": [
-			"from sklearn.${1:preprocessing} import ${2:StandardScaler}",
-			"$0"
-		],
-		"description": "Import scikit-learn subpackage"
-	},
-	"Import TensorFlow": {
-		"prefix": "tf",
-		"body": [
-			"import tensorflow as tf",
-			"$0"
-		],
-		"description": "Import tensorflow package"
-	}
+  "Create Altair Chart": {
+    "prefix": "chart",
+    "body": [
+      "(",
+      "\t${1:df}",
+      "\t.pipe(alt.Chart)",
+      "\t.mark_${2:bar}()",
+      "\t.encode(",
+      "\t\t$0",
+      "\t)",
+      ")"
+    ],
+    "description": "Create altair chart"
+  },
+  "Import Altair": {
+    "prefix": "alt",
+    "body": ["import altair as alt", "$0"],
+    "description": "Import altair package"
+  },
+  "Import NumPy": {
+    "prefix": "np",
+    "body": ["import numpy as np", "$0"],
+    "description": "Import numpy package"
+  },
+  "Import Pandas": {
+    "prefix": "pd",
+    "body": ["import pandas as pd", "$0"],
+    "description": "Import pandas package"
+  },
+  "Import SciKit-Learn Submodule": {
+    "prefix": "sk",
+    "body": [
+      "from sklearn.${1:preprocessing} import ${2:StandardScaler}",
+      "$0"
+    ],
+    "description": "Import scikit-learn subpackage"
+  },
+  "Import TensorFlow": {
+    "prefix": "tf",
+    "body": ["import tensorflow as tf", "$0"],
+    "description": "Import tensorflow package"
+  }
 }
