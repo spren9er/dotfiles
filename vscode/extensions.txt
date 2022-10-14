@@ -5,12 +5,9 @@ bradlc.vscode-tailwindcss
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 deibit.devdocs
-Equinusocio.vsc-material-theme
-equinusocio.vsc-material-theme-icons
 esbenp.prettier-vscode
 file-icons.file-icons
 fivethree.vscode-svelte-snippets
-GitHub.github-vscode-theme
 jebbs.plantuml
 misogi.ruby-rubocop
 ms-python.python
@@ -27,6 +24,5 @@ Orta.vscode-jest
 rebornix.ruby
 svelte.svelte-vscode
 wingrunr21.vscode-ruby
-xabikos.JavaScriptSnippets
 yzane.markdown-pdf
 yzhang.markdown-all-in-one
