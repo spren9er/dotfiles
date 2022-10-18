@@ -52,6 +52,7 @@ ln -s ~/.dotfiles/python/.ipython/profile_default/startup \
 
 ```bash
 ln -s ~/.dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
+ln -s ~/.dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ```
 
 ### visidata

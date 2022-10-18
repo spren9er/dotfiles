@@ -7,7 +7,10 @@
 [user]
 	name = Torsten Sprenger
 	email = mail@spren9er.de
+	signingkey = F2AB3DDB20140E03
 [pull]
 	rebase = true
 [github]
 	user = spren9er
+[commit]
+	gpgsign = true
