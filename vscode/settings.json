@@ -77,7 +77,7 @@
   "markdown-pdf.styles": ["~/.dotfiles/vscode/markdown.css"],
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "http://localhost:8080",
-  "python.defaultInterpreterPath": "~/.local/share/virtualenvs/dev-env-cKMx_9GM/bin/python",
+  "python.defaultInterpreterPath": "~/Development/playground/.venv/bin/python",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "python.languageServer": "Pylance",
