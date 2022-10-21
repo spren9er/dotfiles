@@ -41,13 +41,6 @@ ln -s ~/.dotfiles/vscode/keybindings.json \
 ln -s ~/.dotfiles/vscode/snippets/ ~/Library/Application\ Support/Code/User
 ```
 
-### iPython
-
-```bash
-ln -s ~/.dotfiles/python/.ipython/profile_default/startup \
-  ~/.ipython/profile_default/startup
-```
-
 ### GPG
 
 ```bash
@@ -55,8 +48,21 @@ ln -s ~/.dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ln -s ~/.dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ```
 
+### Warp
+
+```bash
+ln -s ~/.dotfiles/warp/launch_configurations ~/.warp/launch_configurations
+```
+
 ### visidata
 
 ```bash
 ln -s ~/visidata/.visidatarc ~/.visidatarc
+```
+
+### iPython
+
+```bash
+ln -s ~/.dotfiles/python/.ipython/profile_default/startup \
+  ~/.ipython/profile_default/startup
 ```

@@ -1,0 +1,14 @@
+---
+name: spren9er
+windows:
+  - tabs:
+      - title: "spren9er: code"
+        layout:
+          cwd: /Users/spren9er/Development/sites/spren9er
+          commands:
+            - exec: code .
+      - title: "spren9er: local server"
+        layout:
+          cwd: /Users/spren9er/Development/sites/spren9er
+          commands:
+            - exec: jekyll serve

@@ -1,0 +1,14 @@
+---
+name: xgoal
+windows:
+  - tabs:
+      - title: "xgoal: code"
+        layout:
+          cwd: /Users/spren9er/Development/projects/xgoal
+          commands:
+            - exec: code .
+      - title: "xgoal: local server"
+        layout:
+          cwd: /Users/spren9er/Development/projects/xgoal/app
+          commands:
+            - exec: npm run dev -- --open --port 3001
