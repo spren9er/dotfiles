@@ -1,5 +1,5 @@
 ---
-name: city-streets
+name: "project: city-streets"
 windows:
   - tabs:
       - title: "city-streets: code"

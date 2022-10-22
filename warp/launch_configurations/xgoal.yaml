@@ -1,5 +1,5 @@
 ---
-name: xgoal
+name: "project: xgoal"
 windows:
   - tabs:
       - title: "xgoal: code"
