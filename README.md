@@ -66,3 +66,9 @@ ln -s ~/visidata/.visidatarc ~/.visidatarc
 ln -s ~/.dotfiles/python/.ipython/profile_default/startup \
   ~/.ipython/profile_default/startup
 ```
+
+### Prettier
+
+```bash
+ln -s ~/.dotfiles/prettier/.prettierrc ~/.prettierrc
+```
