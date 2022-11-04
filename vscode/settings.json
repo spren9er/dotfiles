@@ -52,6 +52,7 @@
   "files.trimTrailingWhitespace": true,
   "git.decorations.enabled": true,
   "git.enableSmartCommit": true,
+  "isort.path": ["~/.local/bin/isort"],
   "interactiveWindow.alwaysScrollOnNewCell": true,
   "javascript.suggest.autoImports": false,
   "jupyter.addGotoCodeLenses": false,
@@ -74,7 +75,6 @@
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
   "markdown-pdf.plantumlServer": "http://localhost:8080",
   "markdown-pdf.printBackground": false,
-  "markdown-pdf.styles": ["~/.dotfiles/vscode/markdown.css"],
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "http://localhost:8080",
   "prettier.configPath": "~/.prettierrc",
@@ -86,7 +86,6 @@
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.pylintEnabled": false,
-  "python.sortImports.path": "/Users/spren9er/.local/bin/isort",
   "ruby.format": "rubocop",
   "ruby.interpreter.commandPath": "~/.asdf/shims",
   "ruby.lint": {
@@ -154,8 +153,7 @@
     "editor.formatOnSave": true
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

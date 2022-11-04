@@ -60,6 +60,7 @@ doesn't work. Instead, copy launch configuration files via
 
 ```bash
 cp -r ~/.dotfiles/warp/launch_configurations/* ~/.warp/launch_configurations
+```
 
 ### visidata
 
