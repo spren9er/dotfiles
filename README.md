@@ -50,9 +50,16 @@ ln -s ~/.dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 ### Warp
 
+As warp can't detect symlinks (yet), creating links by
+
 ```bash
 ln -s ~/.dotfiles/warp/launch_configurations ~/.warp/launch_configurations
 ```
+
+doesn't work. Instead, copy launch configuration files via
+
+```bash
+cp -r ~/.dotfiles/warp/launch_configurations/* ~/.warp/launch_configurations
 
 ### visidata
 
