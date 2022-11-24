@@ -62,7 +62,6 @@
   "jupyter.enableCellCodeLens": false,
   "jupyter.sendSelectionToInteractiveWindow": true,
   "markdown.extension.italic.indicator": "_",
-  "markdown.extension.syntax.decorations": false,
   "markdown.preview.fontFamily": "Source Sans Pro",
   "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
