@@ -1,0 +1,14 @@
+---
+name: "project: tilez"
+windows:
+  - tabs:
+      - title: "tilez: code"
+        layout:
+          cwd: /Users/spren9er/Development/projects/tilez
+          commands:
+            - exec: code .
+      - title: "tilez: local server"
+        layout:
+          cwd: /Users/spren9er/Development/projects/tilez
+          commands:
+            - exec: npm run dev -- --port 3001

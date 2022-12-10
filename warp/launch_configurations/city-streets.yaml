@@ -4,11 +4,11 @@ windows:
   - tabs:
       - title: "city-streets: code"
         layout:
-          cwd: /Users/spren9er/Development/projects/city_streets
+          cwd: /Users/spren9er/Development/projects/city-streets
           commands:
             - exec: code .
       - title: "city-streets: local server"
         layout:
-          cwd: /Users/spren9er/Development/projects/city_streets/app
+          cwd: /Users/spren9er/Development/projects/city-streets/app
           commands:
-            - exec: npm run dev -- --open --port 3001
+            - exec: npm run dev -- --port 3001

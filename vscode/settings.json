@@ -1,9 +1,4 @@
 {
-  "aws.profile": "env:variables",
-  "aws.experiments": {
-    "jsonResourceModification": true,
-    "CodeWhisperer": true
-  },
   "breadcrumbs.enabled": false,
   "editor.codeLens": false,
   "editor.copyWithSyntaxHighlighting": false,

@@ -1,0 +1,14 @@
+---
+name: "project: shots"
+windows:
+  - tabs:
+      - title: "shots: code"
+        layout:
+          cwd: /Users/spren9er/Development/projects/shots
+          commands:
+            - exec: code .
+      - title: "shots: local server"
+        layout:
+          cwd: /Users/spren9er/Development/projects/shots/app
+          commands:
+            - exec: npm run dev -- --port 3001
