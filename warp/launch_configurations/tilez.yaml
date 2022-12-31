@@ -12,3 +12,13 @@ windows:
           cwd: /Users/spren9er/Development/projects/tilez
           commands:
             - exec: npm run dev -- --port 3001
+      - title: "tilez: tests"
+        layout:
+          cwd: /Users/spren9er/Development/projects/tilez
+          commands:
+            - exec: npm run coverage
+      - title: "tilez: svelte check"
+        layout:
+          cwd: /Users/spren9er/Development/projects/tilez
+          commands:
+            - exec: npm run check

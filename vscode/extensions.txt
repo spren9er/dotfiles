@@ -1,5 +1,4 @@
 akamud.vscode-theme-onelight
-amazonwebservices.aws-toolkit-vscode
 bierner.markdown-mermaid
 bradlc.vscode-tailwindcss
 DavidAnson.vscode-markdownlint
@@ -8,8 +7,11 @@ deibit.devdocs
 esbenp.prettier-vscode
 file-icons.file-icons
 fivethree.vscode-svelte-snippets
+GitHub.copilot
+GitHub.copilot-labs
 jebbs.plantuml
 misogi.ruby-rubocop
+ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
@@ -20,9 +22,9 @@ ms-toolsai.vscode-jupyter-slideshow
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-audio
 ms-vsliveshare.vsliveshare-pack
-Orta.vscode-jest
 rebornix.ruby
 svelte.svelte-vscode
 wingrunr21.vscode-ruby
 yzane.markdown-pdf
 yzhang.markdown-all-in-one
+ZixuanChen.vitest-explorer
