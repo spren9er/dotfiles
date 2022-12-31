@@ -1,6 +1,6 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
-plugins=(bundler docker git kubectl zsh-z)
+plugins=(docker git kubectl z)
 source $ZSH/oh-my-zsh.sh
 
 # key bindings
@@ -16,3 +16,12 @@ export EDITOR="code --wait"
 c() { cd ~/Development/$1; }
 _c() { _files -W ~/Development -/; }
 compdef _c c
+
+# PATH variable
+export PATH=/opt/homebrew/bin:$PATH
+
+# ENV variables
+export GPG_TTY=$(tty)
+
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
