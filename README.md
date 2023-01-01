@@ -45,8 +45,8 @@ ln -s ~/.dotfiles/vscode/snippets/ ~/Library/Application\ Support/Code/User
 
 ```bash
 mkdir ~/.gnupg
-chmod 700 ~/.gnupg
 chmod 600 ~/.gnupg/*
+chmod 700 ~/.gnupg
 ln -s ~/.dotfiles/gpg/gpg.conf ~/.gnupg/gpg.conf
 ln -s ~/.dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ```
@@ -62,7 +62,7 @@ cp -r ~/.dotfiles/warp/launch_configurations/* ~/.warp/launch_configurations
 ### visidata
 
 ```bash
-ln -s ~/visidata/.visidatarc ~/.visidatarc
+ln -s ~/.dotfiles/visidata/.visidatarc ~/.visidatarc
 ```
 
 ### iPython

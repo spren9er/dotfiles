@@ -1,6 +1,4 @@
 akamud.vscode-theme-onelight
-bierner.markdown-mermaid
-bradlc.vscode-tailwindcss
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 deibit.devdocs
@@ -8,7 +6,6 @@ esbenp.prettier-vscode
 file-icons.file-icons
 fivethree.vscode-svelte-snippets
 GitHub.copilot
-GitHub.copilot-labs
 jebbs.plantuml
 misogi.ruby-rubocop
 ms-python.isort
@@ -19,9 +16,6 @@ ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
 ms-toolsai.vscode-jupyter-cell-tags
 ms-toolsai.vscode-jupyter-slideshow
-ms-vsliveshare.vsliveshare
-ms-vsliveshare.vsliveshare-audio
-ms-vsliveshare.vsliveshare-pack
 rebornix.ruby
 svelte.svelte-vscode
 wingrunr21.vscode-ruby

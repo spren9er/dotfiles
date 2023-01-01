@@ -68,8 +68,6 @@
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
   "markdown-pdf.plantumlServer": "http://localhost:8080",
   "markdown-pdf.printBackground": false,
-  "plantuml.render": "PlantUMLServer",
-  "plantuml.server": "http://localhost:8080",
   "prettier.configPath": "~/.prettierrc",
   "python.defaultInterpreterPath": "~/Development/playground/python/.venv/bin/python",
   "python.formatting.provider": "black",
