@@ -1,0 +1,9 @@
+---
+name: "run: awake"
+windows:
+  - tabs:
+      - title: "awake"
+        layout:
+          cwd: /Users/spren9er
+          commands:
+            - exec: while sleep 59; do cliclick m:+1,+0; done

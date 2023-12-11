@@ -1,0 +1,14 @@
+---
+name: "project: undash"
+windows:
+  - tabs:
+      - title: "undash: code"
+        layout:
+          cwd: /Users/spren9er/Development/projects/undash
+          commands:
+            - exec: code .
+      - title: "undash: local server"
+        layout:
+          cwd: /Users/spren9er/Development/projects/undash
+          commands:
+            - exec: npm run dev -- --port 3001
