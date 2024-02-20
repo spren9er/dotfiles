@@ -97,10 +97,6 @@
     "command": "workbench.action.editor.changeLanguageMode"
   },
   {
-    "key": "ctrl+shift+m",
-    "command": "markdown.showPreviewToSide"
-  },
-  {
     "key": "ctrl+alt+cmd+l",
     "command": "workbench.action.reloadWindow"
   },
@@ -394,4 +390,17 @@
     "command": "jupyter.runcurrentcelladvance",
     "when": "editorTextFocus && resourceExtname == .m"
   },
+  {
+    "key": "ctrl+shift+m",
+    "command": "-editor.action.toggleTabFocusMode"
+  },
+  {
+    "key": "cmd+k v",
+    "command": "-markdown-preview-enhanced.openPreviewToTheSide",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "markdown-preview-enhanced.openPreviewToTheSide"
+  }
 ]
