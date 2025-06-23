@@ -1,4 +1,4 @@
-import plugins
+from visidata import vd
 
 options.color_active_status = "black on white"
 options.color_column_sep = "12"
@@ -17,4 +17,12 @@ options.disp_column_sep = "│"
 options.disp_date_fmt = "%Y-%m-%d %H:%M"
 options.disp_menu = False
 options.disp_rowtop_sep = "│"
+options.disp_sidebar = False
 options.save_filetype = "csv"
+
+
+def no_op(*args, **kwargs):
+    pass
+
+
+vd.status = no_op
