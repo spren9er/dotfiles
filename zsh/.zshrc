@@ -21,7 +21,6 @@ compdef _c c
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=~/.local/bin:$PATH
 
-
 # ENV variables
 export GPG_TTY=$(tty)
 
