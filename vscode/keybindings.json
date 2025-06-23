@@ -85,7 +85,7 @@
     "command": "workbench.action.quickOpen"
   },
   {
-    "key": "ctrl-alt-b",
+    "key": "ctrl-alt-b"
   },
   {
     "key": "cmd+b",
@@ -101,7 +101,7 @@
     "command": "workbench.action.reloadWindow"
   },
   {
-    "key": "ctrl+shift+o",
+    "key": "ctrl+shift+o"
   },
   {
     "key": "alt+cmd+i",
@@ -117,7 +117,7 @@
     "command": "workbench.action.files.openFolder"
   },
   {
-    "key": "cmd+shift+o",
+    "key": "cmd+shift+o"
   },
   {
     "key": "ctrl+m",
@@ -181,10 +181,10 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "cmd+=",
+    "key": "cmd+="
   },
   {
-    "key": "cmd+-",
+    "key": "cmd+-"
   },
   {
     "key": "cmd+k cmd+1",
@@ -391,16 +391,22 @@
     "when": "editorTextFocus && resourceExtname == .m"
   },
   {
+    "key": "cmd+k v",
+    "command": "-markdown.showPreviewToSide",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
     "key": "ctrl+shift+m",
     "command": "-editor.action.toggleTabFocusMode"
   },
   {
-    "key": "cmd+k v",
-    "command": "-markdown-preview-enhanced.openPreviewToTheSide",
-    "when": "editorLangId == 'markdown'"
-  },
-  {
     "key": "ctrl+shift+m",
-    "command": "markdown-preview-enhanced.openPreviewToTheSide"
+    "command": "markdown.showPreviewToSide",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
   }
 ]

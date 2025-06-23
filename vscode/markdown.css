@@ -89,6 +89,18 @@ code div {
 
 table {
   margin: 20px 0;
+  border-collapse: collapse;
+}
+
+table th {
+  font-weight: bold;
+  border-bottom: 1px solid #333333;
+  padding: 5px;
+}
+
+table td {
+  border-bottom: 1px solid #efefef;
+  padding: 5px;
 }
 
 @media print {

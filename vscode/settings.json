@@ -1,5 +1,6 @@
 {
   "breadcrumbs.enabled": false,
+  "chat.editor.fontSize": 13,
   "editor.codeLens": true,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
@@ -34,7 +35,7 @@
   "editor.tabSize": 2,
   "editor.unfoldOnClickAfterEndOfLine": true,
   "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 1680,
+  "editor.wordWrapColumn": 80,
   "eslint.validate": ["javascript", "typescript", "svelte"],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -58,11 +59,25 @@
   "jupyter.interactiveWindow.codeLens.enableGotoCell": false,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
-  "markdown-preview-enhanced.enablePreviewZenMode": true,
+  "markdown.extension.italic.indicator": "_",
+  "markdown.preview.fontFamily": "Source Sans Pro",
+  "markdown.preview.fontSize": 13,
+  "markdown.preview.lineHeight": 1.5,
+  "markdown.styles": [
+    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles@master/vscode/markdown.css"
+  ],
+  "markdown-pdf.displayHeaderFooter": false,
+  "markdown-pdf.highlight": false,
+  "markdown-pdf.includeDefaultStyles": false,
+  "markdown-pdf.styles": ["~/.dotfiles/vscode/markdown.css"],
+  "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js",
+  "markdown-pdf.plantumlCloseMarker": "```",
+  "markdown-pdf.plantumlOpenMarker": "```plantuml",
+  "markdown-pdf.plantumlServer": "http://localhost:8080",
+  "markdown-pdf.printBackground": false,
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "http://localhost:8080",
   "prettier.configPath": "~/.prettierrc",
-  "python.defaultInterpreterPath": "~/Development/playground/python/.venv/bin/python",
   "security.workspace.trust.untrustedFiles": "open",
   "svelte.enable-ts-plugin": true,
   "tailwindCSS.colorDecorators": false,
@@ -111,15 +126,20 @@
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.tabSizing": "shrink",
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.ipynb": "jupyter-notebook",
+    "*.svg": "default"
   },
   "workbench.fontAliasing": "default",
   "workbench.iconTheme": "file-icons-colourless",
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 14,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -155,11 +175,17 @@
     "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "[svelte]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "always"
+    },
     "editor.defaultFormatter": "svelte.svelte-vscode",
     "editor.formatOnSave": true
   },
   "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "always",
+    },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   }
 }
