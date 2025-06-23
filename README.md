@@ -41,6 +41,13 @@ ln -s ~/.dotfiles/vscode/keybindings.json \
 ln -s ~/.dotfiles/vscode/snippets/ ~/Library/Application\ Support/Code/User
 ```
 
+### Zed Editor
+
+```bash
+ln -s ~/.dotfiles/zed/settings.json ~/.config/zed/settings.json
+```
+
+
 ### GPG
 
 ```bash

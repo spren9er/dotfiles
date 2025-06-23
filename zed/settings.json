@@ -1,0 +1,62 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "agent_font_size": 14,
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2",
+    "button": false
+  },
+  "autosave": "on_focus_change",
+  "base_keymap": "Atom",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 11.5,
+  "buffer_line_height": "comfortable",
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "icon_theme": "Zed (Default)",
+  "languages": {
+    "TypeScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      },
+      "show_edit_predictions": true
+    }
+  },
+  "preferred_line_length": 80,
+  "project_panel": {
+    "indent_guides": {
+      "show": "never"
+    },
+    "indent_size": 8,
+    "file_icons": true,
+    "folder_icons": true,
+    "show_hidden_files": true
+  },
+  "scroll_beyond_last_line": "off",
+  "show_wrap_guides": true,
+  "show_completions_on_input": true,
+  "show_copilot_suggestions": true,
+  "soft_wrap": "preferred_line_length",
+  "tab_size": 2,
+  "theme": "One Light",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_size": 13
+}
