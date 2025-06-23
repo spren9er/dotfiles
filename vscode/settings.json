@@ -60,7 +60,7 @@
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
   "markdown.extension.italic.indicator": "_",
-  "markdown.preview.fontFamily": "Source Sans Pro",
+  "markdown.preview.fontFamily": "Source Sans 3",
   "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
