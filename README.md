@@ -47,7 +47,6 @@ ln -s ~/.dotfiles/vscode/snippets/ ~/Library/Application\ Support/Code/User
 ln -s ~/.dotfiles/zed/settings.json ~/.config/zed/settings.json
 ```
 
-
 ### GPG
 
 ```bash
