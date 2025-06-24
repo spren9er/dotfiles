@@ -60,6 +60,7 @@
     "https://cdn.jsdelivr.net/gh/spren9er/dotfiles@master/vscode/markdown.css"
   ],
   "markdown-pdf.displayHeaderFooter": false,
+  "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   "markdown-pdf.highlight": false,
   "markdown-pdf.includeDefaultStyles": false,
   "markdown-pdf.styles": ["~/.dotfiles/vscode/markdown.css"],
