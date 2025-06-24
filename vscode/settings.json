@@ -52,13 +52,6 @@
   "interactiveWindow.alwaysScrollOnNewCell": true,
   "javascript.suggest.autoImports": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "jupyter.askForKernelRestart": false,
-  "jupyter.interactiveWindow.cellMarker.decorateCells": "None",
-  "jupyter.interactiveWindow.cellMarker.default": "# %%",
-  "jupyter.interactiveWindow.codeLens.enable": false,
-  "jupyter.interactiveWindow.codeLens.enableGotoCell": false,
-  "jupyter.interactiveWindow.textEditor.executeSelection": true,
-  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
   "markdown.extension.italic.indicator": "_",
   "markdown.preview.fontFamily": "Source Sans 3",
   "markdown.preview.fontSize": 13,
@@ -75,8 +68,6 @@
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
   "markdown-pdf.plantumlServer": "http://localhost:8080",
   "markdown-pdf.printBackground": false,
-  "plantuml.render": "PlantUMLServer",
-  "plantuml.server": "http://localhost:8080",
   "prettier.configPath": "~/.prettierrc",
   "security.workspace.trust.untrustedFiles": "open",
   "svelte.enable-ts-plugin": true,
@@ -170,9 +161,6 @@
     "editor.wordWrapColumn": 88,
     "editor.formatOnType": true,
     "editor.defaultFormatter": "charliermarsh.ruff"
-  },
-  "[ruby]": {
-    "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "[svelte]": {
     "editor.codeActionsOnSave": {
