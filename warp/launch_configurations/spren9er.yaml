@@ -11,4 +11,4 @@ windows:
         layout:
           cwd: /Users/spren9er/Development/sites/spren9er
           commands:
-            - exec: jekyll serve
+            - exec: npm run dev -- --port 3001
