@@ -1,14 +1,29 @@
 ---
-name: "project: undash"
+name: 'project: undash'
 windows:
   - tabs:
-      - title: "undash: code"
+      - title: 'undash: code'
         layout:
           cwd: /Users/spren9er/Development/projects/undash
           commands:
             - exec: code .
-      - title: "undash: local server"
+      - title: 'undash: local server'
         layout:
           cwd: /Users/spren9er/Development/projects/undash
           commands:
-            - exec: npm run dev -- --port 3001
+            - exec: npm run dev
+      - title: 'undash: tests'
+        layout:
+          cwd: /Users/spren9er/Development/projects/undash
+          commands:
+            - exec: npm run test
+      - title: 'undash: svelte check'
+        layout:
+          cwd: /Users/spren9er/Development/projects/undash
+          commands:
+            - exec: npm run check:watch
+      - title: 'undash: typesafe-i18n'
+        layout:
+          cwd: /Users/spren9er/Development/projects/undash
+          commands:
+            - exec: npm run typesafe-i18n
