@@ -57,13 +57,13 @@
   "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
-    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles@master/vscode/markdown.css"
+    "/Users/spren9er/.dotfiles/vscode/markdown.css"
   ],
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   "markdown-pdf.highlight": false,
   "markdown-pdf.includeDefaultStyles": false,
-  "markdown-pdf.styles": ["~/.dotfiles/vscode/markdown.css"],
+  "markdown-pdf.styles": ["/Users/spren9er/.dotfiles/vscode/markdown.css"],
   "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js",
   "markdown-pdf.plantumlCloseMarker": "```",
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
