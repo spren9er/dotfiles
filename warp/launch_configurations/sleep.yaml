@@ -1,0 +1,11 @@
+---
+name: "run: sleep"
+windows:
+  - tabs:
+      - title: "sleep"
+        layout:
+          cwd: /Users/spren9er
+          commands:
+            - exec: open -g raycast://extensions/raycast/system/eject-all-disks
+            - exec: sleep 4
+            - exec: open -g raycast://extensions/raycast/system/sleep

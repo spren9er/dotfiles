@@ -57,7 +57,7 @@
   "markdown.preview.fontSize": 13,
   "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
-    "/Users/spren9er/.dotfiles/vscode/markdown.css"
+    "http://cdn.jsdelivr.net/gh/spren9er/dotfiles/vscode/markdown.css"
   ],
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
