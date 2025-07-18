@@ -64,7 +64,7 @@
   "markdown-pdf.highlight": false,
   "markdown-pdf.includeDefaultStyles": false,
   "markdown-pdf.styles": ["/Users/spren9er/.dotfiles/vscode/markdown.css"],
-  "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js",
+  "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid@11.6.0/dist/mermaid.min.js",
   "markdown-pdf.plantumlCloseMarker": "```",
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
   "markdown-pdf.plantumlServer": "http://localhost:8080",
@@ -176,5 +176,6 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-  }
+  },
+  "github.copilot.nextEditSuggestions.enabled": true
 }
