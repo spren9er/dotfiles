@@ -11,9 +11,8 @@
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "model": "claude-sonnet-4"
     },
-    "version": "2",
     "button": false
   },
   "autosave": "on_focus_change",
@@ -35,6 +34,33 @@
         }
       },
       "show_edit_predictions": true
+    },
+    "Python": {
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ],
+      "language_servers": ["ruff"],
+      "preferred_line_length": 88
+    }
+  },
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lineLength": 88
+        }
+      }
     }
   },
   "preferred_line_length": 80,
@@ -44,13 +70,11 @@
     },
     "indent_size": 8,
     "file_icons": true,
-    "folder_icons": true,
-    "show_hidden_files": true
+    "folder_icons": true
   },
   "scroll_beyond_last_line": "off",
   "show_wrap_guides": true,
   "show_completions_on_input": true,
-  "show_copilot_suggestions": true,
   "soft_wrap": "preferred_line_length",
   "tab_size": 2,
   "theme": "One Light",
