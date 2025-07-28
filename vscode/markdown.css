@@ -42,6 +42,7 @@ p {
 
 code {
   font-family: "Inconsolata";
+  font-size: calc(100% - 1px);
   font-weight: normal;
   color: #333333!important;
   background-color: #efefef;
