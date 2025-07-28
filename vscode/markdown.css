@@ -1,13 +1,10 @@
 body {
-  font-size: 13px;
   color: #333333;
   height: 267mm;
   width: 180mm;
   padding: 0;
   border: 0;
   margin: 15mm;
-  zoom: 1.2;
-  line-height: 1.5;
 }
 
 a {
@@ -34,7 +31,6 @@ h3 {
 }
 
 h4 {
-  font-size: 13px;
   font-weight: bold;
   margin: 10px 0 5px 0;
   padding: 0;
@@ -46,7 +42,6 @@ p {
 
 code {
   font-family: "Inconsolata";
-  font-size: 12px;
   font-weight: normal;
   color: #333333!important;
   background-color: #efefef;
@@ -55,7 +50,6 @@ code {
 }
 
 blockquote {
-  font-size: 13px;
   color: #aaaaaa;
   border-left: 4px solid #aaaaaa;
   padding: 5px 7px;
@@ -104,12 +98,6 @@ table th {
 table td {
   border-bottom: 1px solid #efefef;
   padding: 5px;
-}
-
-@media print {
-  body {
-    zoom: 1;
-  }
 }
 
 @page {
