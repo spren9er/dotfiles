@@ -10,6 +10,7 @@ body {
   border: 0;
   margin: 15mm;
   line-height: 1.5;
+  zoom: 1.2;
 }
 
 a {
@@ -21,7 +22,7 @@ a {
 h1 {
   margin: 20px 0;
   padding: 1px 0;
-  border-bottom: 1px solid #333333!important;
+  border-bottom: 1px solid #333333;
 }
 
 h2 {
@@ -65,9 +66,10 @@ code {
 
 blockquote {
   font-size: 13px;
+  font-style: italic;
   color: #aaaaaa;
   border-left: 4px solid #aaaaaa;
-  padding: 5px 7px;
+  padding: 7px 7px 5px 7px;
   margin: 5px 0;
 }
 
@@ -81,12 +83,8 @@ blockquote p:last-child {
 
 pre {
   margin: 3px 0 8px 0;
-  padding: 8px 10px;
+  padding: 8px 10px 4px 10px!important;
   border: none;
-}
-
-code div {
-  padding: 0;
 }
 
 table {
@@ -107,9 +105,12 @@ table td {
 
 @media print {
   body {
-    zoom: 0.8;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+    zoom: 1;
+    print-color-adjust: exact;
+  }
+
+  pre {
+    padding: 4px 7px!important;
   }
 }
 
