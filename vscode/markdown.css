@@ -51,7 +51,6 @@ pre, blockquote, code {
   background-color: #efefef;
   border-radius: 3px;
   overflow: hidden;
-  display: block;
   margin: 0;
   padding: 0;
 }
@@ -71,6 +70,7 @@ blockquote {
   border-left: 4px solid #aaaaaa;
   padding: 7px 7px 5px 7px;
   margin: 5px 0;
+  display: block;
 }
 
 blockquote p {
@@ -85,6 +85,7 @@ pre {
   margin: 3px 0 8px 0;
   padding: 8px 10px 4px 10px!important;
   border: none;
+  display: block;
 }
 
 table {
