@@ -54,11 +54,8 @@
   "javascript.suggest.autoImports": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown.extension.italic.indicator": "_",
-  "markdown.preview.fontFamily": "Source Sans 3",
-  "markdown.preview.fontSize": 16,
-  "markdown.preview.lineHeight": 1.5,
   "markdown.styles": [
-    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles/vscode/markdown.css"
+    "https://cdn.jsdelivr.net/gh/spren9er/dotfiles/vscode/markdown_preview.css"
   ],
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -69,7 +66,7 @@
   "markdown-pdf.plantumlOpenMarker": "```plantuml",
   "markdown-pdf.plantumlServer": "http://localhost:8080",
   "markdown-pdf.printBackground": false,
-  "markdown-pdf.styles": ["/Users/spren9er/.dotfiles/vscode/markdown.css"],
+  "markdown-pdf.styles": ["/Users/spren9er/.dotfiles/vscode/markdown_preview.css"],
   "prettier.configPath": "~/.prettierrc",
   "security.workspace.trust.untrustedFiles": "open",
   "svelte.enable-ts-plugin": true,
