@@ -104,6 +104,20 @@ table td {
   padding: 5px;
 }
 
+pre > code.language-mermaid {
+  background-color: transparent!important;
+  padding: 0!important;
+  border-radius: 0!important;
+  display: block;
+  color: inherit;
+}
+
+pre:has(code.language-mermaid) {
+  background-color: transparent!important;
+  padding: 0!important;
+  border: none!important;
+}
+
 @media print {
   body {
     zoom: 1;
