@@ -46,14 +46,21 @@ p {
   margin: 8px 0;
 }
 
+pre, blockquote, code {
+  background-color: #efefef;
+  border-radius: 3px;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
 code {
   font-family: "Inconsolata", monospace;
   font-size: 12px;
   font-weight: normal;
-  color: #333333!important;
-  background-color: #efefef;
+  color: #333333;
   padding: 1px 2px 2px 2px;
-  border-radius: 2px;
 }
 
 blockquote {
@@ -62,9 +69,6 @@ blockquote {
   border-left: 4px solid #aaaaaa;
   padding: 5px 7px;
   margin: 5px 0;
-  border-radius: 2px;
-  background-color: #efefef;
-  border-radius: 3px;
 }
 
 blockquote p {
@@ -76,20 +80,13 @@ blockquote p:last-child {
 }
 
 pre {
-  background-color: #efefef!important;
   margin: 3px 0 8px 0;
-  padding: 8px 10px!important;
+  padding: 8px 10px;
   border: none;
 }
 
-pre code {
-  margin: 0;
-  padding: 0;
-  border-radius: 3px;
-}
-
 code div {
-  padding: 0!important;
+  padding: 0;
 }
 
 table {
@@ -111,6 +108,8 @@ table td {
 @media print {
   body {
     zoom: 0.8;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
 
