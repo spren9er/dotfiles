@@ -134,6 +134,7 @@ blockquote p:last-child {
 }
 
 li:has(input[type="checkbox"]) input[type="checkbox"] {
+  accent-color: #767676;
   position: relative;
   top: 0.2em;
   margin-right: 0.4em;
