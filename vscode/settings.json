@@ -54,6 +54,7 @@
   "javascript.suggest.autoImports": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown.extension.italic.indicator": "_",
+  "markdown.preview.linkify": false,
   "markdown.styles": [
     "https://cdn.jsdelivr.net/gh/spren9er/dotfiles/vscode/markdown.css"
   ],

@@ -124,6 +124,26 @@ blockquote p:last-child {
   margin-bottom: 0;
 }
 
+*:has(input[type="checkbox"]) {
+  list-style: none !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  padding-left: 0.5em !important;
+  line-height: 1.5 !important;
+}
+
+li:has(input[type="checkbox"]) input[type="checkbox"] {
+  position: relative;
+  top: 0.2em;
+  margin-right: 0.4em;
+}
+
+ul:has(input[type="checkbox"]) {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
 @media print {
   body {
     print-color-adjust: exact;
