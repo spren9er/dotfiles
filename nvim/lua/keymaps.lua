@@ -38,8 +38,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
 -- CTRL+d/u with centering
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Jump down and center screen' })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Jump up and center screen' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half page down (center)' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half page up (center)' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
