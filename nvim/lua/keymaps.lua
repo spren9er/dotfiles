@@ -37,9 +37,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
--- CTRL+d/u with centering
+-- Vertical navigation with centering
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half page down (center)' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half page up (center)' })
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Move to next match (center)' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Move to prev match (center)' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
