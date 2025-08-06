@@ -47,6 +47,12 @@ ln -s ~/.dotfiles/vscode/snippets/ ~/Library/Application\ Support/Code/User
 ln -s ~/.dotfiles/zed/settings.json ~/.config/zed/settings.json
 ```
 
+### NeoVim
+
+```bash
+ln -s ~/.dotfiles/nvim ~/.config/nvim
+```
+
 ### GPG
 
 ```bash
