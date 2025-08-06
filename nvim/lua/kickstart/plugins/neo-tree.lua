@@ -11,8 +11,8 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'Reveal file in Neo-tree', silent = true },
-    { '<leader>e', ':Neotree reveal<CR>', desc = 'Reveal file in Neo-tree', silent = true },
+    { '\\', ':Neotree reveal<CR>', desc = '[E]xplore file in neo-tree', silent = true },
+    { '<leader>e', ':Neotree reveal<CR>', desc = '[E]xplore file in neo-tree', silent = true },
   },
   filesystem = {
     use_git_status = true,
