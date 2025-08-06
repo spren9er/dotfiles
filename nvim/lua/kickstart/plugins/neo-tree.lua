@@ -11,7 +11,7 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'Explore file in neo-tree', silent = true },
+    { '\\', ':Neotree toggle<CR>', desc = 'Toggle neo-tree', silent = true },
     { '<leader>e', ':Neotree reveal<CR>', desc = '[E]xplore file in neo-tree', silent = true },
   },
   filesystem = {
