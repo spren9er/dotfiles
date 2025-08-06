@@ -3,8 +3,16 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
--- Disable start screen
-vim.o.shortmess = 'I'
+-- Disable swap files
+vim.o.swapfile = false
+
+-- Reduce the "Press ENTER" prompts
+vim.opt.shortmess:append 'I' -- Remove intro message
+vim.opt.shortmess:append 'c' -- Don't show completion menu messages
+vim.opt.shortmess:append 'S' -- Don't show search count message
+
+-- Auto-reload files w/o asking
+vim.o.autoread = true
 
 -- Make line numbers default
 vim.o.number = true
