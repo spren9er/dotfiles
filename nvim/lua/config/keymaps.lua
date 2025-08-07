@@ -44,8 +44,8 @@ vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Move to next match (center)' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Move to prev match (center)' })
 
 -- Open current file's directory in Finder
-vim.keymap.set('n', '<leader>of', function()
+vim.keymap.set('n', '<leader>o', function()
   vim.fn.jobstart({ 'open', '-R', vim.fn.expand '%:p' }, { detach = true })
-end, { desc = 'Open file in Finder' })
+end, { desc = '[O]pen file in Finder' })
 
 -- vim: ts=2 sts=2 sw=2 et
