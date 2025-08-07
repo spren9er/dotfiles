@@ -37,6 +37,10 @@ return {
           ['<C-v>'] = 'open_vsplit',
           ['<C-t>'] = 'open_tabnew',
           ['\\'] = 'close_window',
+          -- Disable space key completely to allow which-key
+          ['<space>'] = 'none',
+          -- Disable double-click mouse event
+          ['<2-LeftMouse>'] = 'none',
         },
       },
     },
