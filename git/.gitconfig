@@ -2,7 +2,7 @@
   defaultBranch = main
 [core]
 	ignorecase = false
-	editor = code --wait
+	editor = nvim
 	excludesfile = ~/.gitignore_global
 [user]
 	name = Torsten Sprenger
