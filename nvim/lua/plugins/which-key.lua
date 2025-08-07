@@ -21,12 +21,17 @@ return {
       -- this setting is independent of vim.o.timeoutlen
       delay = 300,
 
+      -- filter empty string
+      filter = function(mapping)
+        return mapping.desc ~= '' and mapping.desc ~= nil
+      end,
+
       -- hide icons
       icons = {
         mappings = false,
       },
 
-      -- Document existing key chains
+      -- document existing key chains
       spec = {
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
