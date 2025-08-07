@@ -1,3 +1,4 @@
+-- Rosé Pine theme configuration
 return {
   {
     'rose-pine/neovim',

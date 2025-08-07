@@ -43,18 +43,9 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half page up (center)' 
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Move to next match (center)' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Move to prev match (center)' })
 
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
-
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.hl.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
-})
+-- Open current file's directory in Finder
+vim.keymap.set('n', '<leader>of', function()
+  vim.fn.jobstart({ 'open', '-R', vim.fn.expand '%:p' }, { detach = true })
+end, { desc = 'Open file in Finder' })
 
 -- vim: ts=2 sts=2 sw=2 et

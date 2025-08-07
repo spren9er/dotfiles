@@ -14,12 +14,23 @@ return {
     { '\\', ':Neotree toggle<CR>', desc = 'Toggle neo-tree', silent = true },
     { '<leader>e', ':Neotree reveal<CR>', desc = '[E]xplore file in neo-tree', silent = true },
   },
-  filesystem = {
-    use_git_status = true,
-  },
   opts = {
     filesystem = {
+      commands = {
+        delete = function(state)
+          local node = state.tree:get_node()
+          if node.type == 'message' then
+            return
+          end
+          vim.fn.delete(node.path, 'rf')
+          require('neo-tree.sources.manager').refresh(state.name)
+        end,
+      },
+      confirm = {
+        delete = false,
+      },
       use_git_status = true,
+      use_libuv_file_watcher = true,
       window = {
         mappings = {
           ['<C-x>'] = 'open_split',
