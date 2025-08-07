@@ -40,8 +40,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Vertical navigation with centering
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half page down (center)' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half page up (center)' })
-vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Move to next match (center)' })
-vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Move to prev match (center)' })
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next match (center)' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Prev match (center)' })
 
 -- Open current file's directory in Finder
 vim.keymap.set('n', '<leader>o', function()

@@ -33,13 +33,78 @@ return {
       use_libuv_file_watcher = true,
       window = {
         mappings = {
-          ['<C-x>'] = 'open_split',
-          ['<C-v>'] = 'open_vsplit',
-          ['<C-t>'] = 'open_tabnew',
-          ['\\'] = 'close_window',
-          -- Disable space key completely to allow which-key
+          -- File operations
+          ['a'] = { 'add', desc = 'Add file' },
+          ['A'] = { 'add_directory', desc = 'Add directory' },
+          ['d'] = { 'delete', desc = 'Delete file/directory' },
+          ['r'] = { 'rename', desc = 'Rename file/directory' },
+          ['b'] = { 'rename_basename', desc = 'Rename basename only' },
+          ['c'] = { 'copy', desc = 'Copy file/directory' },
+          ['m'] = { 'move', desc = 'Move file/directory' },
+          ['x'] = { 'cut_to_clipboard', desc = 'Cut to clipboard' },
+          ['y'] = { 'copy_to_clipboard', desc = 'Copy to clipboard' },
+          ['p'] = { 'paste_from_clipboard', desc = 'Paste from clipboard' },
+
+          -- Navigation and view
+          ['<cr>'] = { 'open', desc = 'Open file/directory' },
+          ['<C-x>'] = { 'open_split', desc = 'Open in horizontal split' },
+          ['<C-v>'] = { 'open_vsplit', desc = 'Open in vertical split' },
+          ['<C-t>'] = { 'open_tabnew', desc = 'Open in new tab' },
+          ['S'] = { 'open_split', desc = 'Open in horizontal split' },
+          ['s'] = { 'open_vsplit', desc = 'Open in vertical split' },
+          ['t'] = { 'open_tabnew', desc = 'Open in new tab' },
+          ['w'] = { 'open_with_window_picker', desc = 'Open with window picker' },
+
+          -- Tree operations
+          ['C'] = { 'close_node', desc = 'Close node' },
+          ['z'] = { 'close_all_nodes', desc = 'Close all nodes' },
+          ['Z'] = { 'expand_all_nodes', desc = 'Expand all nodes' },
+          ['R'] = { 'refresh', desc = 'Refresh tree' },
+
+          -- View toggles
+          ['H'] = { 'toggle_hidden', desc = 'Toggle hidden files' },
+          ['P'] = { 'toggle_preview', desc = 'Toggle preview' },
+          ['l'] = { 'focus_preview', desc = 'Focus preview window' },
+          ['e'] = { 'toggle_auto_expand_width', desc = 'Toggle auto expand width' },
+
+          -- Information and help
+          ['i'] = { 'show_file_details', desc = 'Show file details' },
+          ['?'] = { 'show_help', desc = 'Show help' },
+          ['o'] = { 'show_help', desc = 'Show order options' },
+
+          -- Cancel/escape operations
+          ['<esc>'] = { 'cancel', desc = 'Cancel operation' },
+
+          -- Filtering and search
+          ['f'] = { 'filter_on_submit', desc = 'Filter on submit' },
+          ['<c-x>'] = { 'clear_filter', desc = 'Clear filter' },
+          ['D'] = { 'fuzzy_finder_directory', desc = 'Fuzzy finder directory' },
+          ['#'] = { 'fuzzy_sorter', desc = 'Fuzzy sorter' },
+
+          -- Navigation and sources
+          ['>'] = { 'next_source', desc = 'Next source' },
+          ['<'] = { 'prev_source', desc = 'Previous source' },
+          ['<bs>'] = { 'navigate_up', desc = 'Navigate up' },
+
+          -- Preview scrolling
+          ['<c-b>'] = { 'scroll_preview', desc = 'Scroll preview up' },
+          ['<c-f>'] = { 'scroll_preview', desc = 'Scroll preview down' },
+
+          -- Sorting options (accessible via 'o' prefix)
+          ['oc'] = { 'order_by_created', desc = 'Order by created time' },
+          ['od'] = { 'order_by_diagnostics', desc = 'Order by diagnostics' },
+          ['og'] = { 'order_by_git_status', desc = 'Order by git status' },
+          ['om'] = { 'order_by_modified', desc = 'Order by modified time' },
+          ['on'] = { 'order_by_name', desc = 'Order by name' },
+          ['os'] = { 'order_by_size', desc = 'Order by size' },
+          ['ot'] = { 'order_by_type', desc = 'Order by type' },
+
+          -- Window management
+          ['q'] = { 'close_window', desc = 'Close neo-tree window' },
+          ['\\'] = { 'close_window', desc = 'Close neo-tree window' },
+
+          -- Disable keys
           ['<space>'] = 'none',
-          -- Disable double-click mouse event
           ['<2-LeftMouse>'] = 'none',
         },
       },
