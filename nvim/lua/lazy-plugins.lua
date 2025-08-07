@@ -1,5 +1,5 @@
 require('lazy').setup({
-  { import = 'spren9er.plugins' },
+  { import = 'plugins' },
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
