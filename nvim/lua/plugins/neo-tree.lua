@@ -124,23 +124,8 @@ return {
   },
   config = function(_, opts)
     require('neo-tree').setup(opts)
-
-    -- Rosé Pine Moon colors for git
-    vim.api.nvim_set_hl(0, 'NeoTreeGitAdded', { fg = '#31748f' }) -- foam
-    vim.api.nvim_set_hl(0, 'NeoTreeGitModified', { fg = '#c4a7e7' }) -- iris
-    vim.api.nvim_set_hl(0, 'NeoTreeGitDeleted', { fg = '#eb6f92' }) -- love
-    vim.api.nvim_set_hl(0, 'NeoTreeGitRenamed', { fg = '#9ccfd8' }) -- pine
-    vim.api.nvim_set_hl(0, 'NeoTreeGitUntracked', { fg = '#f6c177' }) -- gold
-    vim.api.nvim_set_hl(0, 'NeoTreeGitIgnored', { fg = '#6e6a86' }) -- muted
-    vim.api.nvim_set_hl(0, 'NeoTreeGitUnstaged', { fg = '#f6c177' }) -- gold
-    vim.api.nvim_set_hl(0, 'NeoTreeGitStaged', { fg = '#31748f' }) -- foam
-    vim.api.nvim_set_hl(0, 'NeoTreeGitConflict', { fg = '#eb6f92' }) -- love
-
-    -- Minimalistic icon color for generic folder/file icons
-    vim.api.nvim_set_hl(0, 'NeoTreeFileIcon', { fg = '#dfdef4' })
-    vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = '#dfdef4' })
-
-    -- 🧨 Patch all nvim-web-devicons definitions
+    
+    -- 🧨 Patch all nvim-web-devicons definitions to use unified colors
     local devicons = require 'nvim-web-devicons'
     local icons = devicons.get_icons()
 
