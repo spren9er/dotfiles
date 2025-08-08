@@ -74,13 +74,17 @@ vim.api.nvim_create_autocmd('VimEnter', {
     
     -- Start file watcher for automatic theme sync
     warp_theme.start_watcher()
-    
-    -- Add periodic theme check as fallback (every 2 seconds)
-    local timer = vim.uv.new_timer()
-    if timer then
-      timer:start(2000, 2000, vim.schedule_wrap(function()
-        warp_theme.sync(false)
-      end))
+  end,
+})
+
+-- Cleanup file watcher when Neovim exits
+vim.api.nvim_create_autocmd('VimLeavePre', {
+  desc = 'Cleanup theme file watcher',
+  group = vim.api.nvim_create_augroup('warp-theme-cleanup', { clear = true }),
+  callback = function()
+    local ok, warp_theme = pcall(require, 'custom.warp-theme')
+    if ok then
+      warp_theme.stop_watcher()
     end
   end,
 })

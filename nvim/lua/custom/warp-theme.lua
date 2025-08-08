@@ -894,10 +894,8 @@ end
 -- Function to stop file watcher
 function M.stop_watcher()
   if file_watcher then
-    local ok, err = pcall(vim.uv.fs_event_stop, file_watcher)
-    if not ok then
-      vim.notify('Error stopping file watcher: ' .. (err or 'unknown error'), vim.log.levels.WARN)
-    end
+    pcall(vim.uv.fs_event_stop, file_watcher)
+    pcall(vim.uv.close, file_watcher)
     file_watcher = nil
   end
 end
