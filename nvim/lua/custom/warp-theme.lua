@@ -24,8 +24,8 @@ local THEME_CACHE_FILE = vim.fn.expand '~/.config/nvim/lua/custom/.warp-theme-ca
 
 -- Color adjustment factors for generating surface and overlay colors from base theme background
 -- These values (0-255) are added to dark themes or subtracted from light themes to create visual hierarchy
--- surface: subtle background variations (e.g., for floating windows)
--- overlay: more prominent background variations (e.g., for selections, active elements)
+-- surface: subtle background variations (e.g. for floating windows)
+-- overlay: more prominent background variations (e.g. for selections, active elements)
 local COLOR_ADJUSTMENT_FACTORS = { surface = 15, overlay = 30 }
 
 -- State tracking
