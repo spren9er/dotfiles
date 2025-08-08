@@ -798,6 +798,28 @@ function M.apply_theme(theme_info)
   vim.api.nvim_set_hl(0, 'Question', { fg = colors.normal.green })
   vim.api.nvim_set_hl(0, 'QuickFixLine', { bg = overlay, bold = true })
 
+  -- LSP/Notification message box styling (fidget.nvim and similar plugins)
+  vim.api.nvim_set_hl(0, 'FidgetTitle', { fg = theme.accent, bg = surface, bold = true })
+  vim.api.nvim_set_hl(0, 'FidgetTask', { fg = theme.foreground, bg = surface })
+  vim.api.nvim_set_hl(0, 'FidgetIcon', { fg = theme.accent, bg = surface })
+  vim.api.nvim_set_hl(0, 'FidgetText', { fg = theme.foreground, bg = surface })
+  vim.api.nvim_set_hl(0, 'FidgetSpinner', { fg = colors.normal.cyan, bg = surface })
+  vim.api.nvim_set_hl(0, 'FidgetGroup', { fg = muted, bg = surface })
+  vim.api.nvim_set_hl(0, 'FidgetProgress', { fg = colors.normal.green, bg = surface })
+  vim.api.nvim_set_hl(0, 'FidgetProgressNC', { fg = muted, bg = surface })
+  vim.api.nvim_set_hl(0, 'FidgetComplete', { fg = colors.normal.green, bg = surface })
+  
+  -- General notification highlight groups
+  vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = surface })
+  vim.api.nvim_set_hl(0, 'NotifyBorder', { fg = overlay, bg = surface })
+  vim.api.nvim_set_hl(0, 'NotifyTitle', { fg = theme.accent, bg = surface, bold = true })
+  vim.api.nvim_set_hl(0, 'NotifyIcon', { fg = theme.accent, bg = surface })
+  vim.api.nvim_set_hl(0, 'NotifyError', { fg = colors.normal.red, bg = surface })
+  vim.api.nvim_set_hl(0, 'NotifyWarn', { fg = colors.normal.yellow, bg = surface })
+  vim.api.nvim_set_hl(0, 'NotifyInfo', { fg = colors.normal.cyan, bg = surface })
+  vim.api.nvim_set_hl(0, 'NotifyDebug', { fg = muted, bg = surface })
+  vim.api.nvim_set_hl(0, 'NotifyTrace', { fg = muted, bg = surface })
+
   -- LSP and Diagnostic highlighting
   vim.api.nvim_set_hl(0, 'DiagnosticError', { fg = colors.normal.red })
   vim.api.nvim_set_hl(0, 'DiagnosticWarn', { fg = colors.normal.yellow })

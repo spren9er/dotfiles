@@ -24,7 +24,25 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 
+        'j-hui/fidget.nvim', 
+        opts = {
+          notification = {
+            window = {
+              -- Force fidget to use proper background colors
+              normal_hl = 'NormalFloat',
+              winblend = 0,
+            },
+          },
+          progress = {
+            display = {
+              -- Use proper highlight groups for progress display
+              done_style = 'FidgetComplete',
+              progress_style = 'FidgetProgress',
+            },
+          },
+        },
+      },
 
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
