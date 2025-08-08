@@ -43,4 +43,8 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half page up (center)' 
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next match (center)' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Prev match (center)' })
 
+-- Search and replace current highlighted word / selection
+vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]], { desc = '[R]eplace current word' })
+vim.keymap.set('v', '<leader>r', '"zy:<C-u>%s/<C-r>z/<C-r>z/g<Left><Left>', { desc = '[R]eplace current selection' })
+
 -- vim: ts=2 sts=2 sw=2 et
