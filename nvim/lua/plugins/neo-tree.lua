@@ -17,14 +17,6 @@ return {
   opts = {
     filesystem = {
       commands = {
-        delete = function(state)
-          local node = state.tree:get_node()
-          if node.type == 'message' then
-            return
-          end
-          vim.fn.delete(node.path, 'rf')
-          require('neo-tree.sources.manager').refresh(state.name)
-        end,
         open_in_finder = function(state)
           local node = state.tree:get_node()
           if node.type == 'message' then
@@ -32,9 +24,6 @@ return {
           end
           vim.fn.jobstart({ 'open', '-R', node.path }, { detach = true })
         end,
-      },
-      confirm = {
-        delete = false,
       },
       use_git_status = true,
       use_libuv_file_watcher = true,
