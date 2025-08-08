@@ -47,10 +47,10 @@ local color_utils = {}
 
 -- Calculate color luminance using standard formula
 function color_utils.calculate_luminance(color)
-  if not color or type(color) ~= 'string' or not color:match('^#%x%x%x%x%x%x$') then
+  if not color or type(color) ~= 'string' or not color:match '^#%x%x%x%x%x%x$' then
     return 0.5 -- fallback to middle luminance
   end
-  
+
   local r = tonumber(color:sub(2, 3), 16) or 0
   local g = tonumber(color:sub(4, 5), 16) or 0
   local b = tonumber(color:sub(6, 7), 16) or 0
@@ -59,10 +59,10 @@ end
 
 -- Adjust color brightness by a given factor
 function color_utils.adjust_brightness(color, factor, is_dark_theme)
-  if not color or type(color) ~= 'string' or not color:match('^#%x%x%x%x%x%x$') then
+  if not color or type(color) ~= 'string' or not color:match '^#%x%x%x%x%x%x$' then
     return color -- return original if invalid
   end
-  
+
   local r = tonumber(color:sub(2, 3), 16) or 0
   local g = tonumber(color:sub(4, 5), 16) or 0
   local b = tonumber(color:sub(6, 7), 16) or 0
@@ -126,7 +126,7 @@ local function parse_background_color(content)
   if simple_bg then
     return simple_bg
   end
-  
+
   -- Handle gradient background (top/bottom format)
   local bg_top = content:match 'background:%s*\n%s*top:%s*[\'"]?(#%x%x%x%x%x%x)'
   local bg_bottom = content:match 'bottom:%s*[\'"]?(#%x%x%x%x%x%x)'
@@ -137,7 +137,7 @@ end
 -- Helper function to parse background image configuration
 local function parse_background_image(content)
   local bg_image, opacity
-  
+
   -- Try nested structure format first
   local bg_image_section = content:match 'background_image:%s*\n(.-)\ndetails:'
   if bg_image_section then
@@ -150,7 +150,7 @@ local function parse_background_image(content)
     local opacity_str = content:match 'opacity:%s*([%d%.]+)'
     opacity = opacity_str and tonumber(opacity_str)
   end
-  
+
   return bg_image, opacity
 end
 
@@ -158,7 +158,7 @@ end
 local function parse_terminal_colors(content)
   local terminal_colors = { bright = {}, normal = {} }
   local color_names = { 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' }
-  
+
   -- Extract bright colors
   local bright_section = content:match 'bright:%s*\n(.-)\n%s*normal:'
   if bright_section then
@@ -166,7 +166,7 @@ local function parse_terminal_colors(content)
       terminal_colors.bright[color] = parse_color(bright_section, color)
     end
   end
-  
+
   -- Extract normal colors
   local normal_section = content:match 'normal:%s*\n(.+)'
   if normal_section then
@@ -174,7 +174,7 @@ local function parse_terminal_colors(content)
       terminal_colors.normal[color] = parse_color(normal_section, color)
     end
   end
-  
+
   return terminal_colors
 end
 
@@ -216,7 +216,7 @@ function M.get_available_themes()
     vim.notify('Failed to search for Warp themes in: ' .. WARP_THEMES_PATH, vim.log.levels.WARN)
     return themes
   end
-  
+
   for file in handle:lines() do
     local theme = parse_warp_theme(file)
     if theme and theme.name then
@@ -239,10 +239,7 @@ local function save_theme_to_cache(theme_info)
     return false
   end
 
-  local cache_content = string.format(
-    'return %s',
-    vim.inspect(theme_info, { indent = '  ' })
-  )
+  local cache_content = string.format('return %s', vim.inspect(theme_info, { indent = '  ' }))
 
   local file = io.open(THEME_CACHE_FILE, 'w')
   if file then
@@ -455,7 +452,6 @@ local function get_theme_colors(theme_info)
   return nil
 end
 
-
 -- Simple function to detect if we should use dark theme (fallback method)
 local function should_use_dark_theme()
   -- Method 1: Check macOS system appearance
@@ -527,7 +523,6 @@ local function read_current_terminal_colors()
   -- Return nil to indicate theme loading failed and current theme should be kept
   return nil
 end
-
 
 -- Function to load cached theme immediately (for startup)
 function M.load_cached_theme()
@@ -844,10 +839,10 @@ function M.apply_theme(theme_info)
     if ok then
       -- Refresh all Neo-tree sources to pick up new highlight groups
       pcall(function()
-        local events = require('neo-tree.events')
+        local events = require 'neo-tree.events'
         events.fire_event(events.GIT_EVENT)
         -- Also trigger a full filesystem refresh to ensure git status colors update
-        vim.cmd('Neotree filesystem refresh')
+        vim.cmd 'Neotree filesystem refresh'
       end)
     end
   end, 50) -- Small delay to ensure highlight groups are fully applied
@@ -857,24 +852,24 @@ end
 function M.start_watcher()
   -- Stop existing watcher if running
   M.stop_watcher()
-  
+
   -- Only watch if preferences file exists
   if vim.fn.filereadable(WARP_PREFS_FILE) == 0 then
     return false
   end
-  
+
   file_watcher = vim.uv.new_fs_event()
   if not file_watcher then
     vim.notify('Failed to create file watcher for Warp theme sync', vim.log.levels.WARN)
     return false
   end
-  
+
   local success, err = pcall(vim.uv.fs_event_start, file_watcher, WARP_PREFS_FILE, {}, function(err, filename, events)
     if err then
       vim.notify('File watcher error: ' .. err, vim.log.levels.ERROR)
       return
     end
-    
+
     -- Debounce rapid file changes (macOS can trigger multiple events)
     vim.defer_fn(function()
       -- Only sync if we detect an actual theme change
@@ -886,13 +881,13 @@ function M.start_watcher()
       end
     end, 100) -- 100ms debounce
   end)
-  
+
   if not success then
     vim.notify('Failed to start file watcher: ' .. (err or 'unknown error'), vim.log.levels.ERROR)
     file_watcher = nil
     return false
   end
-  
+
   return true
 end
 
