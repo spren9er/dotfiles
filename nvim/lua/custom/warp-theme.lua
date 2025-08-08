@@ -1,5 +1,19 @@
 -- Warp theme integration for Neovim
 -- This module reads Warp's theme YAML files and applies them to Neovim
+--
+-- Features:
+-- - Automatic theme detection from Warp's preferences
+-- - Support for both custom and built-in Warp themes
+-- - Real-time theme synchronization via file watching
+-- - Theme caching for faster startup
+-- - Comprehensive highlight group coverage
+-- - Neo-tree integration
+--
+-- Usage:
+--   local warp_theme = require('custom.warp-theme')
+--   warp_theme.load_cached_theme()  -- Load cached theme on startup
+--   warp_theme.start_watcher()      -- Start automatic sync
+--   warp_theme.sync()               -- Manual sync
 
 local M = {}
 
@@ -7,6 +21,11 @@ local M = {}
 local WARP_THEMES_PATH = vim.fn.expand '~/.warp/themes'
 local WARP_PREFS_FILE = vim.fn.expand '~/Library/Preferences/dev.warp.Warp-Stable.plist'
 local THEME_CACHE_FILE = vim.fn.expand '~/.config/nvim/lua/custom/.warp-theme-cache.lua'
+
+-- Color adjustment factors for generating surface and overlay colors from base theme background
+-- These values (0-255) are added to dark themes or subtracted from light themes to create visual hierarchy
+-- surface: subtle background variations (e.g., for floating windows)
+-- overlay: more prominent background variations (e.g., for selections, active elements)
 local COLOR_ADJUSTMENT_FACTORS = { surface = 15, overlay = 30 }
 
 -- State tracking
@@ -21,6 +40,59 @@ local function safe_popen(command)
     return nil
   end
   return handle
+end
+
+-- Color utility functions
+local color_utils = {}
+
+-- Calculate color luminance using standard formula
+function color_utils.calculate_luminance(color)
+  if not color or type(color) ~= 'string' or not color:match('^#%x%x%x%x%x%x$') then
+    return 0.5 -- fallback to middle luminance
+  end
+  
+  local r = tonumber(color:sub(2, 3), 16) or 0
+  local g = tonumber(color:sub(4, 5), 16) or 0
+  local b = tonumber(color:sub(6, 7), 16) or 0
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255
+end
+
+-- Adjust color brightness by a given factor
+function color_utils.adjust_brightness(color, factor, is_dark_theme)
+  if not color or type(color) ~= 'string' or not color:match('^#%x%x%x%x%x%x$') then
+    return color -- return original if invalid
+  end
+  
+  local r = tonumber(color:sub(2, 3), 16) or 0
+  local g = tonumber(color:sub(4, 5), 16) or 0
+  local b = tonumber(color:sub(6, 7), 16) or 0
+
+  if is_dark_theme then
+    -- For dark themes, lighten the color
+    r = math.min(255, r + factor)
+    g = math.min(255, g + factor)
+    b = math.min(255, b + factor)
+  else
+    -- For light themes, darken the color
+    r = math.max(0, r - factor)
+    g = math.max(0, g - factor)
+    b = math.max(0, b - factor)
+  end
+
+  return string.format('#%02x%02x%02x', r, g, b)
+end
+
+-- Safe file removal using Lua operations instead of shell commands
+local function safe_remove_file(filepath)
+  local success, err = os.remove(filepath)
+  if not success and err then
+    -- Only log if file actually existed (ignore "file not found" errors)
+    local file = io.open(filepath, 'r')
+    if file then
+      file:close()
+      vim.notify('Failed to remove temporary file: ' .. filepath, vim.log.levels.WARN)
+    end
+  end
 end
 
 -- Helper function to parse color from different quote formats
@@ -47,8 +119,67 @@ local function parse_color_section(content, section_name)
   return colors
 end
 
+-- Helper function to parse background color (handles both simple and gradient formats)
+local function parse_background_color(content)
+  -- Try simple format first
+  local simple_bg = parse_color(content, 'background')
+  if simple_bg then
+    return simple_bg
+  end
+  
+  -- Handle gradient background (top/bottom format)
+  local bg_top = content:match 'background:%s*\n%s*top:%s*[\'"]?(#%x%x%x%x%x%x)'
+  local bg_bottom = content:match 'bottom:%s*[\'"]?(#%x%x%x%x%x%x)'
+  -- Use top color as primary background, or bottom if top missing
+  return bg_top or bg_bottom
+end
+
+-- Helper function to parse background image configuration
+local function parse_background_image(content)
+  local bg_image, opacity
+  
+  -- Try nested structure format first
+  local bg_image_section = content:match 'background_image:%s*\n(.-)\ndetails:'
+  if bg_image_section then
+    bg_image = bg_image_section:match 'path:%s*[\'"]?([^\'"\n]+)' or bg_image_section:match 'path:%s*([^%s\n]+)'
+    local opacity_str = bg_image_section:match 'opacity:%s*([%d%.]+)'
+    opacity = opacity_str and tonumber(opacity_str)
+  else
+    -- Fallback to simple format
+    bg_image = content:match 'background_image:%s*[\'"]([^\'"]+)[\'"]' or content:match 'background_image:%s*([^%s\n]+)'
+    local opacity_str = content:match 'opacity:%s*([%d%.]+)'
+    opacity = opacity_str and tonumber(opacity_str)
+  end
+  
+  return bg_image, opacity
+end
+
+-- Helper function to parse terminal colors section
+local function parse_terminal_colors(content)
+  local terminal_colors = { bright = {}, normal = {} }
+  local color_names = { 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' }
+  
+  -- Extract bright colors
+  local bright_section = content:match 'bright:%s*\n(.-)\n%s*normal:'
+  if bright_section then
+    for _, color in ipairs(color_names) do
+      terminal_colors.bright[color] = parse_color(bright_section, color)
+    end
+  end
+  
+  -- Extract normal colors
+  local normal_section = content:match 'normal:%s*\n(.+)'
+  if normal_section then
+    for _, color in ipairs(color_names) do
+      terminal_colors.normal[color] = parse_color(normal_section, color)
+    end
+  end
+  
+  return terminal_colors
+end
+
 -- Function to parse a YAML-like structure (simple parsing for Warp themes)
-local function parse_warp_theme(filepath, debug_output)
+local function parse_warp_theme(filepath)
   local file = io.open(filepath, 'r')
   if not file then
     return nil
@@ -61,100 +192,18 @@ local function parse_warp_theme(filepath, debug_output)
 
   -- Parse basic properties
   theme.name = content:match 'name:%s*(.-)%s*\n' or content:match "name:%s*'(.-)'" or content:match 'name:%s*"(.-)"'
-  theme.accent = content:match "accent:%s*'(#%x%x%x%x%x%x)'" or content:match 'accent:%s*"(#%x%x%x%x%x%x)"' or content:match 'accent:%s*(#%x%x%x%x%x%x)'
-
-  -- Parse background - handle both simple and complex (gradient) formats
-  theme.background = content:match "background:%s*'(#%x%x%x%x%x%x)'"
-    or content:match 'background:%s*"(#%x%x%x%x%x%x)"'
-    or content:match 'background:%s*(#%x%x%x%x%x%x)'
-
-  -- Handle gradient background (top/bottom format)
-  if not theme.background then
-    local bg_top = content:match 'background:%s*\n%s*top:%s*[\'"]?(#%x%x%x%x%x%x)'
-    local bg_bottom = content:match 'bottom:%s*[\'"]?(#%x%x%x%x%x%x)'
-    -- Use top color as primary background, or bottom if top missing
-    theme.background = bg_top or bg_bottom
-
-  end
-
-  theme.foreground = content:match "foreground:%s*'(#%x%x%x%x%x%x)'"
-    or content:match 'foreground:%s*"(#%x%x%x%x%x%x)"'
-    or content:match 'foreground:%s*(#%x%x%x%x%x%x)'
+  theme.accent = parse_color(content, 'accent')
+  theme.foreground = parse_color(content, 'foreground')
   theme.details = content:match 'details:%s*(%w+)'
 
-  -- Parse background image and opacity - handle nested structure
-  local bg_image_section = content:match 'background_image:%s*\n(.-)\ndetails:'
-  if bg_image_section then
-    theme.background_image = bg_image_section:match 'path:%s*[\'"]?([^\'"\n]+)' or bg_image_section:match 'path:%s*([^%s\n]+)'
-    theme.opacity = bg_image_section:match 'opacity:%s*([%d%.]+)' and tonumber(bg_image_section:match 'opacity:%s*([%d%.]+)')
+  -- Parse background (handles both simple and gradient formats)
+  theme.background = parse_background_color(content)
 
-  else
-    -- Fallback to simple format
-    theme.background_image = content:match 'background_image:%s*[\'"]([^\'"]+)[\'"]' or content:match 'background_image:%s*([^%s\n]+)'
-    theme.opacity = content:match 'opacity:%s*([%d%.]+)' and tonumber(content:match 'opacity:%s*([%d%.]+)')
-
-  end
+  -- Parse background image and opacity
+  theme.background_image, theme.opacity = parse_background_image(content)
 
   -- Parse terminal colors
-  theme.terminal_colors = { bright = {}, normal = {} }
-
-  -- Extract bright colors
-  local bright_section = content:match 'bright:%s*\n(.-)\n%s*normal:'
-  if bright_section then
-    theme.terminal_colors.bright.black = bright_section:match "black:%s*'(#%x%x%x%x%x%x)'"
-      or bright_section:match 'black:%s*"(#%x%x%x%x%x%x)"'
-      or bright_section:match 'black:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.bright.red = bright_section:match "red:%s*'(#%x%x%x%x%x%x)'"
-      or bright_section:match 'red:%s*"(#%x%x%x%x%x%x)"'
-      or bright_section:match 'red:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.bright.green = bright_section:match "green:%s*'(#%x%x%x%x%x%x)'"
-      or bright_section:match 'green:%s*"(#%x%x%x%x%x%x)"'
-      or bright_section:match 'green:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.bright.yellow = bright_section:match "yellow:%s*'(#%x%x%x%x%x%x)'"
-      or bright_section:match 'yellow:%s*"(#%x%x%x%x%x%x)"'
-      or bright_section:match 'yellow:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.bright.blue = bright_section:match "blue:%s*'(#%x%x%x%x%x%x)'"
-      or bright_section:match 'blue:%s*"(#%x%x%x%x%x%x)"'
-      or bright_section:match 'blue:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.bright.magenta = bright_section:match "magenta:%s*'(#%x%x%x%x%x%x)'"
-      or bright_section:match 'magenta:%s*"(#%x%x%x%x%x%x)"'
-      or bright_section:match 'magenta:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.bright.cyan = bright_section:match "cyan:%s*'(#%x%x%x%x%x%x)'"
-      or bright_section:match 'cyan:%s*"(#%x%x%x%x%x%x)"'
-      or bright_section:match 'cyan:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.bright.white = bright_section:match "white:%s*'(#%x%x%x%x%x%x)'"
-      or bright_section:match 'white:%s*"(#%x%x%x%x%x%x)"'
-      or bright_section:match 'white:%s*(#%x%x%x%x%x%x)'
-  end
-
-  -- Extract normal colors
-  local normal_section = content:match 'normal:%s*\n(.+)'
-  if normal_section then
-    theme.terminal_colors.normal.black = normal_section:match "black:%s*'(#%x%x%x%x%x%x)'"
-      or normal_section:match 'black:%s*"(#%x%x%x%x%x%x)"'
-      or normal_section:match 'black:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.normal.red = normal_section:match "red:%s*'(#%x%x%x%x%x%x)'"
-      or normal_section:match 'red:%s*"(#%x%x%x%x%x%x)"'
-      or normal_section:match 'red:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.normal.green = normal_section:match "green:%s*'(#%x%x%x%x%x%x)'"
-      or normal_section:match 'green:%s*"(#%x%x%x%x%x%x)"'
-      or normal_section:match 'green:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.normal.yellow = normal_section:match "yellow:%s*'(#%x%x%x%x%x%x)'"
-      or normal_section:match 'yellow:%s*"(#%x%x%x%x%x%x)"'
-      or normal_section:match 'yellow:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.normal.blue = normal_section:match "blue:%s*'(#%x%x%x%x%x%x)'"
-      or normal_section:match 'blue:%s*"(#%x%x%x%x%x%x)"'
-      or normal_section:match 'blue:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.normal.magenta = normal_section:match "magenta:%s*'(#%x%x%x%x%x%x)'"
-      or normal_section:match 'magenta:%s*"(#%x%x%x%x%x%x)"'
-      or normal_section:match 'magenta:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.normal.cyan = normal_section:match "cyan:%s*'(#%x%x%x%x%x%x)'"
-      or normal_section:match 'cyan:%s*"(#%x%x%x%x%x%x)"'
-      or normal_section:match 'cyan:%s*(#%x%x%x%x%x%x)'
-    theme.terminal_colors.normal.white = normal_section:match "white:%s*'(#%x%x%x%x%x%x)'"
-      or normal_section:match 'white:%s*"(#%x%x%x%x%x%x)"'
-      or normal_section:match 'white:%s*(#%x%x%x%x%x%x)'
-  end
+  theme.terminal_colors = parse_terminal_colors(content)
 
   return theme
 end
@@ -163,18 +212,21 @@ end
 function M.get_available_themes()
   local themes = {}
   local handle = safe_popen('find "' .. WARP_THEMES_PATH .. '" -name "*.yaml" 2>/dev/null')
-  if handle then
-    for file in handle:lines() do
-      local theme = parse_warp_theme(file)
-      if theme and theme.name then
-        themes[theme.name] = {
-          filepath = file,
-          theme = theme,
-        }
-      end
-    end
-    handle:close()
+  if not handle then
+    vim.notify('Failed to search for Warp themes in: ' .. WARP_THEMES_PATH, vim.log.levels.WARN)
+    return themes
   end
+  
+  for file in handle:lines() do
+    local theme = parse_warp_theme(file)
+    if theme and theme.name then
+      themes[theme.name] = {
+        filepath = file,
+        theme = theme,
+      }
+    end
+  end
+  handle:close()
   return themes
 end
 
@@ -527,7 +579,7 @@ function M.apply_theme(theme_info)
   -- Set colorscheme name
   vim.g.colors_name = theme.name:lower():gsub('[^%w_]', '_')
 
-  -- Set background based on theme details or original theme background luminance
+  -- Set background based on theme details or original theme background color luminance
   local is_dark_theme = false
   if theme.details == 'darker' then
     is_dark_theme = true
@@ -536,17 +588,12 @@ function M.apply_theme(theme_info)
   else
     -- For 'custom' or other values, determine from original theme background color luminance
     if theme.background then
-      local r = tonumber(theme.background:sub(2, 3), 16) or 0
-      local g = tonumber(theme.background:sub(4, 5), 16) or 0
-      local b = tonumber(theme.background:sub(6, 7), 16) or 0
-      local luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+      local luminance = color_utils.calculate_luminance(theme.background)
       is_dark_theme = luminance < 0.5
     else
       -- Fallback: check if normal colors suggest dark theme
-      local bg_r = tonumber((colors.normal.black or '#000000'):sub(2, 3), 16)
-      local bg_g = tonumber((colors.normal.black or '#000000'):sub(4, 5), 16)
-      local bg_b = tonumber((colors.normal.black or '#000000'):sub(6, 7), 16)
-      local bg_luminance = (0.299 * bg_r + 0.587 * bg_g + 0.114 * bg_b) / 255
+      local fallback_color = colors.normal.black or '#000000'
+      local bg_luminance = color_utils.calculate_luminance(fallback_color)
       is_dark_theme = bg_luminance < 0.5
     end
   end
@@ -772,9 +819,6 @@ function M.apply_theme(theme_info)
   vim.api.nvim_set_hl(0, 'NeoTreeTabSeparatorInactive', { fg = overlay, bg = surface })
   vim.api.nvim_set_hl(0, 'NeoTreeTabSeparatorActive', { fg = theme.accent, bg = overlay })
 
-  -- Set background for terminal
-  vim.opt.background = theme.details == 'darker' and 'dark' or 'light'
-
   -- Update terminal colors
   vim.g.terminal_color_0 = colors.normal.black
   vim.g.terminal_color_1 = colors.normal.red
@@ -792,6 +836,21 @@ function M.apply_theme(theme_info)
   vim.g.terminal_color_13 = colors.bright.magenta
   vim.g.terminal_color_14 = colors.bright.cyan
   vim.g.terminal_color_15 = colors.bright.white
+
+  -- Force Neo-tree to refresh and pick up new git colors
+  -- This ensures git status colors update immediately when theme changes
+  vim.defer_fn(function()
+    local ok, neo_tree = pcall(require, 'neo-tree')
+    if ok then
+      -- Refresh all Neo-tree sources to pick up new highlight groups
+      pcall(function()
+        local events = require('neo-tree.events')
+        events.fire_event(events.GIT_EVENT)
+        -- Also trigger a full filesystem refresh to ensure git status colors update
+        vim.cmd('Neotree filesystem refresh')
+      end)
+    end
+  end, 50) -- Small delay to ensure highlight groups are fully applied
 end
 
 -- Function to start file watcher for automatic theme sync
