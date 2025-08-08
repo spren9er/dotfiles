@@ -43,9 +43,4 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half page up (center)' 
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next match (center)' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Prev match (center)' })
 
--- Open current file's directory in Finder
-vim.keymap.set('n', '<leader>o', function()
-  vim.fn.jobstart({ 'open', '-R', vim.fn.expand '%:p' }, { detach = true })
-end, { desc = '[O]pen file in Finder' })
-
 -- vim: ts=2 sts=2 sw=2 et

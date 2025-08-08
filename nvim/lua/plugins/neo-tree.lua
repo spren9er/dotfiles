@@ -25,6 +25,13 @@ return {
           vim.fn.delete(node.path, 'rf')
           require('neo-tree.sources.manager').refresh(state.name)
         end,
+        open_in_finder = function(state)
+          local node = state.tree:get_node()
+          if node.type == 'message' then
+            return
+          end
+          vim.fn.jobstart({ 'open', '-R', node.path }, { detach = true })
+        end,
       },
       confirm = {
         delete = false,
@@ -44,6 +51,7 @@ return {
           ['x'] = { 'cut_to_clipboard', desc = 'Cut to clipboard' },
           ['y'] = { 'copy_to_clipboard', desc = 'Copy to clipboard' },
           ['p'] = { 'paste_from_clipboard', desc = 'Paste from clipboard' },
+          ['<C-r>'] = { 'open_in_finder', desc = 'Reveal in Finder' },
 
           -- Navigation and view
           ['<cr>'] = { 'open', desc = 'Open file/directory' },
