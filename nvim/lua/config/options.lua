@@ -88,7 +88,7 @@ vim.o.smartindent = true -- Smart indenting when starting a new line
 
 -- Set text width
 vim.o.textwidth = 80
-vim.o.colorcolumn = '80'
+vim.o.colorcolumn = ''
 
 -- Format options (manual string handling)
 vim.o.formatoptions = vim.o.formatoptions .. 't' -- Add auto-wrap
