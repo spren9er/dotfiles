@@ -2,6 +2,9 @@
 -- See `:help vim.o`
 --  For more options, you can see `:help option-list`
 
+-- 24-bit colors
+vim.o.termguicolors = true
+
 -- Disable swap files
 vim.o.swapfile = false
 
@@ -13,10 +16,8 @@ vim.opt.shortmess:append 'S' -- Don't show search count message
 -- Auto-reload files w/o asking
 vim.o.autoread = true
 
--- Make line numbers default
+-- Add relative line numbers
 vim.o.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -33,9 +34,6 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
--- Enable break indent
-vim.o.breakindent = true
-
 -- Save undo history
 vim.o.undofile = true
 
@@ -47,7 +45,7 @@ vim.o.smartcase = true
 vim.o.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 50
 
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
@@ -74,7 +72,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 8
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -90,7 +88,7 @@ vim.o.smartindent = true -- Smart indenting when starting a new line
 
 -- Set text width
 vim.o.textwidth = 80
-vim.o.colorcolumn = ''
+vim.o.colorcolumn = '80'
 
 -- Format options (manual string handling)
 vim.o.formatoptions = vim.o.formatoptions .. 't' -- Add auto-wrap
@@ -99,5 +97,9 @@ vim.o.formatoptions = vim.o.formatoptions .. 't' -- Add auto-wrap
 vim.o.wrap = true
 vim.o.linebreak = true
 vim.o.breakindent = true
+
+-- Search
+vim.o.hlsearch = false
+vim.o.incsearch = true
 
 -- vim: ts=2 sts=2 sw=2 et
