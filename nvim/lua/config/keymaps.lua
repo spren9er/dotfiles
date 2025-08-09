@@ -44,6 +44,9 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- Keep cursor position while joining lines
 vim.keymap.set('n', 'J', 'mzJ`z')
 
+-- Keep cursor position while indenting
+vim.keymap.set('n', '=ap', "ma=ap'a")
+
 -- Search and replace current highlighted word / selection
 vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]], { desc = '[R]eplace current word' })
 vim.keymap.set('v', '<leader>r', '"zy:<C-u>%s/<C-r>z/<C-r>z/g<Left><Left>', { desc = '[R]eplace current selection' })

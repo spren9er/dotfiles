@@ -1,0 +1,26 @@
+name: Atom One Light
+accent: '#526eff'
+background: '#fafafa'
+foreground: '#383a42'
+details: lighter
+
+terminal_colors:
+  normal:
+    black:   '#000000'
+    red:     '#de3e35'
+    green:   '#3e953a'
+    yellow:  '#d2b67c'
+    blue:    '#2f5af3'
+    magenta: '#950095'
+    cyan:    '#3e953a'
+    white:   '#bbbbbb'
+
+  bright:
+    black:   '#000000'
+    red:     '#de3e35'
+    green:   '#3e953a'
+    yellow:  '#d2b67c'
+    blue:    '#2f5af3'
+    magenta: '#950095'
+    cyan:    '#3e953a'
+    white:   '#ffffff'

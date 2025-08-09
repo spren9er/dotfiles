@@ -65,9 +65,11 @@ ln -s ~/.dotfiles/gpg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 ### Warp
 
-Warp can't detect symlinks (yet). Instead, copy launch configuration files via
+NOTE: Launch configurations don't work with symlinks (yet)! Instead, copy launch
+configuration files!
 
 ```bash
+ln -s ~/.dotfiles/warp/themes ~/.warp/themes
 cp -r ~/.dotfiles/warp/launch_configurations/* ~/.warp/launch_configurations
 ```
 

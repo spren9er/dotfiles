@@ -2,23 +2,27 @@
 name: "project: tilez"
 windows:
   - tabs:
-      - title: "tilez: code"
-        layout:
-          cwd: /Users/spren9er/Development/projects/tilez
-          commands:
-            - exec: code .
-      - title: "tilez: local server"
-        layout:
-          cwd: /Users/spren9er/Development/projects/tilez
-          commands:
-            - exec: npm run dev -- --port 3001
-      - title: "tilez: tests"
-        layout:
-          cwd: /Users/spren9er/Development/projects/tilez
-          commands:
-            - exec: npm run coverage
-      - title: "tilez: svelte check"
-        layout:
-          cwd: /Users/spren9er/Development/projects/tilez
-          commands:
-            - exec: npm run check
+    - title: "tilez: console / code"
+      layout:
+        split_direction: vertical
+        panes:
+          - cwd: /Users/spren9er/Development/projects/tilez
+            commands:
+              - exec: nvim
+          - cwd: /Users/spren9er/Development/projects/tilez
+            is_focused: true
+    - title: "tilez: local server"
+      layout:
+        cwd: /Users/spren9er/Development/projects/tilez
+        commands:
+          - exec: npm run dev
+    - title: "tilez: tests"
+      layout:
+        cwd: /Users/spren9er/Development/projects/tilez
+        commands:
+          - exec: npm run test:coverage
+    - title: "tilez: svelte check"
+      layout:
+        cwd: /Users/spren9er/Development/projects/tilez
+        commands:
+          - exec: npm run check

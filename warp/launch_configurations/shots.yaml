@@ -2,13 +2,17 @@
 name: "project: shots"
 windows:
   - tabs:
-      - title: "shots: code"
-        layout:
-          cwd: /Users/spren9er/Development/projects/shots
-          commands:
-            - exec: code .
-      - title: "shots: local server"
-        layout:
-          cwd: /Users/spren9er/Development/projects/shots/app
-          commands:
-            - exec: npm run dev -- --port 3001
+    - title: "shots: console / code"
+      layout:
+        split_direction: vertical
+        panes:
+          - cwd: /Users/spren9er/Development/projects/shots
+            commands:
+              - exec: nvim
+          - cwd: /Users/spren9er/Development/projects/shots
+            is_focused: true
+    - title: "shots: local server"
+      layout:
+        cwd: /Users/spren9er/Development/projects/shots/app
+        commands:
+          - exec: npm run dev

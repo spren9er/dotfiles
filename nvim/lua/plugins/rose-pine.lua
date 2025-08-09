@@ -133,8 +133,13 @@ return {
     end
 
     -- Create user command for toggling
-    vim.api.nvim_create_user_command('ToggleRosePineTheme', toggle_rose_pine, {
+    vim.api.nvim_create_user_command('ToggleTheme', toggle_rose_pine, {
       desc = 'Toggle between rose-pine-moon and rose-pine-dawn',
     })
+
+    -- Create keyboard shortcut for toggling
+    vim.keymap.set('n', '<leader>tt', function()
+      toggle_rose_pine()
+    end, { desc = '[T]oggle [t]heme' })
   end,
 }
