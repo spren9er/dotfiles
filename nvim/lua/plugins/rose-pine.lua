@@ -3,8 +3,8 @@ return {
   name = 'rose-pine',
   config = function()
     -- File to store the current theme state
-    local state_file = vim.fn.stdpath('data') .. '/rose_pine_theme.txt'
-    
+    local state_file = vim.fn.stdpath 'data' .. '/rose_pine_theme.txt'
+
     -- Function to read the saved theme
     local function read_theme()
       local file = io.open(state_file, 'r')
@@ -17,7 +17,7 @@ return {
       end
       return 'moon' -- default fallback
     end
-    
+
     -- Function to save the current theme
     local function save_theme(theme)
       local file = io.open(state_file, 'w')
@@ -26,7 +26,7 @@ return {
         file:close()
       end
     end
-    
+
     -- Load the saved theme or use default
     local current_variant = read_theme()
 
