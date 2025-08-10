@@ -24,6 +24,25 @@ return {
           end
           vim.fn.jobstart({ 'open', '-R', node.path }, { detach = true })
         end,
+        add_to_harpoon_list = function(state)
+          local node = state.tree:get_node()
+          local harpoon = require 'harpoon'
+          if node.type == 'message' or node.type == 'directory' then
+            return
+          end
+
+          -- Convert absolute path to relative path from current working directory
+          local relative_path = vim.fn.fnamemodify(node.path, ':.')
+
+          -- Add the relative file path to harpoon list
+          harpoon:list():add {
+            value = relative_path,
+            context = {
+              row = 1,
+              col = 1,
+            },
+          }
+        end,
       },
       use_git_status = true,
       use_libuv_file_watcher = true,
@@ -103,6 +122,12 @@ return {
           -- Disable keys
           ['<space>'] = 'none',
           ['<2-LeftMouse>'] = 'none',
+
+          -- Add to harpoon list
+          ['<leader>a'] = {
+            'add_to_harpoon_list',
+            desc = 'Add to harpoon list',
+          },
         },
       },
     },
@@ -124,7 +149,7 @@ return {
   },
   config = function(_, opts)
     require('neo-tree').setup(opts)
-    
+
     -- 🧨 Patch all nvim-web-devicons definitions to use unified colors
     local devicons = require 'nvim-web-devicons'
     local icons = devicons.get_icons()
