@@ -48,7 +48,7 @@ vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set('n', '=ap', "ma=ap'a")
 
 -- Search and replace current highlighted word / selection
-vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = '[R]eplace current word' })
-vim.keymap.set('v', '<leader>r', '"zy:<C-u>%s/<C-r>z//g<Left><Left>', { desc = '[R]eplace current selection' })
+vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>//gc<Left><Left><Left>]], { desc = '[R]eplace current word' })
+vim.keymap.set('v', '<leader>r', '"zy:<C-u>%s/<C-r>z//gc<Left><Left><Left>', { desc = '[R]eplace current selection' })
 
 -- vim: ts=2 sts=2 sw=2 et
