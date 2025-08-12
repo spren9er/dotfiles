@@ -91,3 +91,9 @@ ln -s ~/.dotfiles/python/.ipython/profile_default/startup \
 ```bash
 ln -s ~/.dotfiles/prettier/.prettierrc ~/.prettierrc
 ```
+
+### Aerospace
+
+```bash
+ln -s ~/.dotfiles/aerospace/aerospace.toml ~/.config/aerospace/aerospace.toml
+```
