@@ -2,15 +2,9 @@
 name: "project: tilez"
 windows:
   - tabs:
-    - title: "tilez: console / code"
+    - title: "tilez: console"
       layout:
-        split_direction: vertical
-        panes:
-          - cwd: /Users/spren9er/Development/projects/tilez
-            commands:
-              - exec: nvim
-          - cwd: /Users/spren9er/Development/projects/tilez
-            is_focused: true
+        cwd: /Users/spren9er/Development/projects/tilez
     - title: "tilez: local server"
       layout:
         cwd: /Users/spren9er/Development/projects/tilez
@@ -26,3 +20,9 @@ windows:
         cwd: /Users/spren9er/Development/projects/tilez
         commands:
           - exec: npm run check
+  - tabs:
+    - title: "tilez: code"
+      layout:
+        cwd: /Users/spren9er/Development/projects/tilez
+        commands:
+          - exec: nvim

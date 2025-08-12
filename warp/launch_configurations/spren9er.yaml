@@ -2,17 +2,18 @@
 name: "site: spren9er"
 windows:
   - tabs:
-    - title: "spren9er: console / code"
+    - title: "spren9er: console"
       layout:
-        split_direction: vertical
-        panes:
-          - cwd: /Users/spren9er/Development/sites/spren9er
-            commands:
-              - exec: nvim
-          - cwd: /Users/spren9er/Development/sites/spren9er
-            is_focused: true
+        cwd: /Users/spren9er/Development/sites/spren9er
     - title: "spren9er: local server"
       layout:
         cwd: /Users/spren9er/Development/sites/spren9er
         commands:
           - exec: npm run dev
+  - tabs:
+    - title: "spren9er: code"
+      layout:
+        cwd: /Users/spren9er/Development/sites/spren9er
+        commands:
+          - exec: nvim
+

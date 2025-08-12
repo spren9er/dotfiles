@@ -2,15 +2,9 @@
 name: "project: undash"
 windows:
   - tabs:
-    - title: "undash: console / code"
+    - title: "undash: console"
       layout:
-        split_direction: vertical
-        panes:
-          - cwd: /Users/spren9er/Development/projects/undash
-            commands:
-              - exec: nvim
-          - cwd: /Users/spren9er/Development/projects/undash
-            is_focused: true
+        cwd: /Users/spren9er/Development/projects/undash
     - title: "undash: local server"
       layout:
         cwd: /Users/spren9er/Development/projects/undash
@@ -31,3 +25,9 @@ windows:
         cwd: /Users/spren9er/Development/projects/undash
         commands:
           - exec: npm run typesafe-i18n
+  - tabs:
+     - title: "undash: code"
+       layout:
+         cwd: /Users/spren9er/Development/projects/undash
+         commands:
+           - exec: nvim
