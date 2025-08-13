@@ -1,28 +1,31 @@
 from visidata import vd
 
-options.color_active_status = "black on white"
-options.color_column_sep = "12"
-options.color_current_col = "bold white"
-options.color_current_hdr = "bold white reverse"
-options.color_default = "12 on 0"
-options.color_key_col = "white"
-options.color_keystrokes = "0 on 3"
-options.color_menu = "0 on 3"
-options.color_menu_active = "bold 0 on 3"
-options.color_menu_help = "0 on 3"
-options.color_selected_row = "white"
-options.color_status = "bold 0 on white"
+options.color_active_status = "60"
+options.color_bottom_hdr = "underline 60"
+options.color_column_sep = "103"
+options.color_current_col = "bold 60"
+options.color_current_hdr = "bold underline 60"
+options.color_current_row = "reverse"
+options.color_default = "60"
+options.color_default_hdr = "underline 60"
+options.color_key_col = "60"
+options.color_keystrokes = "60"
+options.color_menu = "60"
+options.color_menu_active = "bold 60"
+options.color_menu_help = "97"
+options.color_note_pending = "103"
+options.color_note_row = "103"
+options.color_note_type = "103"
+options.color_selected_row = "bold 60"
+options.color_sidebar = "60"
+options.color_sidebar_title = "60"
+options.color_status = "bold 60"
 options.default_width = 50
 options.disp_column_sep = "│"
 options.disp_date_fmt = "%Y-%m-%d %H:%M"
 options.disp_menu = False
 options.disp_rowtop_sep = "│"
+options.disp_selected_note = "•"
 options.disp_sidebar = False
+options.disp_truncator = ""
 options.save_filetype = "csv"
-
-
-def no_op(*args, **kwargs):
-    pass
-
-
-vd.status = no_op
