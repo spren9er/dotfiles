@@ -4,7 +4,7 @@
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  'exec-and-forget borders active_color=0xff575279 inactive_color=0x00ffffff width=5.0 hidpi=on',
+  'exec-and-forget borders active_color=0xff575279 inactive_color=0x00ffffff width=5.0 hidpi=on order=a ax_focus=on',
 ]
 
 # Start AeroSpace at login
@@ -163,6 +163,10 @@ backspace = ['close-all-windows-but-current', 'mode main']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
 run = ['layout floating']
 
 [[on-window-detected]]
