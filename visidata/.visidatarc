@@ -2,23 +2,23 @@ from visidata import vd
 
 # Rose Pine Dawn Theme
 #
-#| Color Name     | Hex Code | 8-bit Value |
-#|----------------|----------|-------------|
-#| Base           | #faf4ed  | 255         |
-#| Surface        | #fffaf3  | 15          |
-#| Overlay        | #f2e9e1  | 255         |
-#| Muted          | #9893a5  | 247         |
-#| Subtle         | #797593  | 8           |
-#| Text           | #575279  | 60          |
-#| Love           | #b4637a  | 132         |
-#| Gold           | #ea9d34  | 179         |
-#| Rose           | #d7827e  | 174         |
-#| Pine           | #286983  | 24          |
-#| Foam           | #56949f  | 67          |
-#| Iris           | #907aa9  | 103         |
-#| Highlight Low  | #f4ede8  | 255         |
-#| Highlight Med  | #dfdad9  | 253         |
-#| Highlight High | #cecacd  | 252         |
+# | Color Name     | Hex Code | 8-bit Value |
+# |----------------|----------|-------------|
+# | Base           | #faf4ed  | 255         |
+# | Surface        | #fffaf3  | 15          |
+# | Overlay        | #f2e9e1  | 255         |
+# | Muted          | #9893a5  | 247         |
+# | Subtle         | #797593  | 8           |
+# | Text           | #575279  | 60          |
+# | Love           | #b4637a  | 132         |
+# | Gold           | #ea9d34  | 179         |
+# | Rose           | #d7827e  | 174         |
+# | Pine           | #286983  | 24          |
+# | Foam           | #56949f  | 67          |
+# | Iris           | #907aa9  | 103         |
+# | Highlight Low  | #f4ede8  | 255         |
+# | Highlight Med  | #dfdad9  | 253         |
+# | Highlight High | #cecacd  | 252         |
 
 options.color_active_status = 8
 options.color_aggregator = "255 on 132"
