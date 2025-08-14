@@ -21,6 +21,7 @@ from visidata import vd
 #| Highlight High | #cecacd  | 252         |
 
 options.color_active_status = 8
+options.color_aggregator = "255 on 132"
 options.color_bottom_hdr = "underline 8"
 options.color_cmdpalette = 24
 options.color_column_sep = 8
@@ -30,8 +31,11 @@ options.color_current_hdr = "bold underline 8"
 options.color_current_row = "reverse"
 options.color_default = 8
 options.color_default_hdr = "underline 8"
-options.color_edit_cell = 174
+options.color_edit_cell = 24
+options.color_edit_unfocused = 24
 options.color_error = 132
+options.color_highlight_status = 252
+options.color_inactive_status = 247
 options.color_key_col = 8
 options.color_keystrokes = 8
 options.color_menu = 8
