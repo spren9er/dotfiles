@@ -1,25 +1,51 @@
 from visidata import vd
 
-options.color_active_status = "60"
-options.color_bottom_hdr = "underline 60"
-options.color_column_sep = "103"
-options.color_current_col = "bold 60"
-options.color_current_hdr = "bold underline 60"
+# Rose Pine Dawn Theme
+#
+#| Color Name     | Hex Code | 8-bit Value |
+#|----------------|----------|-------------|
+#| Base           | #faf4ed  | 255         |
+#| Surface        | #fffaf3  | 15          |
+#| Overlay        | #f2e9e1  | 255         |
+#| Muted          | #9893a5  | 247         |
+#| Subtle         | #797593  | 8           |
+#| Text           | #575279  | 60          |
+#| Love           | #b4637a  | 132         |
+#| Gold           | #ea9d34  | 179         |
+#| Rose           | #d7827e  | 174         |
+#| Pine           | #286983  | 24          |
+#| Foam           | #56949f  | 67          |
+#| Iris           | #907aa9  | 103         |
+#| Highlight Low  | #f4ede8  | 255         |
+#| Highlight Med  | #dfdad9  | 253         |
+#| Highlight High | #cecacd  | 252         |
+
+options.color_active_status = 8
+options.color_bottom_hdr = "underline 8"
+options.color_cmdpalette = 24
+options.color_column_sep = 8
+options.color_current_cell = "reverse"
+options.color_current_col = "bold 8"
+options.color_current_hdr = "bold underline 8"
 options.color_current_row = "reverse"
-options.color_default = "60"
-options.color_default_hdr = "underline 60"
-options.color_key_col = "60"
-options.color_keystrokes = "60"
-options.color_menu = "60"
-options.color_menu_active = "bold 60"
-options.color_menu_help = "97"
-options.color_note_pending = "103"
-options.color_note_row = "103"
-options.color_note_type = "103"
-options.color_selected_row = "bold 60"
-options.color_sidebar = "60"
-options.color_sidebar_title = "60"
-options.color_status = "bold 60"
+options.color_default = 8
+options.color_default_hdr = "underline 8"
+options.color_edit_cell = 174
+options.color_error = 132
+options.color_key_col = 8
+options.color_keystrokes = 8
+options.color_menu = 8
+options.color_menu_active = "bold 8"
+options.color_menu_help = 97
+options.color_note_pending = 132
+options.color_note_row = 132
+options.color_note_type = 247
+options.color_selected_row = "bold 132"
+options.color_sidebar = 8
+options.color_sidebar_title = 8
+options.color_status = "bold 15"
+options.color_warning = 179
+options.color_working = 8
 options.default_width = 50
 options.disp_column_sep = "│"
 options.disp_date_fmt = "%Y-%m-%d %H:%M"
