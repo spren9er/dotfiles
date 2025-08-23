@@ -93,7 +93,6 @@ return {
 
           -- Filtering and search
           ['f'] = { 'filter_on_submit', desc = 'Filter on submit' },
-          ['<c-x>'] = { 'clear_filter', desc = 'Clear filter' },
           ['D'] = { 'fuzzy_finder_directory', desc = 'Fuzzy finder directory' },
           ['#'] = { 'fuzzy_sorter', desc = 'Fuzzy sorter' },
 
