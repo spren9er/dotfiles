@@ -173,6 +173,10 @@ if.app-id = 'com.apple.Preview'
 run = ['layout floating']
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.Powerpoint'
+run = ['layout floating']
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
 run = ['move-node-to-workspace 2']
 
