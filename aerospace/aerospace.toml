@@ -4,7 +4,7 @@
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  'exec-and-forget borders active_color=0xff575279 inactive_color=0x00ffffff width=5.0 hidpi=on order=a ax_focus=on',
+  'exec-and-forget borders active_color=0xff54697c inactive_color=0x00ffffff width=5.0 hidpi=on order=a ax_focus=on',
 ]
 
 # Start AeroSpace at login
@@ -122,24 +122,24 @@ alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
+alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
+alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
 
 # Fullscreen mode
 alt-shift-f = 'fullscreen'
 
 # Join windows (tiling layout)
-ctrl-alt-shift-h = ['join-with left']
-ctrl-alt-shift-j = ['join-with down']
-ctrl-alt-shift-k = ['join-with up']
-ctrl-alt-shift-l = ['join-with right']
+cmd-ctrl-alt-shift-h = ['join-with left']
+cmd-ctrl-alt-shift-j = ['join-with down']
+cmd-ctrl-alt-shift-k = ['join-with up']
+cmd-ctrl-alt-shift-l = ['join-with right']
 
 # Join windows (accordion layout)
-cmd-ctrl-alt-shift-h = ['join-with left', 'layout accordion']
-cmd-ctrl-alt-shift-j = ['join-with down', 'layout accordion']
-cmd-ctrl-alt-shift-k = ['join-with up', 'layout accordion']
-cmd-ctrl-alt-shift-l = ['join-with right', 'layout accordion']
+ctrl-alt-shift-h = ['join-with left', 'layout accordion']
+ctrl-alt-shift-j = ['join-with down', 'layout accordion']
+ctrl-alt-shift-k = ['join-with up', 'layout accordion']
+ctrl-alt-shift-l = ['join-with right', 'layout accordion']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -196,3 +196,6 @@ run = ['layout floating', 'move-node-to-workspace 3']
 if.app-id = 'com.spotify.client'
 run = ['layout floating', 'move-node-to-workspace 3']
 
+[[on-window-detected]]
+if.app-id = 'com.apple.logic10'
+run = ['layout floating', 'move-node-to-workspace 3']
