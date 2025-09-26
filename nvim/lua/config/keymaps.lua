@@ -44,8 +44,16 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- Keep cursor position while indenting
 vim.keymap.set('n', '=ap', "ma=ap'a")
 
--- Search and replace current highlighted word / selection
-vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>//gc<Left><Left><Left>]], { desc = '[R]eplace current word' })
-vim.keymap.set('v', '<leader>r', '"zy:<C-u>%s/<C-r>z//gc<Left><Left><Left>', { desc = '[R]eplace current selection' })
+-- Search and replace current highlighted word / selection in file
+vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>//gc<Left><Left><Left>]], { desc = '[R]eplace current word in file' })
+vim.keymap.set('v', '<leader>r', '"zy:<C-u>%s/<C-r>z//gc<Left><Left><Left>', { desc = '[R]eplace current selection in file' })
+
+-- Search and replace current highlighted word / selection in project
+vim.keymap.set(
+  'n',
+  '<leader>R',
+  [[:cdo %s///g | update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]],
+  { desc = '[R]eplace current word in project' }
+)
 
 -- vim: ts=2 sts=2 sw=2 et
