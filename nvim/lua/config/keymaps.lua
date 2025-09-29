@@ -52,7 +52,7 @@ vim.keymap.set('v', '<leader>r', '"zy:<C-u>%s/<C-r>z//gc<Left><Left><Left>', { d
 vim.keymap.set(
   'n',
   '<leader>R',
-  [[:cdo %s///g | update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]],
+  [[:cfdo %s///g | update | bd<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>]],
   { desc = '[R]eplace current word in project' }
 )
 
