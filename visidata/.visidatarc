@@ -58,4 +58,5 @@ options.disp_rowtop_sep = "│"
 options.disp_selected_note = "•"
 options.disp_sidebar = False
 options.disp_truncator = ""
+options.motd_url = ''
 options.save_filetype = "csv"

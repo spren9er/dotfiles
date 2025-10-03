@@ -15,6 +15,7 @@ return {
   opts = {
     disable_frontmatter = true,
     legacy_commands = false,
+    preferred_link_style = 'wiki',
     ui = {
       enable = false,
     },
