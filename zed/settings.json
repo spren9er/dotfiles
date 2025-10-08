@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "agent_font_size": 14,
+  "agent_font_size": 13,
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
@@ -16,6 +16,9 @@
     "button": false
   },
   "autosave": "on_focus_change",
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "base_keymap": "Atom",
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 11.5,

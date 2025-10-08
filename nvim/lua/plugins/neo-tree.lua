@@ -128,6 +128,7 @@ return {
             desc = 'Add to harpoon list',
           },
         },
+        width = 28,
       },
     },
     default_component_configs = {

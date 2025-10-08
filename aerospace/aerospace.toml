@@ -167,6 +167,10 @@ check-further-callbacks = true
 run = 'layout floating'
 
 [[on-window-detected]]
+if.window-title-regex-substring = 'sichern'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'warp|zed|obsidian|chrome|safari|chatgpt'
 check-further-callbacks = true
 run = 'layout tiling'
